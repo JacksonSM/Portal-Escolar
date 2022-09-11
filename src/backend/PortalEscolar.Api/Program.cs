@@ -1,6 +1,16 @@
+using PortalEscolar.Api.Filters;
+using PortalEscolar.Application;
+using PortalEscolar.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication(builder.Configuration);
+
+builder.Services.AddRouting(option => option.LowercaseUrls = true);
+
+builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionsFilter)));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
