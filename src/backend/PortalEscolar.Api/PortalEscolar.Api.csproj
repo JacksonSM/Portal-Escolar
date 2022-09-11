@@ -11,7 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Shared\PortalEscolar.Communication\PortalEscolar.Communication.csproj" />
+    <ProjectReference Include="..\..\Shared\PortalEscolar.Exceptions\PortalEscolar.Exceptions.csproj" />
+    <ProjectReference Include="..\PortalEscolar.Application\PortalEscolar.Application.csproj" />
+    <ProjectReference Include="..\PortalEscolar.Infrastructure\PortalEscolar.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
