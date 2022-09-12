@@ -4,7 +4,7 @@ using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
 
 namespace PortalEscolar.Api.Controllers;
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class DiretorController : ControllerBase
 {
