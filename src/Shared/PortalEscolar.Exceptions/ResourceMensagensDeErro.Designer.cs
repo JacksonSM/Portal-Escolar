@@ -106,6 +106,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo nome só pode conter 200 caracteres..
+        /// </summary>
+        public static string DIRETOR_NOMECOMPLETO_MAXIMO200CARACTERES {
+            get {
+                return ResourceManager.GetString("DIRETOR_NOMECOMPLETO_MAXIMO200CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo nome completo deve ser informado..
         /// </summary>
         public static string DIRETOR_NOMECOMPLETO_VAZIO {

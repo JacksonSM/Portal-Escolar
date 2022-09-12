@@ -11,17 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F0B3789F-F72
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{666B00CC-F382-48E6-90D6-7E564BEF2627}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalEscolar.Application", "src\backend\PortalEscolar.Application\PortalEscolar.Application.csproj", "{E806544B-398B-4CD4-8449-50323364C69E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalEscolar.Application", "src\backend\PortalEscolar.Application\PortalEscolar.Application.csproj", "{E806544B-398B-4CD4-8449-50323364C69E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalEscolar.Domain", "src\backend\PortalEscolar.Domain\PortalEscolar.Domain.csproj", "{10BFD5D9-C422-4E12-A3AC-5B75AD330CD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalEscolar.Domain", "src\backend\PortalEscolar.Domain\PortalEscolar.Domain.csproj", "{10BFD5D9-C422-4E12-A3AC-5B75AD330CD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalEscolar.Infrastructure", "src\backend\PortalEscolar.Infrastructure\PortalEscolar.Infrastructure.csproj", "{2C3A9307-5CBD-4E10-95A4-DA3594E20813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalEscolar.Infrastructure", "src\backend\PortalEscolar.Infrastructure\PortalEscolar.Infrastructure.csproj", "{2C3A9307-5CBD-4E10-95A4-DA3594E20813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalEscolar.Api", "src\backend\PortalEscolar.Api\PortalEscolar.Api.csproj", "{BE574EB5-80D3-47BF-8CD4-74BFB7D6BB79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalEscolar.Api", "src\backend\PortalEscolar.Api\PortalEscolar.Api.csproj", "{BE574EB5-80D3-47BF-8CD4-74BFB7D6BB79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalEscolar.Exceptions", "src\Shared\PortalEscolar.Exceptions\PortalEscolar.Exceptions.csproj", "{393B94BD-A14A-4367-83AA-A60C437CA3CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalEscolar.Exceptions", "src\Shared\PortalEscolar.Exceptions\PortalEscolar.Exceptions.csproj", "{393B94BD-A14A-4367-83AA-A60C437CA3CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalEscolar.Communication", "src\Shared\PortalEscolar.Communication\PortalEscolar.Communication.csproj", "{6E351C97-7121-4B64-880D-4E4707A68F4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalEscolar.Communication", "src\Shared\PortalEscolar.Communication\PortalEscolar.Communication.csproj", "{6E351C97-7121-4B64-880D-4E4707A68F4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "tests\Utilities\Utilities.csproj", "{23996162-1AC4-457B-99D6-B4EE0B5B1F6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validators.Test", "tests\Validators.Test\Validators.Test.csproj", "{B9C2E7BC-DD8F-456D-8CD2-AE8F1443C031}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{6E351C97-7121-4B64-880D-4E4707A68F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E351C97-7121-4B64-880D-4E4707A68F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E351C97-7121-4B64-880D-4E4707A68F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23996162-1AC4-457B-99D6-B4EE0B5B1F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23996162-1AC4-457B-99D6-B4EE0B5B1F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23996162-1AC4-457B-99D6-B4EE0B5B1F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23996162-1AC4-457B-99D6-B4EE0B5B1F6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C2E7BC-DD8F-456D-8CD2-AE8F1443C031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C2E7BC-DD8F-456D-8CD2-AE8F1443C031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C2E7BC-DD8F-456D-8CD2-AE8F1443C031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C2E7BC-DD8F-456D-8CD2-AE8F1443C031}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +78,8 @@ Global
 		{BE574EB5-80D3-47BF-8CD4-74BFB7D6BB79} = {00D55CC0-9069-4040-AFE7-C95C3666F114}
 		{393B94BD-A14A-4367-83AA-A60C437CA3CA} = {E69FADC9-6EA6-467D-873D-91ED78152AA7}
 		{6E351C97-7121-4B64-880D-4E4707A68F4B} = {E69FADC9-6EA6-467D-873D-91ED78152AA7}
+		{23996162-1AC4-457B-99D6-B4EE0B5B1F6B} = {666B00CC-F382-48E6-90D6-7E564BEF2627}
+		{B9C2E7BC-DD8F-456D-8CD2-AE8F1443C031} = {666B00CC-F382-48E6-90D6-7E564BEF2627}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2182F326-D2FC-4F63-AA57-8D656B680846}

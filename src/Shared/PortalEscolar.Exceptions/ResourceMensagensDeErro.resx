@@ -132,6 +132,9 @@
   <data name="DIRETOR_EMAIL_VAZIO" xml:space="preserve">
     <value>O campo email deve ser informado.</value>
   </data>
+  <data name="DIRETOR_NOMECOMPLETO_MAXIMO200CARACTERES" xml:space="preserve">
+    <value>O campo nome só pode conter 200 caracteres.</value>
+  </data>
   <data name="DIRETOR_NOMECOMPLETO_VAZIO" xml:space="preserve">
     <value>O campo nome completo deve ser informado.</value>
   </data>
