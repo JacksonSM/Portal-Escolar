@@ -3,14 +3,18 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="Bogus" Version="34.0.2" />
+    <PackageReference Include="Moq" Version="4.18.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\backend\PortalEscolar.Application\PortalEscolar.Application.csproj" />
+    <ProjectReference Include="..\..\src\backend\PortalEscolar.Domain\PortalEscolar.Domain.csproj" />
     <ProjectReference Include="..\..\src\Shared\PortalEscolar.Communication\PortalEscolar.Communication.csproj" />
   </ItemGroup>
 
