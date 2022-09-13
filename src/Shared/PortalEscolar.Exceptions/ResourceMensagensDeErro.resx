@@ -147,6 +147,9 @@
   <data name="ERRO_DESCONHECIDO" xml:space="preserve">
     <value>Erro desconhecido.</value>
   </data>
+  <data name="LOGIN_INVALIDO" xml:space="preserve">
+    <value>Login Invalido. Verifique suas credenciais.</value>
+  </data>
   <data name="USUARIO_EMAIL_EXISTENTE" xml:space="preserve">
     <value>Esse email já existe em nossa base de dados.</value>
   </data>

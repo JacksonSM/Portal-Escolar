@@ -14,6 +14,7 @@ public class ExceptionsFilter : IExceptionFilter
         if (context.Exception is PortalEscolarException)
         {
             TratarMeuLivroDeReceitasException(context);
+
         }
         else
         {
@@ -26,7 +27,18 @@ public class ExceptionsFilter : IExceptionFilter
         if (context.Exception is ErrosDeValidacaoException)
         {
             TratarErrosDeValidacaoException(context);
-        }     
+        }
+        else if (context.Exception is LoginInvalidoException)
+        {
+            TratarLoginInvalidoException(context);
+        }
+    }
+
+    private static void TratarLoginInvalidoException(ExceptionContext context)
+    {
+        var erro = context.Exception as LoginInvalidoException;
+        context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+        context.Result = new ObjectResult(new ResponseErroJson(erro.Message));
     }
 
     private static void TratarErrosDeValidacaoException(ExceptionContext context)

@@ -151,6 +151,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login Invalido. Verifique suas credenciais..
+        /// </summary>
+        public static string LOGIN_INVALIDO {
+            get {
+                return ResourceManager.GetString("LOGIN_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Esse email já existe em nossa base de dados..
         /// </summary>
         public static string USUARIO_EMAIL_EXISTENTE {

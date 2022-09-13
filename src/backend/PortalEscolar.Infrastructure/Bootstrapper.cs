@@ -17,10 +17,16 @@ public static class Bootstrapper
     }
     public static void AddContext(IServiceCollection services, IConfiguration configuration)
     {
-        var ConnectionString = configuration.GetSection("Config:ConnectionString").Value;
+        _ = bool.TryParse(configuration.GetSection("Config:DatabaseInMemory").Value, out bool dbInMemory);
 
-        services.AddDbContext<PortalEscolarDbContext>(options =>
-            options.UseSqlServer(ConnectionString));
+        if (!dbInMemory)
+        {
+
+            var ConnectionString = configuration.GetSection("Config:ConnectionString").Value;
+
+            services.AddDbContext<PortalEscolarDbContext>(options =>
+                options.UseSqlServer(ConnectionString));
+        }
 
     }
     public static void AddRepository(IServiceCollection services)
