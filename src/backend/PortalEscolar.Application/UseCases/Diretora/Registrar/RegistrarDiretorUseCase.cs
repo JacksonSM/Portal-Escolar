@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using PortalEscolar.Application.Services.Criptografia;
 using PortalEscolar.Application.Services.Token;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
@@ -15,20 +16,22 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly TokenController _tokenController;
-
+    private readonly EncriptadorDeSenha _encriptador;
 
     public RegistrarDiretorUseCase(
         IDiretorWriteOnlyRepository repoWriteDiretor,
         IMapper mapper,
         IUnitOfWork unitOfWork,
         TokenController tokenController,
-        IDiretorReadOnlyRepository repoReadDiretor)
+        IDiretorReadOnlyRepository repoReadDiretor,
+        EncriptadorDeSenha encriptador)
     {
         _repoWriteDiretor = repoWriteDiretor;
         _mapper = mapper;
         _unitOfWork = unitOfWork;
         _tokenController = tokenController;
         _repoReadDiretor = repoReadDiretor;
+        _encriptador = encriptador;
     }
 
     public async Task<ResponseTokenJson> ExecutarAsync(RequestRegistrarDiretorJson request)
@@ -36,6 +39,8 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
         await ValidarAsync(request);
 
         var entity = _mapper.Map<Domain.Entities.Diretoria.Diretor>(request);
+
+        entity.Senha = _encriptador.Criptografar(entity.Senha);
 
         await _repoWriteDiretor.AddAsync(entity);
         await _unitOfWork.CommitAsync();

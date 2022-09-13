@@ -8,6 +8,7 @@ using Xunit;
 using FluentAssertions;
 using PortalEscolar.Exceptions.ExceptionsBase;
 using PortalEscolar.Exceptions;
+using Utilities.Criptografia;
 
 namespace UseCase.Test.Diretor.Registrar;
 public class RegistrarDiretorUseCaseTest
@@ -46,8 +47,9 @@ public class RegistrarDiretorUseCaseTest
         var mapper = AutoMapperBuilder.Instance();
         var unit = UnitOfWorkBuilder.Instance().Build();
         var tokenController = TokenControllerBuilder.Instance();
+        var encriptador = EncriptadorDeSenhaBuilder.Instancia();
 
-        var useCase = new RegistrarDiretorUseCase(repoWrite, mapper, unit, tokenController, repoRead);
+        var useCase = new RegistrarDiretorUseCase(repoWrite, mapper, unit, tokenController, repoRead,encriptador);
         return useCase;
     }
 }
