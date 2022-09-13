@@ -47,7 +47,7 @@ public class RegistrarDiretorUseCaseTest
         var mapper = AutoMapperBuilder.Instance();
         var unit = UnitOfWorkBuilder.Instance().Build();
         var tokenController = TokenControllerBuilder.Instance();
-        var encriptador = EncriptadorDeSenhaBuilder.Instancia();
+        var encriptador = EncriptadorDeSenhaBuilder.Instance();
 
         var useCase = new RegistrarDiretorUseCase(repoWrite, mapper, unit, tokenController, repoRead,encriptador);
         return useCase;

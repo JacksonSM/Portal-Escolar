@@ -5,14 +5,15 @@ using Utilities.Criptografia;
 namespace Utilities.Entities;
 public class DiretorBuilder
 {
-    public static Diretor Build()
+    public static (Diretor diretor,string senha) Build()
     {
-        return new Faker<Diretor>()
+        var senha = "";
+        var diretor = new Faker<Diretor>()
             .RuleFor(c => c.Email, f => f.Internet.Email())
             .RuleFor(c => c.Senha, f => 
             {
-                var senha = f.Internet.Password();
-                var senhaCriptografada = EncriptadorDeSenhaBuilder.Instancia().Criptografar(senha);
+                senha = f.Internet.Password();
+                var senhaCriptografada = EncriptadorDeSenhaBuilder.Instance().Criptografar(senha);
 
                 return senhaCriptografada;
             })
@@ -23,5 +24,7 @@ public class DiretorBuilder
 
                 return DateTime.Parse(dateFake);
             });
+
+        return (diretor, senha);
     }
 }
