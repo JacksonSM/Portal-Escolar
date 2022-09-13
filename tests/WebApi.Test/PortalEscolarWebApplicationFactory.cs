@@ -8,6 +8,8 @@ namespace WebApi.Test;
 
 public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
 {
+    private PortalEscolar.Domain.Entities.Diretoria.Diretor _diretor;
+    private string _senha;
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Test")
@@ -35,6 +37,15 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
 
                 database.Database.EnsureDeleted();
 
+                (_diretor,_senha) = ContextSeedInMemory.SeedDiretor(database);
             });
+    }
+    public PortalEscolar.Domain.Entities.Diretoria.Diretor ObterDiretor()
+    {
+        return _diretor;
+    }
+    public string ObterSenha()
+    {
+        return _senha;
     }
 }

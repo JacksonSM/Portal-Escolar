@@ -5,6 +5,6 @@ public class EncriptadorDeSenhaBuilder
 {
     public static EncriptadorDeSenha Instance()
     {
-        return new EncriptadorDeSenha("321ATB");
+        return new EncriptadorDeSenha("OFNAzM@qz23pP1hJ0U%M%V@mT");
     }
 }

@@ -8,7 +8,7 @@ using Xunit;
 namespace WebApi.Test.Diretor;
 public class RegistrarDiretorTest : ControllerBase
 {
-    private const string METODO = "diretor";
+    private const string METODO = "api/diretor";
 
     public RegistrarDiretorTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)
     {
