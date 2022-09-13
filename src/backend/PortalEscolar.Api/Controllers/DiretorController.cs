@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PortalEscolar.Application.UseCases.Diretora.FazerLogin;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
 
 namespace PortalEscolar.Api.Controllers;
-[Route("[controller]")]
+[Route("api/[controller]")]
 [ApiController]
 public class DiretorController : ControllerBase
 {
@@ -17,5 +18,16 @@ public class DiretorController : ControllerBase
         var resposta = await useCase.ExecutarAsync(request);
 
         return Created(string.Empty ,resposta);
+    }
+
+    [HttpPost("login")]
+    [ProducesResponseType(typeof(ResponseTokenJson), StatusCodes.Status200OK)]
+    public async Task<IActionResult> Login(
+        [FromServices] IFazerLoginDiretorUseCase useCase,
+        [FromBody] RequestUsuarioLoginJson request)
+    {
+        var response = await useCase.ExecuteAsync(request);
+
+        return Ok(response);
     }
 }

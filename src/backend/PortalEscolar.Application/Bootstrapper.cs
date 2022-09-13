@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PortalEscolar.Application.Services.Criptografia;
 using PortalEscolar.Application.Services.Mapping;
 using PortalEscolar.Application.Services.Token;
+using PortalEscolar.Application.UseCases.Diretora.FazerLogin;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 
 namespace PortalEscolar.Application;
@@ -37,5 +38,6 @@ public static class Bootstrapper
     public static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegistrarDiretorUseCase, RegistrarDiretorUseCase>();
+        services.AddScoped<IFazerLoginDiretorUseCase, FazerLoginDiretorUseCase>();
     }
 }
