@@ -1,17 +1,18 @@
-﻿using PortalEscolar.Application.UseCases.Diretora.Registrar;
-using Utilities.Requests;
-using FluentAssertions;
-using Xunit;
+﻿using FluentAssertions;
+using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Exceptions;
+using Utilities.Requests;
+using Xunit;
 
-namespace Validators.Test.Diretor.Registrar;
-public class RegistrarDiretorValidatorTest
+
+namespace Validators.Test.Validator;
+public class CamposComumValidatorTest
 {
     //Oque esta sendo testado_Descricao do cenario de teste_O resultado esperado
     [Fact]
     public void Objeto_ParametrosValidos_ObjetoValido()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
 
@@ -22,7 +23,7 @@ public class RegistrarDiretorValidatorTest
     [Fact]
     public void CampoEmail_CampoEmBranco_ErroEmailVazio()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
         request.Email = "";
@@ -36,7 +37,7 @@ public class RegistrarDiretorValidatorTest
     [Fact]
     public void CampoEmail_EmailInvalido_ErroEmailInvalido()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
         request.Email = "errogmail.com";
@@ -50,7 +51,7 @@ public class RegistrarDiretorValidatorTest
     [Fact]
     public void CampoSenha_SenhaVazia_ErroSenhaVazia()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
         request.Senha = string.Empty;
@@ -69,7 +70,7 @@ public class RegistrarDiretorValidatorTest
     [InlineData(5)]
     public void CampoSenha_SenhaComMenosDe6Caracteres_ErroSenhaInvalida(int tamanhoSenha)
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build(tamanhoSenha);
 
@@ -82,7 +83,7 @@ public class RegistrarDiretorValidatorTest
     [Fact]
     public void CampoNomeCompleto_NomeCompletoVazio_ErroNomeCompletoVazio()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
         request.NomeCompleto = string.Empty;
@@ -96,7 +97,7 @@ public class RegistrarDiretorValidatorTest
     [Fact]
     public void CampoNomeCompleto_NomeCompletoComMaisde200Caracteres_ErroNomeCompletoNoMaximo200Caracteres()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
         request.NomeCompleto = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
@@ -112,7 +113,7 @@ public class RegistrarDiretorValidatorTest
     [Fact]
     public void CampoDataNascimento_DataNascimentoVazio_DataNascimentoVazio()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
         request.DataNascimento = string.Empty;
@@ -126,7 +127,7 @@ public class RegistrarDiretorValidatorTest
     [Fact]
     public void CampoDataNascimento_DataNascimentoInvalido_DataNascimentoInvalido()
     {
-        var validator = new RegistrarDiretorValidator();
+        var validator = new CamposComumValidator();
 
         var request = RequestRegistrarDiretorBuilder.Build();
         request.DataNascimento = "23/05/200";
