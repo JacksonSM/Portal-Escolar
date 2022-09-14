@@ -31,7 +31,7 @@ public class DiretorReadOnlyRepositoryBuilder
     public DiretorReadOnlyRepositoryBuilder ObterPorEmailSenha(PortalEscolar.Domain.Entities.Diretoria.Diretor diretor)
     {
 
-        _repository.Setup(i => i.ObterPorEmailSenha(diretor.Email, diretor.Senha)).ReturnsAsync(diretor);
+        _repository.Setup(i => i.ObterPorEmailSenhaAsync(diretor.Email, diretor.Senha)).ReturnsAsync(diretor);
 
         return this;
     }
