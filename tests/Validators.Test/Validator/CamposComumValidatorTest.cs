@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using PortalEscolar.Application.UseCases.Diretora.Registrar;
+using PortalEscolar.Application.UseCases.Validator;
 using PortalEscolar.Exceptions;
 using Utilities.Requests;
 using Xunit;
