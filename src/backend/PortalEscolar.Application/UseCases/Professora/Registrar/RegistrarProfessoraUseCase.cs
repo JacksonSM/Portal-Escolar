@@ -15,7 +15,6 @@ public class RegistrarProfessoraUseCase : IRegistrarProfessoraUseCase
     private readonly IProfessoraWriteOnlyRepository _professoraWrite;
     private readonly IMapper _mapper;
     private readonly EncriptadorDeSenha _encriptadorDeSenha;
-    private readonly IUsuarioLogado _usuarioLogado;
     private readonly IUnitOfWork _unitOfWork;
 
     public RegistrarProfessoraUseCase(
@@ -23,14 +22,12 @@ public class RegistrarProfessoraUseCase : IRegistrarProfessoraUseCase
         IProfessoraWriteOnlyRepository professoraWrite,
         IMapper mapper,
         EncriptadorDeSenha encriptadorDeSenha,
-        IUsuarioLogado usuarioLogado,
         IUnitOfWork unitOfWork)
     {
         _professoraRead = professoraRead;
         _professoraWrite = professoraWrite;
         _mapper = mapper;
         _encriptadorDeSenha = encriptadorDeSenha;
-        _usuarioLogado = usuarioLogado;
         _unitOfWork = unitOfWork;
     }
 
@@ -56,9 +53,6 @@ public class RegistrarProfessoraUseCase : IRegistrarProfessoraUseCase
         var validator = new RegistrarProfessoraValidator();
         var validationResult = validator.Validate(request);
 
-        var diretor = await _usuarioLogado.ObterDiretor();
-        if (diretor is null) validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(request.Email,
-                ResourceMensagensDeErro.ERRO_REGISTRAR_PROFESSOR_DIRETOR_INVALIDO));
 
         var existeEmail = await _professoraRead.ExisteEmailAsync(request.Email);
         if (existeEmail) validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(request.Email,
