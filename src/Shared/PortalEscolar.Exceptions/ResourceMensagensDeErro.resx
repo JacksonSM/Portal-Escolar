@@ -117,40 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DIRETOR_DATANASCIMENTO_INVALIDO" xml:space="preserve">
+  <data name="DATANASCIMENTO_INVALIDO" xml:space="preserve">
     <value>O campo data nascimento está inválido. o formato deve ser DD/MM/AAAA</value>
   </data>
-  <data name="DIRETOR_DATANASCIMENTO_MENOS18ANOS" xml:space="preserve">
+  <data name="DATANASCIMENTO_MENOS18ANOS" xml:space="preserve">
     <value>O Diretor deve ser maior que 18 anos.</value>
   </data>
-  <data name="DIRETOR_DATANASCIMENTO_VAZIO" xml:space="preserve">
+  <data name="DATANASCIMENTO_VAZIO" xml:space="preserve">
     <value>O campo data de nascimento deve ser informado.</value>
   </data>
-  <data name="DIRETOR_EMAIL_INVALIDO" xml:space="preserve">
+  <data name="EMAIL_EXISTENTE" xml:space="preserve">
+    <value>Esse email já existe em nossa base de dados.</value>
+  </data>
+  <data name="EMAIL_INVALIDO" xml:space="preserve">
     <value>O campo email estar inválido.</value>
   </data>
-  <data name="DIRETOR_EMAIL_VAZIO" xml:space="preserve">
+  <data name="EMAIL_VAZIO" xml:space="preserve">
     <value>O campo email deve ser informado.</value>
-  </data>
-  <data name="DIRETOR_NOMECOMPLETO_MAXIMO200CARACTERES" xml:space="preserve">
-    <value>O campo nome só pode conter 200 caracteres.</value>
-  </data>
-  <data name="DIRETOR_NOMECOMPLETO_VAZIO" xml:space="preserve">
-    <value>O campo nome completo deve ser informado.</value>
-  </data>
-  <data name="DIRETOR_SENHA_MINIMO_SEIS_CARACTERES" xml:space="preserve">
-    <value>A senha deve conter no minimo 6 caracteres.</value>
-  </data>
-  <data name="DIRETOR_SENHA_VAZIA" xml:space="preserve">
-    <value>O campo senha deve ser informado.</value>
   </data>
   <data name="ERRO_DESCONHECIDO" xml:space="preserve">
     <value>Erro desconhecido.</value>
   </data>
+  <data name="ERRO_REGISTRAR_PROFESSOR_DIRETOR_INVALIDO" xml:space="preserve">
+    <value>É necessario um Diretor valido para executar essa ação.</value>
+  </data>
   <data name="LOGIN_INVALIDO" xml:space="preserve">
     <value>Login Invalido. Verifique suas credenciais.</value>
   </data>
-  <data name="USUARIO_EMAIL_EXISTENTE" xml:space="preserve">
-    <value>Esse email já existe em nossa base de dados.</value>
+  <data name="NOMECOMPLETO_MAXIMO200CARACTERES" xml:space="preserve">
+    <value>O campo nome só pode conter 200 caracteres.</value>
+  </data>
+  <data name="NOMECOMPLETO_VAZIO" xml:space="preserve">
+    <value>O campo nome completo deve ser informado.</value>
+  </data>
+  <data name="SENHA_MINIMO_SEIS_CARACTERES" xml:space="preserve">
+    <value>A senha deve conter no minimo 6 caracteres.</value>
+  </data>
+  <data name="SENHA_VAZIA" xml:space="preserve">
+    <value>O campo senha deve ser informado.</value>
   </data>
 </root>

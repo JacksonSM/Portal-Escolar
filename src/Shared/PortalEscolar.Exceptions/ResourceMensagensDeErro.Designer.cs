@@ -63,81 +63,54 @@ namespace PortalEscolar.Exceptions {
         /// <summary>
         ///   Looks up a localized string similar to O campo data nascimento está inválido. o formato deve ser DD/MM/AAAA.
         /// </summary>
-        public static string DIRETOR_DATANASCIMENTO_INVALIDO {
+        public static string DATANASCIMENTO_INVALIDO {
             get {
-                return ResourceManager.GetString("DIRETOR_DATANASCIMENTO_INVALIDO", resourceCulture);
+                return ResourceManager.GetString("DATANASCIMENTO_INVALIDO", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to O Diretor deve ser maior que 18 anos..
         /// </summary>
-        public static string DIRETOR_DATANASCIMENTO_MENOS18ANOS {
+        public static string DATANASCIMENTO_MENOS18ANOS {
             get {
-                return ResourceManager.GetString("DIRETOR_DATANASCIMENTO_MENOS18ANOS", resourceCulture);
+                return ResourceManager.GetString("DATANASCIMENTO_MENOS18ANOS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to O campo data de nascimento deve ser informado..
         /// </summary>
-        public static string DIRETOR_DATANASCIMENTO_VAZIO {
+        public static string DATANASCIMENTO_VAZIO {
             get {
-                return ResourceManager.GetString("DIRETOR_DATANASCIMENTO_VAZIO", resourceCulture);
+                return ResourceManager.GetString("DATANASCIMENTO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esse email já existe em nossa base de dados..
+        /// </summary>
+        public static string EMAIL_EXISTENTE {
+            get {
+                return ResourceManager.GetString("EMAIL_EXISTENTE", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to O campo email estar inválido..
         /// </summary>
-        public static string DIRETOR_EMAIL_INVALIDO {
+        public static string EMAIL_INVALIDO {
             get {
-                return ResourceManager.GetString("DIRETOR_EMAIL_INVALIDO", resourceCulture);
+                return ResourceManager.GetString("EMAIL_INVALIDO", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to O campo email deve ser informado..
         /// </summary>
-        public static string DIRETOR_EMAIL_VAZIO {
+        public static string EMAIL_VAZIO {
             get {
-                return ResourceManager.GetString("DIRETOR_EMAIL_VAZIO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to O campo nome só pode conter 200 caracteres..
-        /// </summary>
-        public static string DIRETOR_NOMECOMPLETO_MAXIMO200CARACTERES {
-            get {
-                return ResourceManager.GetString("DIRETOR_NOMECOMPLETO_MAXIMO200CARACTERES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to O campo nome completo deve ser informado..
-        /// </summary>
-        public static string DIRETOR_NOMECOMPLETO_VAZIO {
-            get {
-                return ResourceManager.GetString("DIRETOR_NOMECOMPLETO_VAZIO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A senha deve conter no minimo 6 caracteres..
-        /// </summary>
-        public static string DIRETOR_SENHA_MINIMO_SEIS_CARACTERES {
-            get {
-                return ResourceManager.GetString("DIRETOR_SENHA_MINIMO_SEIS_CARACTERES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to O campo senha deve ser informado..
-        /// </summary>
-        public static string DIRETOR_SENHA_VAZIA {
-            get {
-                return ResourceManager.GetString("DIRETOR_SENHA_VAZIA", resourceCulture);
+                return ResourceManager.GetString("EMAIL_VAZIO", resourceCulture);
             }
         }
         
@@ -151,6 +124,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to É necessario um Diretor valido para executar essa ação..
+        /// </summary>
+        public static string ERRO_REGISTRAR_PROFESSOR_DIRETOR_INVALIDO {
+            get {
+                return ResourceManager.GetString("ERRO_REGISTRAR_PROFESSOR_DIRETOR_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login Invalido. Verifique suas credenciais..
         /// </summary>
         public static string LOGIN_INVALIDO {
@@ -160,11 +142,38 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Esse email já existe em nossa base de dados..
+        ///   Looks up a localized string similar to O campo nome só pode conter 200 caracteres..
         /// </summary>
-        public static string USUARIO_EMAIL_EXISTENTE {
+        public static string NOMECOMPLETO_MAXIMO200CARACTERES {
             get {
-                return ResourceManager.GetString("USUARIO_EMAIL_EXISTENTE", resourceCulture);
+                return ResourceManager.GetString("NOMECOMPLETO_MAXIMO200CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo nome completo deve ser informado..
+        /// </summary>
+        public static string NOMECOMPLETO_VAZIO {
+            get {
+                return ResourceManager.GetString("NOMECOMPLETO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A senha deve conter no minimo 6 caracteres..
+        /// </summary>
+        public static string SENHA_MINIMO_SEIS_CARACTERES {
+            get {
+                return ResourceManager.GetString("SENHA_MINIMO_SEIS_CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo senha deve ser informado..
+        /// </summary>
+        public static string SENHA_VAZIA {
+            get {
+                return ResourceManager.GetString("SENHA_VAZIA", resourceCulture);
             }
         }
     }
