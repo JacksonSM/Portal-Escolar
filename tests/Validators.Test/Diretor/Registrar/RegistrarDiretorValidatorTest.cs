@@ -31,7 +31,7 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_EMAIL_VAZIO));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.EMAIL_VAZIO));
     }
     [Fact]
     public void CampoEmail_EmailInvalido_ErroEmailInvalido()
@@ -45,7 +45,7 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_EMAIL_INVALIDO));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.EMAIL_INVALIDO));
     }
     [Fact]
     public void CampoSenha_SenhaVazia_ErroSenhaVazia()
@@ -59,7 +59,7 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_SENHA_VAZIA));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.SENHA_VAZIA));
     }
     [Theory]
     [InlineData(1)]
@@ -77,7 +77,7 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_SENHA_MINIMO_SEIS_CARACTERES));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.SENHA_MINIMO_SEIS_CARACTERES));
     }
     [Fact]
     public void CampoNomeCompleto_NomeCompletoVazio_ErroNomeCompletoVazio()
@@ -91,7 +91,7 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_NOMECOMPLETO_VAZIO));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.NOMECOMPLETO_VAZIO));
     }
     [Fact]
     public void CampoNomeCompleto_NomeCompletoComMaisde200Caracteres_ErroNomeCompletoNoMaximo200Caracteres()
@@ -107,7 +107,7 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_NOMECOMPLETO_MAXIMO200CARACTERES));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.NOMECOMPLETO_MAXIMO200CARACTERES));
     }
     [Fact]
     public void CampoDataNascimento_DataNascimentoVazio_DataNascimentoVazio()
@@ -121,7 +121,7 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_DATANASCIMENTO_VAZIO));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DATANASCIMENTO_VAZIO));
     }
     [Fact]
     public void CampoDataNascimento_DataNascimentoInvalido_DataNascimentoInvalido()
@@ -135,6 +135,6 @@ public class RegistrarDiretorValidatorTest
 
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
-            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DIRETOR_DATANASCIMENTO_INVALIDO));
+            .Contain(erros => erros.ErrorMessage.Equals(ResourceMensagensDeErro.DATANASCIMENTO_INVALIDO));
     }
 }
