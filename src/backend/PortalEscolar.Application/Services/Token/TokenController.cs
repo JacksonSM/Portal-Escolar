@@ -37,6 +37,12 @@ public class TokenController
         return tokenHandler.WriteToken(securityToken);
     }
 
+    public string RecuperarEmail(string token)
+    {
+        var claims = ValidarToken(token);
+        return claims.FindFirst(EmailAlias).Value;
+    }
+
     public ClaimsPrincipal ValidarToken(string token)
     {
         var tokenHandler = new JwtSecurityTokenHandler();

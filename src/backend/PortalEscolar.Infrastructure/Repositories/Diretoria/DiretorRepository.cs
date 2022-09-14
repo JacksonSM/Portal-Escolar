@@ -19,6 +19,9 @@ public class DiretorRepository : IDiretorWriteOnlyRepository, IDiretorReadOnlyRe
     public async Task<bool> ExisteEmailAsync(string emailUsuario) =>
         await _context.Diretor.AsNoTracking().AnyAsync(c => c.Email.Equals(emailUsuario));
 
-    public async Task<Diretor> ObterPorEmailSenha(string email, string senha) =>
+    public async Task<Diretor> ObterPorEmailAsync(string email) =>
+        await _context.Diretor.AsNoTracking().FirstOrDefaultAsync(c => c.Email.Equals(email));
+
+    public async Task<Diretor> ObterPorEmailSenhaAsync(string email, string senha) =>
         await _context.Diretor.AsNoTracking().FirstOrDefaultAsync(c => c.Email.Equals(email) && c.Senha.Equals(senha));
 }

@@ -11,5 +11,7 @@ public class AutoMapperConfig : Profile
     {
         CreateMap<Communication.Request.RequestRegistrarDiretorJson,Domain.Entities.Diretoria.Diretor>()
             .ForMember(c => c.DataNascimento, opt => opt.MapFrom(origem => origem.DataNascimento));
+        CreateMap<Communication.Request.RequestRegistrarProfessoraJson, Domain.Entities.SalaAula.Professora>()
+            .ForMember(c => c.DataNascimento, opt => opt.MapFrom(origem => origem.DataNascimento));
     }
 }

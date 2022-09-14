@@ -2,5 +2,6 @@
 public interface IDiretorReadOnlyRepository
 {
     Task<bool> ExisteEmailAsync(string emailUsuario);
-    Task<PortalEscolar.Domain.Entities.Diretoria.Diretor> ObterPorEmailSenha(string email, string senha);
+    Task<Entities.Diretoria.Diretor> ObterPorEmailSenhaAsync(string email, string senha);
+    Task<Entities.Diretoria.Diretor> ObterPorEmailAsync(string email);
 }

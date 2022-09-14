@@ -22,7 +22,7 @@ public class FazerLoginDiretorUseCase : IFazerLoginDiretorUseCase
     {
         var senhaCriptografada = _encriptadorDeSenha.Criptografar(request.Senha);
 
-        var diretor = await _repoRead.ObterPorEmailSenha(request.Email, senhaCriptografada);
+        var diretor = await _repoRead.ObterPorEmailSenhaAsync(request.Email, senhaCriptografada);
 
         if (diretor is null) throw new LoginInvalidoException();
 
