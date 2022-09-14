@@ -12,8 +12,8 @@ using PortalEscolar.Infrastructure.Context;
 namespace PortalEscolar.Infrastructure.Migrations
 {
     [DbContext(typeof(PortalEscolarDbContext))]
-    [Migration("20220913164906_initial")]
-    partial class initial
+    [Migration("20220914155040_EditandoTipoDataNascimentoeAdicionadoATabelaProfessora")]
+    partial class EditandoTipoDataNascimentoeAdicionadoATabelaProfessora
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace PortalEscolar.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<DateTime>("DataRegistro")
                         .HasColumnType("datetime2");
@@ -55,6 +55,39 @@ namespace PortalEscolar.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Diretor");
+                });
+
+            modelBuilder.Entity("PortalEscolar.Domain.Entities.SalaAula.Professora", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("date");
+
+                    b.Property<DateTime>("DataRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("NomeCompleto")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Professora");
                 });
 #pragma warning restore 612, 618
         }

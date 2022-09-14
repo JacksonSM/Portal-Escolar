@@ -20,5 +20,7 @@ public class DiretorMap : IEntityTypeConfiguration<Diretor>
         builder.Property(c => c.Senha)
             .IsRequired();
 
+        builder.Property<DateTime>(c => c.DataNascimento)
+               .HasColumnType("date");
     }
 }
