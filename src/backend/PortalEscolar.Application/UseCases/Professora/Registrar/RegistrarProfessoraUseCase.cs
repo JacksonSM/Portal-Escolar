@@ -39,7 +39,10 @@ public class RegistrarProfessoraUseCase : IRegistrarProfessoraUseCase
         await Validar(request);
 
         var entity = _mapper.Map<Domain.Entities.SalaAula.Professora>(request);
-        
+
+        var senhaCriptografada = _encriptadorDeSenha.Criptografar(entity.Senha);
+
+        entity.Senha = senhaCriptografada;
         await _professoraWrite.AddAsync(entity);
         await _unitOfWork.CommitAsync();
 
