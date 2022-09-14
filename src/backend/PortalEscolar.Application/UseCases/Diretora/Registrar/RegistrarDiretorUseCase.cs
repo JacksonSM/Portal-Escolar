@@ -67,7 +67,7 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
         if (existeEmail)
         {
             resultado.Errors.Add(new FluentValidation.Results.ValidationFailure(request.Email,
-                ResourceMensagensDeErro.USUARIO_EMAIL_EXISTENTE));
+                ResourceMensagensDeErro.EMAIL_EXISTENTE));
         }
 
         if (!resultado.IsValid)
