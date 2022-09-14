@@ -35,7 +35,7 @@ public class RegistrarDiretorUseCaseTest
 
         await action.Should().ThrowAsync<ErrosDeValidacaoException>()
             .Where(exception => exception.MensagensDeErro.Count == 1 &&
-                exception.MensagensDeErro.Contains(ResourceMensagensDeErro.EMAIL_EXISTENTE));
+                exception.MensagensDeErro.Contains(ResourceMensagensDeErro.USUARIO_EMAIL_EXISTENTE));
     }
 
 
