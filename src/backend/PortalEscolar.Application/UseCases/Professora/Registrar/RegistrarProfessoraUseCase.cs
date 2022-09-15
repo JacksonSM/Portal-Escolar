@@ -56,7 +56,7 @@ public class RegistrarProfessoraUseCase : IRegistrarProfessoraUseCase
 
         var existeEmail = await _professoraRead.ExisteEmailAsync(request.Email);
         if (existeEmail) validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(request.Email,
-                ResourceMensagensDeErro.EMAIL_EXISTENTE)); ;
+                ResourceMensagensDeErro.EMAIL_EXISTENTE));
 
 
         if (!validationResult.IsValid)

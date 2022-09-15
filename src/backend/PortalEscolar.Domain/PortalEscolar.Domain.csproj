@@ -6,4 +6,10 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Interfaces\Repositories\Diretoria\Matricula\**" />
+    <EmbeddedResource Remove="Interfaces\Repositories\Diretoria\Matricula\**" />
+    <None Remove="Interfaces\Repositories\Diretoria\Matricula\**" />
+  </ItemGroup>
+
 </Project>
