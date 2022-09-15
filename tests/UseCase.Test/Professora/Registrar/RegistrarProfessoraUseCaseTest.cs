@@ -21,6 +21,7 @@ public class RegistrarProfessoraUseCaseTest
 
         result.Should().NotBeNull();
         result.Mensagem.Should().NotBeNullOrWhiteSpace();
+        result.Mensagem.Should().Contain(ResourceMensagensDeErro.REGISTRAR_PROFESSORA_SUCESSO);
     }
 
     [Fact]
@@ -49,10 +50,3 @@ public class RegistrarProfessoraUseCaseTest
         return new RegistrarProfessoraUseCase(repoRead, repoWrite, mapper, encriptador, unit);
     }
 }
-
-
-//private readonly IProfessoraReadOnlyRepository _professoraRead;
-//private readonly IProfessoraWriteOnlyRepository _professoraWrite;
-//private readonly IMapper _mapper;
-//private readonly EncriptadorDeSenha _encriptadorDeSenha;
-//private readonly IUnitOfWork _unitOfWork;

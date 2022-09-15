@@ -160,6 +160,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Professora registrado com sucesso !.
+        /// </summary>
+        public static string REGISTRAR_PROFESSORA_SUCESSO {
+            get {
+                return ResourceManager.GetString("REGISTRAR_PROFESSORA_SUCESSO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A senha deve conter no minimo 6 caracteres..
         /// </summary>
         public static string SENHA_MINIMO_SEIS_CARACTERES {

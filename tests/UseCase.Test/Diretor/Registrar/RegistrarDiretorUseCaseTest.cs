@@ -37,6 +37,19 @@ public class RegistrarDiretorUseCaseTest
             .Where(exception => exception.MensagensDeErro.Count == 1 &&
                 exception.MensagensDeErro.Contains(ResourceMensagensDeErro.EMAIL_EXISTENTE));
     }
+    [Fact]
+    public async void ValidacaoEmailVazio_EmailVazio_ELancadaExceptionEmailVazio()
+    {
+        var request = RequestRegistrarDiretorBuilder.Build();
+        var useCase = CreateUseCase();
+        request.Email = string.Empty;
+
+        Func<Task> action = async () => { await useCase.ExecutarAsync(request); };
+
+        await action.Should().ThrowAsync<ErrosDeValidacaoException>()
+            .Where(exception => exception.MensagensDeErro.Count == 1 &&
+                exception.MensagensDeErro.Contains(ResourceMensagensDeErro.EMAIL_VAZIO));
+    }
 
 
 

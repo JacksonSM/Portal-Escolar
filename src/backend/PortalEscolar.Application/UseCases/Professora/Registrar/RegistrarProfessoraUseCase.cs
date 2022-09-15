@@ -43,7 +43,7 @@ public class RegistrarProfessoraUseCase : IRegistrarProfessoraUseCase
         await _professoraWrite.AddAsync(entity);
         await _unitOfWork.CommitAsync();
 
-        return new GenericResponseJson { Mensagem = "Professora registrado com sucesso !" };
+        return new GenericResponseJson { Mensagem = ResourceMensagensDeErro.REGISTRAR_PROFESSORA_SUCESSO };
     }
 
     private async Task Validar(RequestRegistrarProfessoraJson request)
