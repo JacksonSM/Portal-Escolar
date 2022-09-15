@@ -10,6 +10,11 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
 {
     private PortalEscolar.Domain.Entities.Diretoria.Diretor _diretor;
     private string _senha;
+
+    private PortalEscolar.Domain.Entities.SalaAula.Professora _professora;
+    private string _senhaProfessora;
+
+
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Test")
@@ -38,6 +43,7 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
                 database.Database.EnsureDeleted();
 
                 (_diretor,_senha) = ContextSeedInMemory.SeedDiretor(database);
+                (_professora, _senhaProfessora) = ContextSeedInMemory.SeedProfessora(database);
             });
     }
     public PortalEscolar.Domain.Entities.Diretoria.Diretor ObterDiretor()
@@ -47,5 +53,13 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
     public string ObterSenha()
     {
         return _senha;
+    }
+    public PortalEscolar.Domain.Entities.SalaAula.Professora ObterProfessora()
+    {
+        return _professora;
+    }
+    public string ObterSenhaProfessora()
+    {
+        return _senhaProfessora;
     }
 }

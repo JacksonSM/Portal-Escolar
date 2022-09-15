@@ -15,5 +15,13 @@ public class ContextSeedInMemory
         return (diretor,senha);
     }
 
-   
+    internal static (PortalEscolar.Domain.Entities.SalaAula.Professora _professora, string _senhaProfessora) SeedProfessora(PortalEscolarDbContext context)
+    {
+        (var professora, var senha) = ProfessoraBuilder.Build();
+
+        context.Professora.Add(professora);
+        context.SaveChanges();
+
+        return (professora, senha);
+    }
 }
