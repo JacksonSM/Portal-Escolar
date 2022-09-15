@@ -28,7 +28,14 @@ public class ProfessoraReadOnlyRepositoryBuilder
 
         return this;
     }
-   
+    public ProfessoraReadOnlyRepositoryBuilder ObterPorEmailESenhaAsync
+        (PortalEscolar.Domain.Entities.SalaAula.Professora professora)
+    {
+        _repository.Setup(i => i.ObterPorEmailESenhaAsync(professora.Email,professora.Senha)).ReturnsAsync(professora);
+
+        return this;
+    }
+
 
     public IProfessoraReadOnlyRepository Build()
     {
