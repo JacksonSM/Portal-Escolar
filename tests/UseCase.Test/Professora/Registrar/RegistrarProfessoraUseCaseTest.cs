@@ -17,7 +17,7 @@ public class RegistrarProfessoraUseCaseTest
     {
         var request = RequestRegistrarProfessoraBuilder.Build();
         var useCase = BuildUseCase();
-        var result = await useCase.ExecuteAysnc(request);
+        var result = await useCase.ExecuteAsync(request);
 
         result.Should().NotBeNull();
         result.Mensagem.Should().NotBeNullOrWhiteSpace();
@@ -30,7 +30,7 @@ public class RegistrarProfessoraUseCaseTest
         var request = RequestRegistrarProfessoraBuilder.Build();
         var useCase = BuildUseCase(request.Email);
 
-        Func<Task> action = async () => { await useCase.ExecuteAysnc(request); };
+        Func<Task> action = async () => { await useCase.ExecuteAsync(request); };
 
         await action.Should().ThrowAsync<ErrosDeValidacaoException>()
             .Where(exception => exception.MensagensDeErro.Count == 1 &&
