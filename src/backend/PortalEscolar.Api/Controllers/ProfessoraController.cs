@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PortalEscolar.Application.UseCases.Professora.Login;
 using PortalEscolar.Application.UseCases.Professora.Registrar;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
@@ -14,9 +15,19 @@ public class ProfessoraController : ControllerBase
         [FromServices] IRegistrarProfessoraUseCase useCase,
         [FromBody] RequestRegistrarProfessoraJson request)
     {
-        var response = await useCase.ExecuteAysnc(request);
+        var response = await useCase.ExecuteAsync(request);
 
         return Created(string.Empty, response);
+    }
+    [HttpPost("login")]
+    [ProducesResponseType(typeof(ResponseTokenJson), StatusCodes.Status200OK)]
+    public async Task<IActionResult> Login(
+    [FromServices] ILoginProfessoraUseCase useCase,
+    [FromBody] RequestUsuarioLoginJson request)
+    {
+        var response = await useCase.ExecuteAsync(request);
+
+        return Ok(response);
     }
 
 }

@@ -4,5 +4,5 @@ using PortalEscolar.Communication.Response;
 namespace PortalEscolar.Application.UseCases.Professora.Registrar;
 public interface IRegistrarProfessoraUseCase
 {
-    Task<GenericResponseJson> ExecuteAysnc(RequestRegistrarProfessoraJson request);
+    Task<GenericResponseJson> ExecuteAsync(RequestRegistrarProfessoraJson request);
 }

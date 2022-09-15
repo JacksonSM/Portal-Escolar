@@ -31,7 +31,7 @@ public class RegistrarProfessoraUseCase : IRegistrarProfessoraUseCase
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<GenericResponseJson> ExecuteAysnc(RequestRegistrarProfessoraJson request)
+    public async Task<GenericResponseJson> ExecuteAsync(RequestRegistrarProfessoraJson request)
     {
         await Validar(request);
 
