@@ -185,5 +185,23 @@ namespace PortalEscolar.Exceptions {
                 return ResourceManager.GetString("SENHA_VAZIA", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Token Expirado !!.
+        /// </summary>
+        public static string TOKEN_EXPIRADO {
+            get {
+                return ResourceManager.GetString("TOKEN_EXPIRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esse usuario não está autorizado realizar essa ação !!.
+        /// </summary>
+        public static string USUARIO_NAO_AUTORIZADO {
+            get {
+                return ResourceManager.GetString("USUARIO_NAO_AUTORIZADO", resourceCulture);
+            }
+        }
     }
 }

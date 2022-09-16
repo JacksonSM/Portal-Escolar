@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PortalEscolar.Api.Filters.Autorizacao;
 using PortalEscolar.Application.UseCases.Professora.Login;
 using PortalEscolar.Application.UseCases.Professora.Registrar;
 using PortalEscolar.Communication.Request;
@@ -10,6 +11,7 @@ namespace PortalEscolar.Api.Controllers;
 public class ProfessoraController : ControllerBase
 {
     [HttpPost]
+    [AutorizacaoPortalEscolar("diretor")]
     [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status201Created)]
     public async Task<IActionResult> Registrar(
         [FromServices] IRegistrarProfessoraUseCase useCase,

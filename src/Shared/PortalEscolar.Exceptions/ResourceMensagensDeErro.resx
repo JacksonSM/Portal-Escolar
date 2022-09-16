@@ -159,4 +159,10 @@
   <data name="SENHA_VAZIA" xml:space="preserve">
     <value>O campo senha deve ser informado.</value>
   </data>
+  <data name="TOKEN_EXPIRADO" xml:space="preserve">
+    <value>Token Expirado !!</value>
+  </data>
+  <data name="USUARIO_NAO_AUTORIZADO" xml:space="preserve">
+    <value>Esse usuario não está autorizado realizar essa ação !!</value>
+  </data>
 </root>
