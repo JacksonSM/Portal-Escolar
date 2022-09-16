@@ -8,6 +8,8 @@ using PortalEscolar.Domain.Interfaces.Repositories;
 using PortalEscolar.Infrastructure.Repositories;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Professora;
 using PortalEscolar.Infrastructure.Repositories.Professora;
+using PortalEscolar.Infrastructure.Repositories.Papel;
+using PortalEscolar.Domain.Interfaces.Repositories.Papeis;
 
 namespace PortalEscolar.Infrastructure;
 public static class Bootstrapper
@@ -38,6 +40,9 @@ public static class Bootstrapper
         
         services.AddScoped<IProfessoraWriteOnlyRepository, ProfessoraRepository>();
         services.AddScoped<IProfessoraReadOnlyRepository, ProfessoraRepository>();
+
+        services.AddScoped<IPapelWriteOnlyRepository, PapelRepository>();
+        services.AddScoped<IPapelReadOnlyRepository, PapelRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }
