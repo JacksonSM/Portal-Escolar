@@ -55,14 +55,15 @@ public class RegistrarDiretorUseCaseTest
 
     private RegistrarDiretorUseCase CreateUseCase(string email = "")
     {
-        var repoWrite = DiretorWriteOnlyRepositoryBuilder.Instance().Build();
+        var repoDiretorWrite = DiretorWriteOnlyRepositoryBuilder.Instance().Build();
+        var repoPapelWrite = PapelWriteOnlyRepositoryBuilder.Instance().Build();
         var repoRead = DiretorReadOnlyRepositoryBuilder.Instance().ExisteEmail(email).Build();
         var mapper = AutoMapperBuilder.Instance();
         var unit = UnitOfWorkBuilder.Instance().Build();
         var tokenController = TokenControllerBuilder.Instance();
         var encriptador = EncriptadorDeSenhaBuilder.Instance();
 
-        var useCase = new RegistrarDiretorUseCase(repoWrite, mapper, unit, tokenController, repoRead,encriptador);
+        var useCase = new RegistrarDiretorUseCase(repoDiretorWrite,repoPapelWrite, mapper, unit, tokenController, repoRead,encriptador);
         return useCase;
     }
 }
