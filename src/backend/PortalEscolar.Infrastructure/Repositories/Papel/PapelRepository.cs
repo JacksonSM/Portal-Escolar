@@ -12,8 +12,16 @@ public class PapelRepository : IPapelWriteOnlyRepository, IPapelReadOnlyReposito
     {
         _context = context;
     }
-    public async Task AplicarPapelAsync(PapelUsuario papelUsuario) =>
+    public async Task AplicarPapelAsync(string nomePapel, string emailUsuario)
+    {
+        var papelSelecionado = await _context.Papel
+            .FirstOrDefaultAsync(c => c.Nome.ToUpper().Equals(nomePapel.ToUpper()));
+
+        var papelUsuario = new PapelUsuario { EmailUsuario = emailUsuario, Papel = papelSelecionado};
+
         await _context.PapelUsuario.AddAsync(papelUsuario);
+    }
+
     public async Task CriarPapelAsync(Domain.Entities.Papel.Papel papel) =>
         await _context.Papel.AddAsync(papel);
 
