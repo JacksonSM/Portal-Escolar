@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PortalEscolar.Domain.Entities.Diretoria;
+using PortalEscolar.Domain.Entities.Papel;
 using PortalEscolar.Domain.Entities.SalaAula;
 
 namespace PortalEscolar.Infrastructure.Context;
@@ -9,6 +10,8 @@ public class PortalEscolarDbContext : DbContext
 
     public DbSet<Diretor> Diretor { get; set; }
     public DbSet<Professora> Professora { get; set; }
+    public DbSet<Papel> Papel { get; set; }
+    public DbSet<PapelUsuario> PapelUsuario { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PortalEscolar.Infrastructure.Context;
 
@@ -11,9 +12,10 @@ using PortalEscolar.Infrastructure.Context;
 namespace PortalEscolar.Infrastructure.Migrations
 {
     [DbContext(typeof(PortalEscolarDbContext))]
-    partial class PortalEscolarDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220915213604_AdicionadoAsTabelasPapelEPapelUsuario")]
+    partial class AdicionadoAsTabelasPapelEPapelUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,6 +86,12 @@ namespace PortalEscolar.Infrastructure.Migrations
 
                     b.Property<string>("EmailUsuario")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DataRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
                     b.HasKey("PapelId", "EmailUsuario");
 
