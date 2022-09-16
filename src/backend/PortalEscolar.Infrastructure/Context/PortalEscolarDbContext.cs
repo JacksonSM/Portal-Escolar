@@ -17,8 +17,13 @@ public class PortalEscolarDbContext : DbContext
     {
         foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
-        
+
+        builder.SemearPapel();
+        builder.SemearDiretor();
+
         base.OnModelCreating(builder);
         builder.ApplyConfigurationsFromAssembly(typeof(PortalEscolarDbContext).Assembly);
     }
+
+    
 }
