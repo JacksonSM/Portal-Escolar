@@ -160,6 +160,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aluno registrado com sucesso !.
+        /// </summary>
+        public static string REGISTRAR_ALUNO_SUCESSO {
+            get {
+                return ResourceManager.GetString("REGISTRAR_ALUNO_SUCESSO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Professora registrado com sucesso !.
         /// </summary>
         public static string REGISTRAR_PROFESSORA_SUCESSO {
