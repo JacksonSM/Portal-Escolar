@@ -1,14 +1,14 @@
-﻿using PortalEscolar.Application.UseCases.Diretora.Registrar;
+﻿using FluentAssertions;
+using PortalEscolar.Application.UseCases.Diretora.Registrar;
+using PortalEscolar.Exceptions;
+using PortalEscolar.Exceptions.ExceptionsBase;
 using Utilitario.ParaOsTestes.Mapper;
 using Utilitario.ParaOsTestes.Repositorios;
+using Utilities.Criptografia;
 using Utilities.Repositories.Diretor;
 using Utilities.Requests;
 using Utilities.Services.Token;
 using Xunit;
-using FluentAssertions;
-using PortalEscolar.Exceptions.ExceptionsBase;
-using PortalEscolar.Exceptions;
-using Utilities.Criptografia;
 
 namespace UseCase.Test.Diretor.Registrar;
 public class RegistrarDiretorUseCaseTest
