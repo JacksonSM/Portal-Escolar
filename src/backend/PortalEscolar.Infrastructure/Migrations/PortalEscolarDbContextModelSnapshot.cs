@@ -46,6 +46,9 @@ namespace PortalEscolar.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<int>("Papel")
+                        .HasColumnType("int");
+
                     b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -53,41 +56,18 @@ namespace PortalEscolar.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Diretor");
-                });
 
-            modelBuilder.Entity("PortalEscolar.Domain.Entities.Papel.Papel", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("DataRegistro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NomeNormalizado")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Papel");
-                });
-
-            modelBuilder.Entity("PortalEscolar.Domain.Entities.Papel.PapelUsuario", b =>
-                {
-                    b.Property<long>("PapelId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("EmailUsuario")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("PapelId", "EmailUsuario");
-
-                    b.ToTable("PapelUsuario");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            DataNascimento = new DateTime(2002, 9, 16, 0, 0, 0, 0, DateTimeKind.Local),
+                            DataRegistro = new DateTime(2022, 9, 16, 23, 6, 23, 595, DateTimeKind.Utc).AddTicks(1537),
+                            Email = "diretor@portalescolar.com",
+                            NomeCompleto = "Diretor",
+                            Papel = 1,
+                            Senha = "Diretor321"
+                        });
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.SalaAula.Professora", b =>
@@ -114,6 +94,9 @@ namespace PortalEscolar.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<int>("Papel")
+                        .HasColumnType("int");
+
                     b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -121,16 +104,6 @@ namespace PortalEscolar.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Professora");
-                });
-
-            modelBuilder.Entity("PortalEscolar.Domain.Entities.Papel.PapelUsuario", b =>
-                {
-                    b.HasOne("PortalEscolar.Domain.Entities.Papel.Papel", "Papel")
-                        .WithMany()
-                        .HasForeignKey("PapelId")
-                        .IsRequired();
-
-                    b.Navigation("Papel");
                 });
 #pragma warning restore 612, 618
         }

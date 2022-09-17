@@ -12,8 +12,8 @@ using PortalEscolar.Infrastructure.Context;
 namespace PortalEscolar.Infrastructure.Migrations
 {
     [DbContext(typeof(PortalEscolarDbContext))]
-    [Migration("20220915220935_RemovendoIdeDataRegistrodaTabelaPapelUsuario")]
-    partial class RemovendoIdeDataRegistrodaTabelaPapelUsuario
+    [Migration("20220916195052_SemeandoPapeldoDiretor")]
+    partial class SemeandoPapeldoDiretor
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,6 +55,17 @@ namespace PortalEscolar.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Diretor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            DataNascimento = new DateTime(2002, 9, 16, 0, 0, 0, 0, DateTimeKind.Local),
+                            DataRegistro = new DateTime(2022, 9, 16, 19, 50, 52, 96, DateTimeKind.Utc).AddTicks(3177),
+                            Email = "diretor@portalescolar.com",
+                            NomeCompleto = "Diretor",
+                            Senha = "Diretor321"
+                        });
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.Papel.Papel", b =>
@@ -77,6 +88,29 @@ namespace PortalEscolar.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Papel");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            DataRegistro = new DateTime(2022, 9, 16, 19, 50, 52, 96, DateTimeKind.Utc).AddTicks(2953),
+                            Nome = "Diretor",
+                            NomeNormalizado = "DIRETOR"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            DataRegistro = new DateTime(2022, 9, 16, 19, 50, 52, 96, DateTimeKind.Utc).AddTicks(3119),
+                            Nome = "Professora",
+                            NomeNormalizado = "PROFESSORA"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            DataRegistro = new DateTime(2022, 9, 16, 19, 50, 52, 96, DateTimeKind.Utc).AddTicks(3141),
+                            Nome = "Aluno",
+                            NomeNormalizado = "ALUNO"
+                        });
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.Papel.PapelUsuario", b =>
@@ -90,6 +124,13 @@ namespace PortalEscolar.Infrastructure.Migrations
                     b.HasKey("PapelId", "EmailUsuario");
 
                     b.ToTable("PapelUsuario");
+
+                    b.HasData(
+                        new
+                        {
+                            PapelId = 1L,
+                            EmailUsuario = "diretor@portalescolar.com"
+                        });
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.SalaAula.Professora", b =>

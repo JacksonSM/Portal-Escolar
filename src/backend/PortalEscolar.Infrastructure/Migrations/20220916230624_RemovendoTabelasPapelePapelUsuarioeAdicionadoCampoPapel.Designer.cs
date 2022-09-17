@@ -12,8 +12,8 @@ using PortalEscolar.Infrastructure.Context;
 namespace PortalEscolar.Infrastructure.Migrations
 {
     [DbContext(typeof(PortalEscolarDbContext))]
-    [Migration("20220914155040_EditandoTipoDataNascimentoeAdicionadoATabelaProfessora")]
-    partial class EditandoTipoDataNascimentoeAdicionadoATabelaProfessora
+    [Migration("20220916230624_RemovendoTabelasPapelePapelUsuarioeAdicionadoCampoPapel")]
+    partial class RemovendoTabelasPapelePapelUsuarioeAdicionadoCampoPapel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,6 +48,9 @@ namespace PortalEscolar.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<int>("Papel")
+                        .HasColumnType("int");
+
                     b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -55,6 +58,18 @@ namespace PortalEscolar.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Diretor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            DataNascimento = new DateTime(2002, 9, 16, 0, 0, 0, 0, DateTimeKind.Local),
+                            DataRegistro = new DateTime(2022, 9, 16, 23, 6, 23, 595, DateTimeKind.Utc).AddTicks(1537),
+                            Email = "diretor@portalescolar.com",
+                            NomeCompleto = "Diretor",
+                            Papel = 1,
+                            Senha = "Diretor321"
+                        });
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.SalaAula.Professora", b =>
@@ -80,6 +95,9 @@ namespace PortalEscolar.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("Papel")
+                        .HasColumnType("int");
 
                     b.Property<string>("Senha")
                         .IsRequired()
