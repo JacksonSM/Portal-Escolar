@@ -23,7 +23,7 @@ public class ProfessoraBuilder
             {
                 var dateFake = f.Person.DateOfBirth.Date.ToString("dd/MM/yyyy");
 
-                return DateTime.Parse(dateFake);
+                return DateTime.ParseExact(dateFake, "dd/MM/yyyy", null);
             });
 
         return (professora, senha);
