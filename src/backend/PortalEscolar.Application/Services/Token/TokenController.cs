@@ -1,4 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using PortalEscolar.Domain.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
@@ -7,6 +8,7 @@ namespace PortalEscolar.Application.Services.Token;
 public class TokenController
 {
     private const string EmailAlias = "eml";
+    private const string Papel = "ppl";
     private readonly double _duracaoTokenEmMinutos;
     private readonly string _chaveDeSeguranca;
 
@@ -16,11 +18,12 @@ public class TokenController
         _chaveDeSeguranca = chaveDeSeguranca;
     }
 
-    public string GerarToken(string emailUsuario)
+    public string GerarToken(Usuario usuario)
     {
         var claims = new List<Claim>
         {
-            new Claim(EmailAlias, emailUsuario),
+            new Claim(EmailAlias, usuario.Email),
+            new Claim(Papel, usuario.Papel.ToString())
         };
 
         var tokenHandler = new JwtSecurityTokenHandler();
@@ -41,6 +44,13 @@ public class TokenController
     {
         var claims = ValidarToken(token);
         return claims.FindFirst(EmailAlias).Value;
+    }
+    public Domain.Enum.Papel RecuperarPapel(string token)
+    {
+        var claims = ValidarToken(token);
+        var number = claims.FindFirst(Papel).Value;
+        var papel = Enum.Parse<Domain.Enum.Papel>(number);
+        return papel;
     }
 
     public ClaimsPrincipal ValidarToken(string token)

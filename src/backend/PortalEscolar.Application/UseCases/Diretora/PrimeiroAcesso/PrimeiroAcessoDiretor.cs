@@ -40,7 +40,7 @@ public class PrimeiroAcessoDiretor : IPrimeiroAcessoDiretor
         _repoWrite.Atualizar(diretor);
         await _unitOfWork.CommitAsync();
 
-        var token = _tokenController.GerarToken(diretor.Email);
+        var token = _tokenController.GerarToken(diretor);
 
         return new ResponseTokenJson { Nome = diretor.NomeCompleto, Token = token };
     }

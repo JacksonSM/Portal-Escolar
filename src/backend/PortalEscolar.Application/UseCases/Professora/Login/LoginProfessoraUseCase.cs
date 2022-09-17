@@ -30,7 +30,7 @@ public class LoginProfessoraUseCase : ILoginProfessoraUseCase
 
         if (professora is null) throw new LoginInvalidoException();
 
-        var token = _tokenController.GerarToken(professora.Email);
+        var token = _tokenController.GerarToken(professora);
 
         var response = new ResponseTokenJson { Nome = professora.NomeCompleto, Token = token };
         return response;

@@ -3,10 +3,8 @@ using PortalEscolar.Application.Services.Criptografia;
 using PortalEscolar.Application.Services.Token;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
-using PortalEscolar.Domain.Entities.Papel;
 using PortalEscolar.Domain.Interfaces.Repositories;
 using PortalEscolar.Domain.Interfaces.Repositories.Diretoria.Diretor;
-using PortalEscolar.Domain.Interfaces.Repositories.Papeis;
 using PortalEscolar.Exceptions;
 using PortalEscolar.Exceptions.ExceptionsBase;
 
@@ -15,7 +13,6 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
 {
     private readonly IDiretorWriteOnlyRepository _repoWriteDiretor;
     private readonly IDiretorReadOnlyRepository _repoReadDiretor;
-    private readonly IPapelWriteOnlyRepository _repoReadPapel;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly TokenController _tokenController;
@@ -26,7 +23,6 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
 
     public RegistrarDiretorUseCase(
         IDiretorWriteOnlyRepository repoWriteDiretor,
-        IPapelWriteOnlyRepository repoReadPapel,
         IMapper mapper,
         IUnitOfWork unitOfWork,
         TokenController tokenController,
@@ -34,7 +30,6 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
         EncriptadorDeSenha encriptador)
     {
         _repoWriteDiretor = repoWriteDiretor;
-        _repoReadPapel = repoReadPapel;
         _mapper = mapper;
         _unitOfWork = unitOfWork;
         _tokenController = tokenController;
@@ -52,11 +47,10 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
 
         await _repoWriteDiretor.AddAsync(entity);
 
-        await _repoReadPapel.AplicarPapelAsync(_nomePapel, entity.Email);
 
         await _unitOfWork.CommitAsync();
 
-        var token = _tokenController.GerarToken(entity.Email);
+        var token = _tokenController.GerarToken(entity);
         var response = new ResponseTokenJson
         {
             Nome = entity.NomeCompleto,

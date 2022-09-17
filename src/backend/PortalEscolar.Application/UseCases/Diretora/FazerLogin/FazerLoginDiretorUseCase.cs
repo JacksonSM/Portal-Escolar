@@ -29,7 +29,7 @@ public class FazerLoginDiretorUseCase : IFazerLoginDiretorUseCase
         return new ResponseTokenJson
         {
             Nome = diretor.NomeCompleto,
-            Token = _tokenController.GerarToken(diretor.Email)
+            Token = _tokenController.GerarToken(diretor)
         };
 
     }
