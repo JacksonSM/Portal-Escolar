@@ -16,7 +16,7 @@ public class DiretorController : ControllerBase
         [FromServices] IRegistrarDiretorUseCase useCase,
         [FromBody] RequestRegistrarDiretorJson request )
     {
-        var resposta = await useCase.ExecutarAsync(request);
+        var resposta = await useCase.ExecuteAsync(request);
 
         return Created(string.Empty ,resposta);
     }

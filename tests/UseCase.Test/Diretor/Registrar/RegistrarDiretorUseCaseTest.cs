@@ -19,7 +19,7 @@ public class RegistrarDiretorUseCaseTest
         var request = RequestRegistrarDiretorBuilder.Build();
         var useCase = CreateUseCase();
 
-        var result = await useCase.ExecutarAsync(request);
+        var result = await useCase.ExecuteAsync(request);
 
         result.Should().NotBeNull();    
         result.Token.Should().NotBeNullOrWhiteSpace();
@@ -31,7 +31,7 @@ public class RegistrarDiretorUseCaseTest
         var request = RequestRegistrarDiretorBuilder.Build();
         var useCase = CreateUseCase(request.Email);
 
-        Func<Task> action = async () => { await useCase.ExecutarAsync(request); };
+        Func<Task> action = async () => { await useCase.ExecuteAsync(request); };
 
         await action.Should().ThrowAsync<ErrosDeValidacaoException>()
             .Where(exception => exception.MensagensDeErro.Count == 1 &&
@@ -44,7 +44,7 @@ public class RegistrarDiretorUseCaseTest
         var useCase = CreateUseCase();
         request.Email = string.Empty;
 
-        Func<Task> action = async () => { await useCase.ExecutarAsync(request); };
+        Func<Task> action = async () => { await useCase.ExecuteAsync(request); };
 
         await action.Should().ThrowAsync<ErrosDeValidacaoException>()
             .Where(exception => exception.MensagensDeErro.Count == 1 &&

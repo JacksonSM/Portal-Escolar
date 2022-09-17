@@ -37,7 +37,7 @@ public class RegistrarDiretorUseCase : IRegistrarDiretorUseCase
         _encriptador = encriptador;
     }
 
-    public async Task<ResponseTokenJson> ExecutarAsync(RequestRegistrarDiretorJson request)
+    public async Task<ResponseTokenJson> ExecuteAsync(RequestRegistrarDiretorJson request)
     {
         await ValidarAsync(request);
 

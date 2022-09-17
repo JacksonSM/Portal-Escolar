@@ -94,7 +94,6 @@ public class RegistrarProfessoraTest : ControllerBase
     public async Task Token_TokenExpirado_Status401Unauthorized()
     {
         var request = RequestRegistrarProfessoraBuilder.Build();
-        request.NomeCompleto = string.Empty;
 
         var tokenController = TokenControllerBuilder.ExpiredToken();
 
