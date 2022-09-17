@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.IdentityModel.Tokens;
 using PortalEscolar.Application.Services.Token;
 using PortalEscolar.Communication.Response;
-using PortalEscolar.Domain.Interfaces.Repositories.Papeis;
+using PortalEscolar.Domain.Enum;
 using PortalEscolar.Exceptions;
 using PortalEscolar.Exceptions.ExceptionsBase;
 
@@ -12,29 +12,29 @@ namespace PortalEscolar.Api.Filters.Autorizacao;
 public class PapeisNecessariosFilter : IAsyncAuthorizationFilter
 {
     private readonly TokenController _tokenController;
-    private readonly IPapelReadOnlyRepository _repoReadPapel;
 
-    readonly List<string> _papeisAutorizados;
+    readonly Papel[] _papeisAutorizados;
 
     public PapeisNecessariosFilter(
-        List<string> papeis, 
-        TokenController tokenController, 
-        IPapelReadOnlyRepository repoReadPapel)
+        Papel[] papeis, 
+        TokenController tokenController)
     {
         _papeisAutorizados = papeis;
         _tokenController = tokenController;
-        _repoReadPapel = repoReadPapel;
     }
     public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
     {
         try
         {
-            var papelUsuario = await ObterPapelUsuario(context);
+            var tokenRequest = ObterTokenNaRequisicao(context);
 
-            var usuarioEstaAutorizado = _papeisAutorizados
-                .Exists(papelAutorizado => papelAutorizado.ToUpper().Equals(papelUsuario.NomeNormalizado));
+            var papelUsuario = _tokenController.RecuperarPapel(tokenRequest);
 
-            
+            bool papelEstaAutorizado = _papeisAutorizados
+                .Any(papelAutorizado => papelAutorizado.Equals(papelUsuario));
+
+            if (!papelEstaAutorizado) UsuarioNaoAutorizado(context); 
+                     
         }
         catch (SecurityTokenExpiredException)
         {
@@ -49,17 +49,6 @@ public class PapeisNecessariosFilter : IAsyncAuthorizationFilter
     private void TokenExpirado(AuthorizationFilterContext context)
     {
         context.Result = new UnauthorizedObjectResult(new ResponseErroJson(ResourceMensagensDeErro.TOKEN_EXPIRADO));
-    }
-
-    private async Task<Domain.Entities.Papel.Papel> ObterPapelUsuario(AuthorizationFilterContext context)
-    {
-        var token = ObterTokenNaRequisicao(context);
-
-        var emailUsuario = _tokenController.RecuperarEmail(token);
-
-        var papelUsuario = await _repoReadPapel.ObterPapel(emailUsuario);
-
-        return papelUsuario;
     }
 
     private static string ObterTokenNaRequisicao(AuthorizationFilterContext context)

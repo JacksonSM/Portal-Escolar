@@ -4,6 +4,7 @@ using PortalEscolar.Application.UseCases.Professora.Login;
 using PortalEscolar.Application.UseCases.Professora.Registrar;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
+using PortalEscolar.Domain.Enum;
 
 namespace PortalEscolar.Api.Controllers;
 [Route("api/[controller]")]
@@ -11,7 +12,7 @@ namespace PortalEscolar.Api.Controllers;
 public class ProfessoraController : ControllerBase
 {
     [HttpPost]
-    [AutorizacaoPortalEscolar("diretor")]
+    [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
     [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status201Created)]
     public async Task<IActionResult> Registrar(
         [FromServices] IRegistrarProfessoraUseCase useCase,
