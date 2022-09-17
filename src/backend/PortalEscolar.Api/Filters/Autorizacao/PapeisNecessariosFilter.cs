@@ -9,7 +9,7 @@ using PortalEscolar.Exceptions.ExceptionsBase;
 
 namespace PortalEscolar.Api.Filters.Autorizacao;
 
-public class PapeisNecessariosFilter : IAsyncAuthorizationFilter
+public class PapeisNecessariosFilter : IAuthorizationFilter
 {
     private readonly TokenController _tokenController;
 
@@ -22,7 +22,7 @@ public class PapeisNecessariosFilter : IAsyncAuthorizationFilter
         _papeisAutorizados = papeis;
         _tokenController = tokenController;
     }
-    public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
+    public void OnAuthorization(AuthorizationFilterContext context)
     {
         try
         {
