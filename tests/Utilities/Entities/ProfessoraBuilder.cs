@@ -9,6 +9,7 @@ public class ProfessoraBuilder
     {
         var senha = "";
         var professora = new Faker<Professora>()
+            .RuleFor(c => c.Papel, PortalEscolar.Domain.Enum.Papel.Professora)
             .RuleFor(c => c.Email, f => f.Internet.Email())
             .RuleFor(c => c.Senha, f => 
             {

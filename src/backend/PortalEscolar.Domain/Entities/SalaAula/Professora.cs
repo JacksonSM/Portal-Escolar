@@ -5,7 +5,8 @@ public class Professora : Usuario
 {
     public string NomeCompleto { get; set; }
     public DateTime DataNascimento { get; set; }
-    
+
+    public Professora(){}
     public Professora(string nomeCompleto, DateTime dataNascimento, string email, string senha) : base(email, senha)
     {
         NomeCompleto = nomeCompleto;

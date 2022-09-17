@@ -9,6 +9,7 @@ public class DiretorBuilder
     {
         var senha = "";
         var diretor = new Faker<Diretor>()
+            .RuleFor(c => c.Papel,PortalEscolar.Domain.Enum.Papel.Diretor)
             .RuleFor(c => c.Email, f => f.Internet.Email())
             .RuleFor(c => c.Senha, f => 
             {
