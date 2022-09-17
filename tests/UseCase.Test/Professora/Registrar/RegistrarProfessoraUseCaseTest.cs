@@ -42,12 +42,11 @@ public class RegistrarProfessoraUseCaseTest
     private RegistrarProfessoraUseCase BuildUseCase(string email = "")
     {
         var repoRead = ProfessoraReadOnlyRepositoryBuilder.Instance().ExisteEmail(email).Build();
-        var repoPapelWrite = PapelWriteOnlyRepositoryBuilder.Instance().Build();
         var repoWrite = ProfessoraWriteOnlyRepositoryBuilder.Instance().Build();
         var mapper = AutoMapperBuilder.Instance();
         var encriptador = EncriptadorDeSenhaBuilder.Instance();
         var unit = UnitOfWorkBuilder.Instance().Build();
 
-        return new RegistrarProfessoraUseCase(repoRead, repoWrite, repoPapelWrite,mapper, encriptador, unit);
+        return new RegistrarProfessoraUseCase(repoRead, repoWrite,mapper, encriptador, unit);
     }
 }
