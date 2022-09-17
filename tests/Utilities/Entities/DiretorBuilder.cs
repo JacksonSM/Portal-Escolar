@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using PortalEscolar.Domain.Entities.Diretoria;
+using System.Globalization;
 using Utilities.Criptografia;
 
 namespace Utilities.Entities;
@@ -23,7 +24,7 @@ public class DiretorBuilder
             {
                 var dateFake = f.Person.DateOfBirth.Date.ToString("dd/MM/yyyy");
 
-                return DateTime.ParseExact(dateFake, "dd/MM/yyyy", null);
+                return DateTime.ParseExact(dateFake, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             });
 
         return (diretor, senha);

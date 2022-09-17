@@ -99,6 +99,8 @@ public class AlunoProfessoraTest : ControllerBase
 
         var token = tokenController.GerarToken(_diretor);
 
+        Thread.Sleep(1000);
+
         var response = await PostRequest(METODO, request, token);
 
         response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);

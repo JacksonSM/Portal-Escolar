@@ -98,6 +98,7 @@ public class RegistrarProfessoraTest : ControllerBase
         var tokenController = TokenControllerBuilder.ExpiredToken();
 
         var token = tokenController.GerarToken(_diretor);
+        Thread.Sleep(1000);
 
         var response = await PostRequest(METODO, request, token);
 
