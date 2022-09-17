@@ -9,6 +9,7 @@ public class PortalEscolarDbContext : DbContext
 
     public DbSet<Diretor> Diretor { get; set; }
     public DbSet<Professora> Professora { get; set; }
+    public DbSet<Aluno> Aluno { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
