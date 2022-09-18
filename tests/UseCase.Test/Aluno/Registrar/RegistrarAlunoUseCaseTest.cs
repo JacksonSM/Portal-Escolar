@@ -9,7 +9,7 @@ using Utilities.Repositories.Diretor;
 using Utilities.Requests;
 using Xunit;
 
-namespace UseCase.Test.Diretor.Registrar;
+namespace UseCase.Test.Aluno.Registrar;
 public class RegistrarAlunoUseCaseTest
 {
     [Fact]
@@ -47,7 +47,7 @@ public class RegistrarAlunoUseCaseTest
         var unit = UnitOfWorkBuilder.Instance().Build();
         var encriptador = EncriptadorDeSenhaBuilder.Instance();
 
-        var useCase = new RegistrarAlunoUseCase(repoAlunoRead,repoAlunoWrite,mapper,encriptador,unit);
+        var useCase = new RegistrarAlunoUseCase(repoAlunoRead, repoAlunoWrite, mapper, encriptador, unit);
         return useCase;
     }
 }

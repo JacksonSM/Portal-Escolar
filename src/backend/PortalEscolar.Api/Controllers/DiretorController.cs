@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PortalEscolar.Application.UseCases.Diretora.FazerLogin;
+using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Communication.Request;
@@ -24,7 +24,7 @@ public class DiretorController : ControllerBase
     [HttpPost("login")]
     [ProducesResponseType(typeof(ResponseTokenJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> Login(
-        [FromServices] IFazerLoginDiretorUseCase useCase,
+        [FromServices] ILoginDiretorUseCase useCase,
         [FromBody] RequestUsuarioLoginJson request)
     {
         var response = await useCase.ExecuteAsync(request);

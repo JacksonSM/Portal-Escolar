@@ -1,5 +1,6 @@
 using PortalEscolar.Api.Filters;
 using PortalEscolar.Application;
+using PortalEscolar.Application.Services.Mapping;
 using PortalEscolar.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,12 @@ builder.Services.AddHttpContextAccessor();
 // Add services to the container.
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication(builder.Configuration);
+
+builder.Services.AddScoped(provider => new AutoMapper.MapperConfiguration(cfg =>
+{
+    cfg.AddProfile(new AutoMapperConfig());
+}).CreateMapper());
+
 
 builder.Services.AddRouting(option => option.LowercaseUrls = true);
 

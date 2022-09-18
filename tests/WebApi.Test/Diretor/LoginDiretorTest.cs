@@ -6,13 +6,13 @@ using System.Text.Json;
 using Xunit;
 
 namespace WebApi.Test.Diretor;
-public class FazerLoginDiretorTest : ControllerBase
+public class LoginDiretorTest : ControllerBase
 {
     private const string METODO = "api/diretor/login";
     private PortalEscolar.Domain.Entities.Diretoria.Diretor _diretor;
     private string _senha;
 
-    public FazerLoginDiretorTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)
+    public LoginDiretorTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)
     {
         _diretor = factory.ObterDiretor();
         _senha = factory.ObterSenha();

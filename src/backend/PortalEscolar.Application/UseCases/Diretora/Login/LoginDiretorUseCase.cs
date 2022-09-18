@@ -5,14 +5,14 @@ using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Interfaces.Repositories.Diretoria.Diretor;
 using PortalEscolar.Exceptions.ExceptionsBase;
 
-namespace PortalEscolar.Application.UseCases.Diretora.FazerLogin;
-public class FazerLoginDiretorUseCase : IFazerLoginDiretorUseCase
+namespace PortalEscolar.Application.UseCases.Diretora.Login;
+public class LoginDiretorUseCase : ILoginDiretorUseCase
 {
     private readonly IDiretorReadOnlyRepository _repoRead;
     private readonly EncriptadorDeSenha _encriptadorDeSenha;
     private readonly TokenController _tokenController;
 
-    public FazerLoginDiretorUseCase(IDiretorReadOnlyRepository repoRead, EncriptadorDeSenha encriptadorDeSenha, TokenController tokenController)
+    public LoginDiretorUseCase(IDiretorReadOnlyRepository repoRead, EncriptadorDeSenha encriptadorDeSenha, TokenController tokenController)
     {
         _repoRead = repoRead;
         _encriptadorDeSenha = encriptadorDeSenha;

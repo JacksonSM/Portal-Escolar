@@ -1,5 +1,4 @@
-﻿using PortalEscolar.Application.UseCases.Diretora.FazerLogin;
-using Utilities.Criptografia;
+﻿using Utilities.Criptografia;
 using Utilities.Repositories.Diretor;
 using Utilities.Services.Token;
 using Xunit;
@@ -8,14 +7,15 @@ using Utilities.Entities;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Exceptions.ExceptionsBase;
 using PortalEscolar.Exceptions;
+using PortalEscolar.Application.UseCases.Diretora.Login;
 
-namespace UseCase.Test.Diretor.FazerLogin;
-public class FazerLoginDiretorUseCaseTest
+namespace UseCase.Test.Diretor.Login;
+public class LoginDiretorUseCaseTest
 {
     [Fact]
     public async void UseCase_DadosValidos_TokenENomeValidos()
     {
-        (var diretor,var senha) = DiretorBuilder.Build();
+        (var diretor, var senha) = DiretorBuilder.Build();
         var request = new RequestUsuarioLoginJson
         {
             Email = diretor.Email,
@@ -115,13 +115,13 @@ public class FazerLoginDiretorUseCaseTest
              .Where(exception => exception.Message.Equals(ResourceMensagensDeErro.LOGIN_INVALIDO));
     }
 
-    private FazerLoginDiretorUseCase UseCaseBuild(PortalEscolar.Domain.Entities.Diretoria.Diretor diretor)
+    private LoginDiretorUseCase UseCaseBuild(PortalEscolar.Domain.Entities.Diretoria.Diretor diretor)
     {
         var repoRead = DiretorReadOnlyRepositoryBuilder.Instance().ObterPorEmailSenha(diretor).Build();
         var encriptador = EncriptadorDeSenhaBuilder.Instance();
         var token = TokenControllerBuilder.Instance();
-        
-        var useCase = new FazerLoginDiretorUseCase(repoRead, encriptador, token);
+
+        var useCase = new LoginDiretorUseCase(repoRead, encriptador, token);
         return useCase;
     }
 }

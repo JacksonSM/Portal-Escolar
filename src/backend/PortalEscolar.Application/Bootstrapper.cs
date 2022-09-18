@@ -5,7 +5,7 @@ using PortalEscolar.Application.Services.Mapping;
 using PortalEscolar.Application.Services.Token;
 using PortalEscolar.Application.Services.UsuarioLogado;
 using PortalEscolar.Application.UseCases.Aluno.Registrar;
-using PortalEscolar.Application.UseCases.Diretora.FazerLogin;
+using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Application.UseCases.Professora.Login;
@@ -16,7 +16,6 @@ public static class Bootstrapper
 {
     public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
     {
-        AddAutoMapper(services);
         AddChaveAdicionalSenha(services, configuration);
         AddTokenJWT(services,configuration);
         AddUseCases(services);
@@ -34,11 +33,6 @@ public static class Bootstrapper
 
         services.AddScoped(option => new EncriptadorDeSenha(section.Value));
     }
-
-    public static void AddAutoMapper(IServiceCollection services)
-    {
-        services.AddAutoMapper(typeof(AutoMapperConfig));
-    }
     
     public static void AddTokenJWT(IServiceCollection services,IConfiguration configuration)
     {
@@ -50,7 +44,7 @@ public static class Bootstrapper
     public static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegistrarDiretorUseCase, RegistrarDiretorUseCase>();
-        services.AddScoped<IFazerLoginDiretorUseCase, FazerLoginDiretorUseCase>();
+        services.AddScoped<ILoginDiretorUseCase, LoginDiretorUseCase>();
         services.AddScoped<IPrimeiroAcessoDiretor, PrimeiroAcessoDiretor>();
         services.AddScoped<IRegistrarProfessoraUseCase, RegistrarProfessoraUseCase>();
         services.AddScoped<ILoginProfessoraUseCase, LoginProfessoraUseCase>();
