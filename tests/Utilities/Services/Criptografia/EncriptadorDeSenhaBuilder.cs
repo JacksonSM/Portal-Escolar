@@ -1,6 +1,6 @@
 ﻿using PortalEscolar.Application.Services.Criptografia;
 
-namespace Utilities.Criptografia;
+namespace Utilities.Services.Criptografia;
 public class EncriptadorDeSenhaBuilder
 {
     public static EncriptadorDeSenha Instance()

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using PortalEscolar.Application.Services.Mapping;
 
-namespace Utilitario.ParaOsTestes.Mapper;
+namespace Utilities.Services.Mapper;
 
 public class AutoMapperBuilder
 {

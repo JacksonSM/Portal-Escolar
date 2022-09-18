@@ -1,7 +1,7 @@
 ﻿using Moq;
 using PortalEscolar.Domain.Interfaces.Repositories;
 
-namespace Utilitario.ParaOsTestes.Repositorios;
+namespace Utilities.Repositories;
 
 public class UnitOfWorkBuilder
 {

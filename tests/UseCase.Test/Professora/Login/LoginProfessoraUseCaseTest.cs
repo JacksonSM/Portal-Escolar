@@ -1,13 +1,13 @@
 ﻿using PortalEscolar.Application.UseCases.Professora.Login;
 using PortalEscolar.Communication.Request;
-using Utilities.Criptografia;
 using Utilities.Entities;
-using Utilities.Repositories.Diretor;
 using Utilities.Services.Token;
 using FluentAssertions;
 using Xunit;
 using PortalEscolar.Exceptions.ExceptionsBase;
 using PortalEscolar.Exceptions;
+using Utilities.Services.Criptografia;
+using Utilities.Repositories.Professora;
 
 namespace UseCase.Test.Professora.Login;
 public class LoginProfessoraUseCaseTest

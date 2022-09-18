@@ -2,11 +2,11 @@
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Exceptions;
 using PortalEscolar.Exceptions.ExceptionsBase;
-using Utilitario.ParaOsTestes.Mapper;
-using Utilitario.ParaOsTestes.Repositorios;
-using Utilities.Criptografia;
+using Utilities.Repositories;
 using Utilities.Repositories.Diretor;
 using Utilities.Requests;
+using Utilities.Services.Criptografia;
+using Utilities.Services.Mapper;
 using Utilities.Services.Token;
 using Xunit;
 

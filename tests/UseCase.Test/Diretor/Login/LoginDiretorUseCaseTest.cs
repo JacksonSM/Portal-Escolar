@@ -1,5 +1,4 @@
-﻿using Utilities.Criptografia;
-using Utilities.Repositories.Diretor;
+﻿using Utilities.Repositories.Diretor;
 using Utilities.Services.Token;
 using Xunit;
 using FluentAssertions;
@@ -8,6 +7,7 @@ using PortalEscolar.Communication.Request;
 using PortalEscolar.Exceptions.ExceptionsBase;
 using PortalEscolar.Exceptions;
 using PortalEscolar.Application.UseCases.Diretora.Login;
+using Utilities.Services.Criptografia;
 
 namespace UseCase.Test.Diretor.Login;
 public class LoginDiretorUseCaseTest
@@ -125,8 +125,3 @@ public class LoginDiretorUseCaseTest
         return useCase;
     }
 }
-
-
-//private readonly IDiretorReadOnlyRepository _repoRead;
-//private readonly EncriptadorDeSenha _encriptadorDeSenha;
-//private readonly TokenController _tokenController;

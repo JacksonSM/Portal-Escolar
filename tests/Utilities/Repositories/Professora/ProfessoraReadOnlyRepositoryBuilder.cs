@@ -1,7 +1,7 @@
 ﻿using Moq;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Professora;
 
-namespace Utilities.Repositories.Diretor;
+namespace Utilities.Repositories.Professora;
 public class ProfessoraReadOnlyRepositoryBuilder
 {
 
@@ -31,7 +31,7 @@ public class ProfessoraReadOnlyRepositoryBuilder
     public ProfessoraReadOnlyRepositoryBuilder ObterPorEmailESenhaAsync
         (PortalEscolar.Domain.Entities.SalaAula.Professora professora)
     {
-        _repository.Setup(i => i.ObterPorEmailESenhaAsync(professora.Email,professora.Senha)).ReturnsAsync(professora);
+        _repository.Setup(i => i.ObterPorEmailESenhaAsync(professora.Email, professora.Senha)).ReturnsAsync(professora);
 
         return this;
     }

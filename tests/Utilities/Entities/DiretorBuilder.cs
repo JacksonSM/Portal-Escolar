@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using PortalEscolar.Domain.Entities.Diretoria;
 using System.Globalization;
-using Utilities.Criptografia;
+using Utilities.Services.Criptografia;
 
 namespace Utilities.Entities;
 public class DiretorBuilder
@@ -20,12 +20,7 @@ public class DiretorBuilder
                 return senhaCriptografada;
             })
             .RuleFor(c => c.NomeCompleto, f => f.Name.FullName())
-            .RuleFor(c => c.DataNascimento, f => 
-            {
-                var dateFake = f.Person.DateOfBirth.Date.ToString("dd/MM/yyyy");
-
-                return DateTime.ParseExact(dateFake, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            });
+            .RuleFor(c => c.DataNascimento, f => f.Person.DateOfBirth);
 
         return (diretor, senha);
     }

@@ -1,13 +1,13 @@
 ﻿using PortalEscolar.Application.UseCases.Professora.Registrar;
-using Utilitario.ParaOsTestes.Mapper;
-using Utilitario.ParaOsTestes.Repositorios;
-using Utilities.Criptografia;
-using Utilities.Repositories.Diretor;
 using Utilities.Requests;
 using Xunit;
 using FluentAssertions;
 using PortalEscolar.Exceptions;
 using PortalEscolar.Exceptions.ExceptionsBase;
+using Utilities.Repositories;
+using Utilities.Repositories.Professora;
+using Utilities.Services.Criptografia;
+using Utilities.Services.Mapper;
 
 namespace UseCase.Test.Professora.Registrar;
 public class RegistrarProfessoraUseCaseTest
