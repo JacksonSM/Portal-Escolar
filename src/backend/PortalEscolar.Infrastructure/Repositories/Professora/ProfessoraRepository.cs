@@ -21,5 +21,5 @@ public class ProfessoraRepository : IProfessoraWriteOnlyRepository, IProfessoraR
     public async Task<Domain.Entities.SalaAula.Professora> ObterPorEmailESenhaAsync (string email, string senha) =>
         await _context.Professora
         .AsNoTracking()
-        .FirstOrDefaultAsync(c => c.Email.Equals(email) && c.Senha.Equals(senha));
+        .FirstOrDefaultAsync(c => c.Email.ToUpper().Equals(email.ToUpper()) && c.Senha.Equals(senha));
 }
