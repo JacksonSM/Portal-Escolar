@@ -14,6 +14,9 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
     private PortalEscolar.Domain.Entities.SalaAula.Professora _professora;
     private string _senhaProfessora;
 
+    private PortalEscolar.Domain.Entities.SalaAula.Aluno _aluno;
+    private string _senhaAluno;
+
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
@@ -44,6 +47,7 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
 
                 (_diretor,_senha) = ContextSeedInMemory.SeedDiretor(database);
                 (_professora, _senhaProfessora) = ContextSeedInMemory.SeedProfessora(database);
+                (_aluno, _senhaAluno) = ContextSeedInMemory.SeedAluno(database);
             });
     }
     public PortalEscolar.Domain.Entities.Diretoria.Diretor ObterDiretor()
@@ -61,5 +65,13 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
     public string ObterSenhaProfessora()
     {
         return _senhaProfessora;
+    }
+    public PortalEscolar.Domain.Entities.SalaAula.Aluno ObterAluno()
+    {
+        return _aluno;
+    }
+    public string ObterSenhaAluno()
+    {
+        return _senhaAluno;
     }
 }

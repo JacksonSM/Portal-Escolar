@@ -1,4 +1,5 @@
-﻿using PortalEscolar.Infrastructure.Context;
+﻿using PortalEscolar.Domain.Entities.SalaAula;
+using PortalEscolar.Infrastructure.Context;
 using Utilities.Entities;
 
 namespace WebApi.Test;
@@ -23,5 +24,15 @@ public class ContextSeedInMemory
         context.SaveChanges();
 
         return (professora, senha);
+    }
+
+    internal static (Aluno _aluno, string _senhaAluno) SeedAluno(PortalEscolarDbContext context)
+    {
+        (var aluno, var senha) = AlunoBuilder.Build();
+
+        context.Aluno.Add(aluno);
+        context.SaveChanges();
+
+        return (aluno, senha);
     }
 }
