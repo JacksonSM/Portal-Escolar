@@ -1,7 +1,7 @@
 ﻿using Moq;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Aluno;
 
-namespace Utilities.Repositories.Diretor;
+namespace Utilities.Repositories.Aluno;
 public class AlunoReadOnlyRepositoryBuilder
 {
 
@@ -33,4 +33,9 @@ public class AlunoReadOnlyRepositoryBuilder
         return _repository.Object;
     }
 
+    public AlunoReadOnlyRepositoryBuilder ObterPorEmailSenha(PortalEscolar.Domain.Entities.SalaAula.Aluno aluno)
+    {
+        _repository.Setup(i => i.ObterPorEmailSenhaAsync(aluno.Email, aluno.Senha)).ReturnsAsync(aluno);
+        return this;
+    }
 }
