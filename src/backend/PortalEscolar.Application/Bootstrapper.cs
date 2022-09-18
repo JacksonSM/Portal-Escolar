@@ -4,6 +4,7 @@ using PortalEscolar.Application.Services.Criptografia;
 using PortalEscolar.Application.Services.Mapping;
 using PortalEscolar.Application.Services.Token;
 using PortalEscolar.Application.Services.UsuarioLogado;
+using PortalEscolar.Application.UseCases.Aluno.Login;
 using PortalEscolar.Application.UseCases.Aluno.Registrar;
 using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
@@ -49,6 +50,7 @@ public static class Bootstrapper
         services.AddScoped<IRegistrarProfessoraUseCase, RegistrarProfessoraUseCase>();
         services.AddScoped<ILoginProfessoraUseCase, LoginProfessoraUseCase>();
         services.AddScoped<IRegistrarAlunoUseCase, RegistrarAlunoUseCase>();
+        services.AddScoped<ILoginAlunoUseCase, LoginAlunoUseCase>();
 
     }
 }

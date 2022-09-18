@@ -14,7 +14,11 @@ public class AlunoRepository : IAlunoReadOnlyRepository, IAlunoWriteOnlyReposito
 
     public async Task AdicionarAsync(Domain.Entities.SalaAula.Aluno aluno) =>
         await _context.AddAsync(aluno);
-    //TODO - ERRO ESTA AQUI
     public async Task<bool> ExisteEmailAsync(string emailUsuario) =>
         await _context.Aluno.AsNoTracking().AnyAsync(c => c.Email.Equals(emailUsuario));
+
+    public async Task<Domain.Entities.SalaAula.Aluno> ObterPorEmailSenhaAsync(string email, string senha) =>
+        await _context.Aluno
+        .AsNoTracking()
+        .FirstOrDefaultAsync(c => c.Email.ToUpper().Equals(email.ToUpper()) && c.Senha.Equals(senha));
 }
