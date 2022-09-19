@@ -24,4 +24,13 @@ public class DiretorBuilder
 
         return (diretor, senha);
     }
+    public static (Diretor diretor, string senha) Build(string senha)
+    {
+        (var diretor, _) = Build();
+
+        var senhaCriptografada = EncriptadorDeSenhaBuilder.Instance().Criptografar(senha);
+        diretor.Senha = senhaCriptografada;
+
+        return (diretor, senha);
+    }
 }
