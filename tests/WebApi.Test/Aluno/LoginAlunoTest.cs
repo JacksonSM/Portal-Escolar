@@ -5,7 +5,7 @@ using System.Net;
 using System.Text.Json;
 using Xunit;
 
-namespace WebApi.Test.Diretor;
+namespace WebApi.Test.Aluno;
 public class LoginAlunoTest : ControllerBase
 {
     private const string METODO = "api/aluno/login";
@@ -37,7 +37,7 @@ public class LoginAlunoTest : ControllerBase
     [Fact]
     public async Task Email_EmailInvalido_MensagemErroLoginInvalido()
     {
-        var request = new RequestUsuarioLoginJson { Email = "teste@gmail.com" , Senha = _senha };
+        var request = new RequestUsuarioLoginJson { Email = "teste@gmail.com", Senha = _senha };
         var response = await PostRequest(METODO, request);
 
         response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);

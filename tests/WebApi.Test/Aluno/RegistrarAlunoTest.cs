@@ -7,13 +7,13 @@ using Utilities.Requests;
 using Utilities.Services.Token;
 using Xunit;
 
-namespace WebApi.Test.Professora;
-public class AlunoProfessoraTest : ControllerBase
+namespace WebApi.Test.Aluno;
+public class RegistrarAlunoTest : ControllerBase
 {
     private const string METODO = "api/aluno";
 
     private PortalEscolar.Domain.Entities.Diretoria.Diretor _diretor;
-    public AlunoProfessoraTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)
+    public RegistrarAlunoTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)
     {
         _diretor = factory.ObterDiretor();
     }
@@ -27,7 +27,7 @@ public class AlunoProfessoraTest : ControllerBase
 
         var token = tokenController.GerarToken(_diretor);
 
-        var response = await PostRequest(METODO, request,token);
+        var response = await PostRequest(METODO, request, token);
 
         response.StatusCode.Should().Be(HttpStatusCode.Created);
 
@@ -37,7 +37,7 @@ public class AlunoProfessoraTest : ControllerBase
 
         responseData.RootElement.GetProperty("mensagem").GetString().Should()
             .NotBeNullOrWhiteSpace().And.Contain(ResourceMensagensDeErro.REGISTRAR_ALUNO_SUCESSO);
-        
+
     }
     [Fact]
     public async Task NomeCompleto_NomeCompletoVazio_StatusBadRequest()

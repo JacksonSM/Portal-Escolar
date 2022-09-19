@@ -21,6 +21,14 @@ public class ControllerBase : IClassFixture<PortalEscolarWebApplicationFactory<P
 
         return await _client.PostAsync(metodo, new StringContent(jsonString, Encoding.UTF8, "application/json"));
     }
+    protected async Task<HttpResponseMessage> PutRequest(string metodo, object body, string token = "")
+    {
+        AutorizarRequisicao(token);
+
+        var jsonString = JsonConvert.SerializeObject(body);
+
+        return await _client.PutAsync(metodo, new StringContent(jsonString, Encoding.UTF8, "application/json"));
+    }
     private void AutorizarRequisicao(string token)
     {
         if (!string.IsNullOrWhiteSpace(token) && !_client.DefaultRequestHeaders.Contains("Authorization"))
