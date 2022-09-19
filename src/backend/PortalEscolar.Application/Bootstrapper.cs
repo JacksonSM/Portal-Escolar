@@ -50,7 +50,7 @@ public static class Bootstrapper
         services.AddScoped<ILoginDiretorUseCase, LoginDiretorUseCase>();
         services.AddScoped<IPrimeiroAcessoDiretor, PrimeiroAcessoDiretor>();
         services.AddScoped<IAlterarSenhaDiretorUseCase, AlterarSenhaDiretorUseCase>();
-        services.AddScoped<IAlterarInfoPessoalDiretor, AlterarInfoPessoalDiretor>();
+        services.AddScoped<IAlterarInfoPessoalDiretorUseCase, AlterarInfoPessoalDiretorUseCase>();
 
         services.AddScoped<IRegistrarProfessoraUseCase, RegistrarProfessoraUseCase>();
         services.AddScoped<ILoginProfessoraUseCase, LoginProfessoraUseCase>();

@@ -59,7 +59,7 @@ public class DiretorController : ControllerBase
     [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
     [ProducesResponseType(typeof(ResponseInfoPessoalDiretorJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> AlterarInfoPessoal(
-        [FromServices] IAlterarInfoPessoalDiretor useCase,
+        [FromServices] IAlterarInfoPessoalDiretorUseCase useCase,
         [FromBody] RequestAlterarInfoPessoalDiretorJson request)
     {
         var response = await useCase.ExecuteAsync(request);

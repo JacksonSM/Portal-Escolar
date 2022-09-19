@@ -8,14 +8,14 @@ using PortalEscolar.Exceptions.ExceptionsBase;
 using System.Globalization;
 
 namespace PortalEscolar.Application.UseCases.Diretora.AlterarInfoPessoal;
-public class AlterarInfoPessoalDiretor : IAlterarInfoPessoalDiretor
+public class AlterarInfoPessoalDiretorUseCase : IAlterarInfoPessoalDiretorUseCase
 {
     private readonly IDiretorWriteOnlyRepository _repoDiretorWrite;
     private readonly IUsuarioLogado _usuarioLogado;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public AlterarInfoPessoalDiretor(IDiretorWriteOnlyRepository repoDiretorWrite,
+    public AlterarInfoPessoalDiretorUseCase(IDiretorWriteOnlyRepository repoDiretorWrite,
         IUsuarioLogado usuarioLogado,
         IUnitOfWork unitOfWork,
         IMapper mapper)
