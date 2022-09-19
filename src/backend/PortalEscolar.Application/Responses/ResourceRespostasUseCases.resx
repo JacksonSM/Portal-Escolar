@@ -117,58 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DATANASCIMENTO_INVALIDO" xml:space="preserve">
-    <value>O campo data nascimento está inválido. o formato deve ser DD/MM/AAAA</value>
-  </data>
-  <data name="DATANASCIMENTO_MENOS18ANOS" xml:space="preserve">
-    <value>O Diretor deve ser maior que 18 anos.</value>
-  </data>
-  <data name="DATANASCIMENTO_VAZIO" xml:space="preserve">
-    <value>O campo data de nascimento deve ser informado.</value>
-  </data>
-  <data name="EMAIL_EXISTENTE" xml:space="preserve">
-    <value>Esse email já existe em nossa base de dados.</value>
-  </data>
-  <data name="EMAIL_INVALIDO" xml:space="preserve">
-    <value>O campo email estar inválido.</value>
-  </data>
-  <data name="EMAIL_VAZIO" xml:space="preserve">
-    <value>O campo email deve ser informado.</value>
-  </data>
-  <data name="ERRO_DESCONHECIDO" xml:space="preserve">
-    <value>Erro desconhecido.</value>
-  </data>
-  <data name="ERRO_REGISTRAR_PROFESSOR_DIRETOR_INVALIDO" xml:space="preserve">
-    <value>É necessario um Diretor valido para executar essa ação.</value>
-  </data>
-  <data name="LOGIN_INVALIDO" xml:space="preserve">
-    <value>Login Invalido. Verifique suas credenciais.</value>
-  </data>
-  <data name="NOMECOMPLETO_MAXIMO200CARACTERES" xml:space="preserve">
-    <value>O campo nome só pode conter 200 caracteres.</value>
-  </data>
-  <data name="NOMECOMPLETO_VAZIO" xml:space="preserve">
-    <value>O campo nome completo deve ser informado.</value>
-  </data>
-  <data name="REGISTRAR_ALUNO_SUCESSO" xml:space="preserve">
-    <value>Aluno registrado com sucesso !</value>
-  </data>
-  <data name="REGISTRAR_PROFESSORA_SUCESSO" xml:space="preserve">
-    <value>Professora registrado com sucesso !</value>
-  </data>
-  <data name="SENHAATUAL_INVALIDA" xml:space="preserve">
-    <value>A Senha atual está inválida.</value>
-  </data>
-  <data name="SENHA_MINIMO_SEIS_CARACTERES" xml:space="preserve">
-    <value>A senha deve conter no minimo 6 caracteres.</value>
-  </data>
-  <data name="SENHA_VAZIA" xml:space="preserve">
-    <value>O campo senha deve ser informado.</value>
-  </data>
-  <data name="TOKEN_EXPIRADO" xml:space="preserve">
-    <value>Token Expirado !!</value>
-  </data>
-  <data name="USUARIO_NAO_AUTORIZADO" xml:space="preserve">
-    <value>Esse usuario não está autorizado realizar essa ação !!</value>
+  <data name="SENHA_ALTERADA_COM_SUCESSO" xml:space="preserve">
+    <value>A senha foi alterada com sucesso !!</value>
   </data>
 </root>

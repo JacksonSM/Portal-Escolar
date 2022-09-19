@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PortalEscolar.Application.UseCases.Diretora.AlterarSenha;
 using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
@@ -36,6 +37,16 @@ public class DiretorController : ControllerBase
     public async Task<IActionResult> PrimeiroAcesso(
         [FromServices] IPrimeiroAcessoDiretor useCase,
         [FromBody] RequestUsuarioLoginJson request)
+    {
+        var response = await useCase.ExecuteAsync(request);
+
+        return Ok(response);
+    }
+    [HttpPut("alterar-senha")]
+    [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status200OK)]
+    public async Task<IActionResult> AlterarSenha(
+        [FromServices] IAlterarSenhaDiretorUseCase useCase,
+        [FromBody] RequestAlterarSenhaUsuarioJson request)
     {
         var response = await useCase.ExecuteAsync(request);
 

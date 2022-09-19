@@ -196,6 +196,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A Senha atual está inválida..
+        /// </summary>
+        public static string SENHAATUAL_INVALIDA {
+            get {
+                return ResourceManager.GetString("SENHAATUAL_INVALIDA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Token Expirado !!.
         /// </summary>
         public static string TOKEN_EXPIRADO {

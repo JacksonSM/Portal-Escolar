@@ -11,8 +11,7 @@ public class CamposComumValidator : AbstractValidator<RequestCamposComum>
         RuleFor(c => c.Email)
             .NotEmpty().WithMessage(ResourceMensagensDeErro.EMAIL_VAZIO);
 
-        RuleFor(c => c.Senha)
-            .NotEmpty().WithMessage(ResourceMensagensDeErro.SENHA_VAZIA);
+        RuleFor(c => c.Senha).SetValidator(new SenhaValidator());
 
         RuleFor(c => c.NomeCompleto)
             .NotEmpty().WithMessage(ResourceMensagensDeErro.NOMECOMPLETO_VAZIO)
@@ -36,15 +35,9 @@ public class CamposComumValidator : AbstractValidator<RequestCamposComum>
                 }
             });
         });
-
-
         When(c => !string.IsNullOrWhiteSpace(c.Email), () =>
         {
             RuleFor(c => c.Email).EmailAddress().WithMessage(ResourceMensagensDeErro.EMAIL_INVALIDO);
-        });
-        When(c => !string.IsNullOrWhiteSpace(c.Senha), () =>
-        {
-            RuleFor(c => c.Senha).MinimumLength(6).WithMessage(ResourceMensagensDeErro.SENHA_MINIMO_SEIS_CARACTERES);
         });
     }
 }

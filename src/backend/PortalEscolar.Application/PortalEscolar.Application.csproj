@@ -21,4 +21,19 @@
     <ProjectReference Include="..\PortalEscolar.Domain\PortalEscolar.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Responses\ResourceRespostasUseCases.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceRespostasUseCases.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Responses\ResourceRespostasUseCases.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceRespostasUseCases.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
