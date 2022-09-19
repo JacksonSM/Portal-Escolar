@@ -6,6 +6,7 @@ using PortalEscolar.Application.Services.Token;
 using PortalEscolar.Application.Services.UsuarioLogado;
 using PortalEscolar.Application.UseCases.Aluno.Login;
 using PortalEscolar.Application.UseCases.Aluno.Registrar;
+using PortalEscolar.Application.UseCases.Diretora.AlterarInfoPessoal;
 using PortalEscolar.Application.UseCases.Diretora.AlterarSenha;
 using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
@@ -49,9 +50,11 @@ public static class Bootstrapper
         services.AddScoped<ILoginDiretorUseCase, LoginDiretorUseCase>();
         services.AddScoped<IPrimeiroAcessoDiretor, PrimeiroAcessoDiretor>();
         services.AddScoped<IAlterarSenhaDiretorUseCase, AlterarSenhaDiretorUseCase>();
+        services.AddScoped<IAlterarInfoPessoalDiretor, AlterarInfoPessoalDiretor>();
 
         services.AddScoped<IRegistrarProfessoraUseCase, RegistrarProfessoraUseCase>();
         services.AddScoped<ILoginProfessoraUseCase, LoginProfessoraUseCase>();
+
         services.AddScoped<IRegistrarAlunoUseCase, RegistrarAlunoUseCase>();
         services.AddScoped<ILoginAlunoUseCase, LoginAlunoUseCase>();
 

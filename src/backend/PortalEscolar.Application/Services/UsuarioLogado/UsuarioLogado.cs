@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using PortalEscolar.Application.Services.Token;
 using PortalEscolar.Domain.Entities.Diretoria;
+using PortalEscolar.Domain.Entities.SalaAula;
 using PortalEscolar.Domain.Interfaces.Repositories.Diretoria.Diretor;
+using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Aluno;
 
 namespace PortalEscolar.Application.Services.UsuarioLogado;
 public class UsuarioLogado : IUsuarioLogado
@@ -18,17 +20,22 @@ public class UsuarioLogado : IUsuarioLogado
         _tokenController = tokenController;
         _repoReadDiretor = repoReadDiretor;
     }
-
     public async Task<Diretor> ObterDiretor()
+    {
+
+        var token = ObterTokenRequisicao();
+
+        var emailDiretor = _tokenController.RecuperarEmail(token);
+
+        var diretor = await _repoReadDiretor.ObterPorEmailAsync(emailDiretor);
+
+        return diretor;
+    }
+    private string ObterTokenRequisicao()
     {
         var authorization = _httpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString();
 
         var token = authorization["Bearer".Length..].Trim();
-
-        var emailDiretor = _tokenController.RecuperarEmail(token);
-
-        var diretor = await _repoReadDiretor.ObterPorEmailAsync("jackson@gmail.com");
-
-        return diretor;
+        return token;
     }
 }

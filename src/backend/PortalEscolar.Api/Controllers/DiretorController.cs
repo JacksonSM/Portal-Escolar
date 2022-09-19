@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PortalEscolar.Api.Filters.Autorizacao;
+using PortalEscolar.Application.UseCases.Diretora.AlterarInfoPessoal;
 using PortalEscolar.Application.UseCases.Diretora.AlterarSenha;
 using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
+using PortalEscolar.Domain.Enum;
 
 namespace PortalEscolar.Api.Controllers;
 [Route("api/[controller]")]
@@ -47,6 +50,17 @@ public class DiretorController : ControllerBase
     public async Task<IActionResult> AlterarSenha(
         [FromServices] IAlterarSenhaDiretorUseCase useCase,
         [FromBody] RequestAlterarSenhaUsuarioJson request)
+    {
+        var response = await useCase.ExecuteAsync(request);
+
+        return Ok(response);
+    }
+    [HttpPut("alterar-info-pessoal")]
+    [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
+    [ProducesResponseType(typeof(ResponseInfoPessoalDiretorJson), StatusCodes.Status200OK)]
+    public async Task<IActionResult> AlterarInfoPessoal(
+        [FromServices] IAlterarInfoPessoalDiretor useCase,
+        [FromBody] RequestAlterarInfoPessoalDiretorJson request)
     {
         var response = await useCase.ExecuteAsync(request);
 
