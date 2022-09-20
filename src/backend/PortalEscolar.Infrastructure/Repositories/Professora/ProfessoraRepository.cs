@@ -18,6 +18,9 @@ public class ProfessoraRepository : IProfessoraWriteOnlyRepository, IProfessoraR
     public async Task<bool> ExisteEmailAsync(string email) =>
         await _context.Professora.AnyAsync(c => c.Email.Equals(email));
 
+    public async Task<bool> ExistePorIdAsync(long id) =>
+        await _context.Professora.AnyAsync(c => c.Id == id);
+
     public async Task<Domain.Entities.SalaAula.Professora> ObterPorEmailESenhaAsync (string email, string senha) =>
         await _context.Professora
         .AsNoTracking()

@@ -10,7 +10,7 @@ public class Turma : EntityBase
     public string NomeTurma { get; set; }
     public Serie Serie { get; set; }
     public Turno Turno { get; set; }
-    public bool Ativo { get; set; }
+    public bool Ativo { get; set; } = true;
     public List<Aluno> Alunos { get; set; }
     public List<Matricula> Matricula { get; set; }
 }
