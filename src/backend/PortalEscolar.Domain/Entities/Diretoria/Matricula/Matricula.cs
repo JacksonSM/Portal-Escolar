@@ -11,4 +11,6 @@ public class Matricula : EntityBase
     public Responsavel Responsavel { get; set; }
     public Aluno Aluno { get; set; }
     public long AlunoId { get; set; }
+    public Turma Turma { get; set; }
+    public long TurmaId { get; set; }
 }

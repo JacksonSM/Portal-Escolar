@@ -1,4 +1,5 @@
-﻿using PortalEscolar.Domain.Enum;
+﻿using PortalEscolar.Domain.Entities.Diretoria.Matricula;
+using PortalEscolar.Domain.Enum;
 
 namespace PortalEscolar.Domain.Entities.SalaAula;
 public class Turma : EntityBase
@@ -11,4 +12,5 @@ public class Turma : EntityBase
     public Turno Turno { get; set; }
     public bool Ativo { get; set; }
     public List<Aluno> Alunos { get; set; }
+    public List<Matricula> Matricula { get; set; }
 }
