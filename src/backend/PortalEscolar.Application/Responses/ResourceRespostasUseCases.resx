@@ -120,4 +120,7 @@
   <data name="SENHA_ALTERADA_COM_SUCESSO" xml:space="preserve">
     <value>A senha foi alterada com sucesso !!</value>
   </data>
+  <data name="TURMA_CRIADA_COM_SUCESSO" xml:space="preserve">
+    <value>A turma foi criado com sucesso !!</value>
+  </data>
 </root>

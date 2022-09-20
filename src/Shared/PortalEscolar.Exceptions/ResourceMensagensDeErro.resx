@@ -150,6 +150,9 @@
   <data name="NOMECOMPLETO_VAZIO" xml:space="preserve">
     <value>O campo nome completo deve ser informado.</value>
   </data>
+  <data name="PROFESSORA_NAO_ENCONTRADA" xml:space="preserve">
+    <value>Professora não foi encontrada.</value>
+  </data>
   <data name="REGISTRAR_ALUNO_SUCESSO" xml:space="preserve">
     <value>Aluno registrado com sucesso !</value>
   </data>
@@ -167,6 +170,18 @@
   </data>
   <data name="TOKEN_EXPIRADO" xml:space="preserve">
     <value>Token Expirado !!</value>
+  </data>
+  <data name="TURMA_NOME_TURMA_NOMAXIMO50CARACTERES" xml:space="preserve">
+    <value>O campo sala deve conter no máximo 50 caracteres.</value>
+  </data>
+  <data name="TURMA_NOME_TURMA_VAZIO" xml:space="preserve">
+    <value>O campo nome da turma deve ser informado.</value>
+  </data>
+  <data name="TURMA_SALA_NOMAXIMO50CARACTERES" xml:space="preserve">
+    <value>O campo sala deve conter no máximo 50 caracteres.</value>
+  </data>
+  <data name="TURMA_SALA_VAZIA" xml:space="preserve">
+    <value>O campo sala deve ser informado.</value>
   </data>
   <data name="USUARIO_NAO_AUTORIZADO" xml:space="preserve">
     <value>Esse usuario não está autorizado realizar essa ação !!</value>

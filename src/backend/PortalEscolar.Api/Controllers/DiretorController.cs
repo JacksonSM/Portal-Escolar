@@ -5,6 +5,7 @@ using PortalEscolar.Application.UseCases.Diretora.AlterarSenha;
 using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
+using PortalEscolar.Application.UseCases.Turma.Criar;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Enum;
@@ -61,6 +62,17 @@ public class DiretorController : ControllerBase
     public async Task<IActionResult> AlterarInfoPessoal(
         [FromServices] IAlterarInfoPessoalDiretorUseCase useCase,
         [FromBody] RequestAlterarInfoPessoalDiretorJson request)
+    {
+        var response = await useCase.ExecuteAsync(request);
+
+        return Ok(response);
+    }
+    [HttpPost("criar-turma")]
+    [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
+    [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status200OK)]
+    public async Task<IActionResult> CriarTurma(
+    [FromServices] ICriarTurmaUseCase useCase,
+    [FromBody] RequestCriarTurmaJson request)
     {
         var response = await useCase.ExecuteAsync(request);
 

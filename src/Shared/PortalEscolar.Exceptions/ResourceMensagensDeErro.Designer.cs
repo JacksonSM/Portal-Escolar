@@ -160,6 +160,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Professora não foi encontrada..
+        /// </summary>
+        public static string PROFESSORA_NAO_ENCONTRADA {
+            get {
+                return ResourceManager.GetString("PROFESSORA_NAO_ENCONTRADA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aluno registrado com sucesso !.
         /// </summary>
         public static string REGISTRAR_ALUNO_SUCESSO {
@@ -210,6 +219,42 @@ namespace PortalEscolar.Exceptions {
         public static string TOKEN_EXPIRADO {
             get {
                 return ResourceManager.GetString("TOKEN_EXPIRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo sala deve conter no máximo 50 caracteres..
+        /// </summary>
+        public static string TURMA_NOME_TURMA_NOMAXIMO50CARACTERES {
+            get {
+                return ResourceManager.GetString("TURMA_NOME_TURMA_NOMAXIMO50CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo nome da turma deve ser informado..
+        /// </summary>
+        public static string TURMA_NOME_TURMA_VAZIO {
+            get {
+                return ResourceManager.GetString("TURMA_NOME_TURMA_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo sala deve conter no máximo 50 caracteres..
+        /// </summary>
+        public static string TURMA_SALA_NOMAXIMO50CARACTERES {
+            get {
+                return ResourceManager.GetString("TURMA_SALA_NOMAXIMO50CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo sala deve ser informado..
+        /// </summary>
+        public static string TURMA_SALA_VAZIA {
+            get {
+                return ResourceManager.GetString("TURMA_SALA_VAZIA", resourceCulture);
             }
         }
         

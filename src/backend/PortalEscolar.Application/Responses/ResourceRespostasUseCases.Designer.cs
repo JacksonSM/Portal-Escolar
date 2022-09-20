@@ -68,5 +68,14 @@ namespace PortalEscolar.Application.Responses {
                 return ResourceManager.GetString("SENHA_ALTERADA_COM_SUCESSO", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A turma foi criado com sucesso !!.
+        /// </summary>
+        public static string TURMA_CRIADA_COM_SUCESSO {
+            get {
+                return ResourceManager.GetString("TURMA_CRIADA_COM_SUCESSO", resourceCulture);
+            }
+        }
     }
 }

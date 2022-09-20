@@ -3,7 +3,7 @@ using PortalEscolar.Communication.Request;
 using PortalEscolar.Exceptions;
 
 namespace PortalEscolar.Application.UseCases.Validator;
-public class CamposComumValidator : AbstractValidator<RequestCamposComum>
+public class CamposComumValidator : AbstractValidator<CamposComum>
 {
     public CamposComumValidator()
     {
