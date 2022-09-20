@@ -214,6 +214,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Essa serie não existe em nossa escola..
+        /// </summary>
+        public static string SERIE_INEXISTENTE {
+            get {
+                return ResourceManager.GetString("SERIE_INEXISTENTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Token Expirado !!.
         /// </summary>
         public static string TOKEN_EXPIRADO {
@@ -255,6 +264,15 @@ namespace PortalEscolar.Exceptions {
         public static string TURMA_SALA_VAZIA {
             get {
                 return ResourceManager.GetString("TURMA_SALA_VAZIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esse turno não existe..
+        /// </summary>
+        public static string TURNO_INEXISTENTE {
+            get {
+                return ResourceManager.GetString("TURNO_INEXISTENTE", resourceCulture);
             }
         }
         

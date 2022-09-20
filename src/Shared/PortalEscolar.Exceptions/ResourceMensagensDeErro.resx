@@ -168,6 +168,9 @@
   <data name="SENHA_VAZIA" xml:space="preserve">
     <value>O campo senha deve ser informado.</value>
   </data>
+  <data name="SERIE_INEXISTENTE" xml:space="preserve">
+    <value>Essa serie não existe em nossa escola.</value>
+  </data>
   <data name="TOKEN_EXPIRADO" xml:space="preserve">
     <value>Token Expirado !!</value>
   </data>
@@ -182,6 +185,9 @@
   </data>
   <data name="TURMA_SALA_VAZIA" xml:space="preserve">
     <value>O campo sala deve ser informado.</value>
+  </data>
+  <data name="TURNO_INEXISTENTE" xml:space="preserve">
+    <value>Esse turno não existe.</value>
   </data>
   <data name="USUARIO_NAO_AUTORIZADO" xml:space="preserve">
     <value>Esse usuario não está autorizado realizar essa ação !!</value>
