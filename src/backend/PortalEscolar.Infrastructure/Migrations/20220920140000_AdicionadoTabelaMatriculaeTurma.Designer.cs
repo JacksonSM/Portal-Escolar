@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PortalEscolar.Infrastructure.Context;
 
@@ -11,9 +12,10 @@ using PortalEscolar.Infrastructure.Context;
 namespace PortalEscolar.Infrastructure.Migrations
 {
     [DbContext(typeof(PortalEscolarDbContext))]
-    partial class PortalEscolarDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220920140000_AdicionadoTabelaMatriculaeTurma")]
+    partial class AdicionadoTabelaMatriculaeTurma
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,7 +57,7 @@ namespace PortalEscolar.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Diretor", (string)null);
+                    b.ToTable("Diretor");
 
                     b.HasData(
                         new
@@ -112,7 +114,7 @@ namespace PortalEscolar.Infrastructure.Migrations
 
                     b.HasIndex("TurmaId");
 
-                    b.ToTable("Matricula", (string)null);
+                    b.ToTable("Matricula");
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.SalaAula.Aluno", b =>
@@ -156,7 +158,7 @@ namespace PortalEscolar.Infrastructure.Migrations
 
                     b.HasIndex("TurmaId");
 
-                    b.ToTable("Aluno", (string)null);
+                    b.ToTable("Aluno");
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.SalaAula.Professora", b =>
@@ -192,7 +194,7 @@ namespace PortalEscolar.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Professora", (string)null);
+                    b.ToTable("Professora");
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.SalaAula.Turma", b =>
@@ -232,7 +234,7 @@ namespace PortalEscolar.Infrastructure.Migrations
 
                     b.HasIndex("ProfessoraId");
 
-                    b.ToTable("Turma", (string)null);
+                    b.ToTable("Turma");
                 });
 
             modelBuilder.Entity("PortalEscolar.Domain.Entities.Diretoria.Matricula.Matricula", b =>
@@ -247,7 +249,7 @@ namespace PortalEscolar.Infrastructure.Migrations
                         .HasForeignKey("TurmaId")
                         .IsRequired();
 
-                    b.OwnsOne("PortalEscolar.Domain.Entities.Diretoria.Matricula.Matricula.Responsavel#PortalEscolar.Domain.Entities.Diretoria.Matricula.Responsavel", "Responsavel", b1 =>
+                    b.OwnsOne("PortalEscolar.Domain.Entities.Diretoria.Matricula.Responsavel", "Responsavel", b1 =>
                         {
                             b1.Property<long>("MatriculaId")
                                 .HasColumnType("bigint");
@@ -278,7 +280,7 @@ namespace PortalEscolar.Infrastructure.Migrations
 
                             b1.HasKey("MatriculaId");
 
-                            b1.ToTable("Matricula", (string)null);
+                            b1.ToTable("Matricula");
 
                             b1.WithOwner()
                                 .HasForeignKey("MatriculaId");
