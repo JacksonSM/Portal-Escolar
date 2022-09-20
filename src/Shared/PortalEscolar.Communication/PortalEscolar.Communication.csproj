@@ -6,4 +6,8 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\backend\PortalEscolar.Domain\PortalEscolar.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

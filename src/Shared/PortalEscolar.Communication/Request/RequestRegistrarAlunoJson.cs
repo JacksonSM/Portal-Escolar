@@ -1,5 +1,5 @@
 ﻿namespace PortalEscolar.Communication.Request;
-public class RequestRegistrarAlunoJson : RequestCamposComum
+public class RequestRegistrarAlunoJson : CamposComum
 {
 
 }
