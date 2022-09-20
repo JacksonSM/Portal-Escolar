@@ -69,13 +69,13 @@ public class DiretorController : ControllerBase
     }
     [HttpPost("criar-turma")]
     [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
-    [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status201Created)]
     public async Task<IActionResult> CriarTurma(
     [FromServices] ICriarTurmaUseCase useCase,
     [FromBody] RequestCriarTurmaJson request)
     {
         var response = await useCase.ExecuteAsync(request);
 
-        return Ok(response);
+        return Created(string.Empty,response);
     }
 }
