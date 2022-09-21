@@ -142,6 +142,168 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo cidade de nascimento do aluno deve conter no máximo 150 caracteres..
+        /// </summary>
+        public static string MATRICULA_CIDADENASCIMENTO_ALUNO_NOMAXIMO150CARACTERES {
+            get {
+                return ResourceManager.GetString("MATRICULA_CIDADENASCIMENTO_ALUNO_NOMAXIMO150CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo cidade de nascimento do aluno está vazia..
+        /// </summary>
+        public static string MATRICULA_CIDADENASCIMENTO_ALUNO_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_CIDADENASCIMENTO_ALUNO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo cidade nascimento do responsavel deve conter no máximo 20 caracteres.
+        /// </summary>
+        public static string MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_NOMAXIMO100CARACTERES {
+            get {
+                return ResourceManager.GetString("MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_NOMAXIMO100CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo cidade de nascimento do responsavel está vazia..
+        /// </summary>
+        public static string MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo CPF deve conter apenas números..
+        /// </summary>
+        public static string MATRICULA_CPF_RESPONSAVEL_APENAS_NUMEROS {
+            get {
+                return ResourceManager.GetString("MATRICULA_CPF_RESPONSAVEL_APENAS_NUMEROS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O CPF informado é invalido..
+        /// </summary>
+        public static string MATRICULA_CPF_RESPONSAVEL_INVALIDO {
+            get {
+                return ResourceManager.GetString("MATRICULA_CPF_RESPONSAVEL_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo CPF deve conter no minimo e no máximo 11 números..
+        /// </summary>
+        public static string MATRICULA_CPF_RESPONSAVEL_SOMENTE11NUMEROS {
+            get {
+                return ResourceManager.GetString("MATRICULA_CPF_RESPONSAVEL_SOMENTE11NUMEROS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo CPF deve ser informado..
+        /// </summary>
+        public static string MATRICULA_CPF_RESPONSAVEL_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_CPF_RESPONSAVEL_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo data inicio está inválido. o formato deve ser DD/MM/AAAA.
+        /// </summary>
+        public static string MATRICULA_DATA_INICIO_INVALIDO {
+            get {
+                return ResourceManager.GetString("MATRICULA_DATA_INICIO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo data de inicio deve ser informado..
+        /// </summary>
+        public static string MATRICULA_DATA_INICIO_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_DATA_INICIO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo data nascimento do responsavel estar invalido..
+        /// </summary>
+        public static string MATRICULA_DATA_NASCIMENTO_RESPONSAVEL_INVALIDO {
+            get {
+                return ResourceManager.GetString("MATRICULA_DATA_NASCIMENTO_RESPONSAVEL_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo data nascimento do responsavel deve ser informado..
+        /// </summary>
+        public static string MATRICULA_DATA_NASCIMENTO_RESPONSAVEL_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_DATA_NASCIMENTO_RESPONSAVEL_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo data términio está inválido. o formato deve ser DD/MM/AAAA.
+        /// </summary>
+        public static string MATRICULA_DATA_TERMINIO_INVALIDO {
+            get {
+                return ResourceManager.GetString("MATRICULA_DATA_TERMINIO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo data de términio deve ser informado..
+        /// </summary>
+        public static string MATRICULA_DATA_TERMINIO_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_DATA_TERMINIO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo nome completo do responsavel deve conter no máximo 20 caracteres.
+        /// </summary>
+        public static string MATRICULA_NOMECOMPLETO_RESPONSAVEL_NOMAXIMO200CARACTERES {
+            get {
+                return ResourceManager.GetString("MATRICULA_NOMECOMPLETO_RESPONSAVEL_NOMAXIMO200CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo nome completo do responsavel deve ser informado..
+        /// </summary>
+        public static string MATRICULA_NOMECOMPLETO_RESPONSAVEL_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_NOMECOMPLETO_RESPONSAVEL_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O telefone do responsavel deve estar no formato XX X XXXX-XXXX.
+        /// </summary>
+        public static string MATRICULA_TELEFONE_RESPONSAVEL_INVALIDO {
+            get {
+                return ResourceManager.GetString("MATRICULA_TELEFONE_RESPONSAVEL_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo telefone do responsavel deve ser informado..
+        /// </summary>
+        public static string MATRICULA_TELEFONE_RESPONSAVEL_VAZIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_TELEFONE_RESPONSAVEL_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo nome só pode conter 200 caracteres..
         /// </summary>
         public static string NOMECOMPLETO_MAXIMO200CARACTERES {
@@ -228,6 +390,15 @@ namespace PortalEscolar.Exceptions {
         public static string TOKEN_EXPIRADO {
             get {
                 return ResourceManager.GetString("TOKEN_EXPIRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A turma informada não existe..
+        /// </summary>
+        public static string TURMA_INEXISTENTE {
+            get {
+                return ResourceManager.GetString("TURMA_INEXISTENTE", resourceCulture);
             }
         }
         

@@ -144,6 +144,60 @@
   <data name="LOGIN_INVALIDO" xml:space="preserve">
     <value>Login Invalido. Verifique suas credenciais.</value>
   </data>
+  <data name="MATRICULA_CIDADENASCIMENTO_ALUNO_NOMAXIMO150CARACTERES" xml:space="preserve">
+    <value>O campo cidade de nascimento do aluno deve conter no máximo 150 caracteres.</value>
+  </data>
+  <data name="MATRICULA_CIDADENASCIMENTO_ALUNO_VAZIO" xml:space="preserve">
+    <value>O campo cidade de nascimento do aluno está vazia.</value>
+  </data>
+  <data name="MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_NOMAXIMO100CARACTERES" xml:space="preserve">
+    <value>O campo cidade nascimento do responsavel deve conter no máximo 20 caracteres</value>
+  </data>
+  <data name="MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_VAZIO" xml:space="preserve">
+    <value>O campo cidade de nascimento do responsavel está vazia.</value>
+  </data>
+  <data name="MATRICULA_CPF_RESPONSAVEL_APENAS_NUMEROS" xml:space="preserve">
+    <value>O campo CPF deve conter apenas números.</value>
+  </data>
+  <data name="MATRICULA_CPF_RESPONSAVEL_INVALIDO" xml:space="preserve">
+    <value>O CPF informado é invalido.</value>
+  </data>
+  <data name="MATRICULA_CPF_RESPONSAVEL_SOMENTE11NUMEROS" xml:space="preserve">
+    <value>O campo CPF deve conter no minimo e no máximo 11 números.</value>
+  </data>
+  <data name="MATRICULA_CPF_RESPONSAVEL_VAZIO" xml:space="preserve">
+    <value>O campo CPF deve ser informado.</value>
+  </data>
+  <data name="MATRICULA_DATA_INICIO_INVALIDO" xml:space="preserve">
+    <value>O campo data inicio está inválido. o formato deve ser DD/MM/AAAA</value>
+  </data>
+  <data name="MATRICULA_DATA_INICIO_VAZIO" xml:space="preserve">
+    <value>O campo data de inicio deve ser informado.</value>
+  </data>
+  <data name="MATRICULA_DATA_NASCIMENTO_RESPONSAVEL_INVALIDO" xml:space="preserve">
+    <value>O campo data nascimento do responsavel estar invalido.</value>
+  </data>
+  <data name="MATRICULA_DATA_NASCIMENTO_RESPONSAVEL_VAZIO" xml:space="preserve">
+    <value>O campo data nascimento do responsavel deve ser informado.</value>
+  </data>
+  <data name="MATRICULA_DATA_TERMINIO_INVALIDO" xml:space="preserve">
+    <value>O campo data términio está inválido. o formato deve ser DD/MM/AAAA</value>
+  </data>
+  <data name="MATRICULA_DATA_TERMINIO_VAZIO" xml:space="preserve">
+    <value>O campo data de términio deve ser informado.</value>
+  </data>
+  <data name="MATRICULA_NOMECOMPLETO_RESPONSAVEL_NOMAXIMO200CARACTERES" xml:space="preserve">
+    <value>O campo nome completo do responsavel deve conter no máximo 20 caracteres</value>
+  </data>
+  <data name="MATRICULA_NOMECOMPLETO_RESPONSAVEL_VAZIO" xml:space="preserve">
+    <value>O campo nome completo do responsavel deve ser informado.</value>
+  </data>
+  <data name="MATRICULA_TELEFONE_RESPONSAVEL_INVALIDO" xml:space="preserve">
+    <value>O telefone do responsavel deve estar no formato XX X XXXX-XXXX</value>
+  </data>
+  <data name="MATRICULA_TELEFONE_RESPONSAVEL_VAZIO" xml:space="preserve">
+    <value>O campo telefone do responsavel deve ser informado.</value>
+  </data>
   <data name="NOMECOMPLETO_MAXIMO200CARACTERES" xml:space="preserve">
     <value>O campo nome só pode conter 200 caracteres.</value>
   </data>
@@ -173,6 +227,9 @@
   </data>
   <data name="TOKEN_EXPIRADO" xml:space="preserve">
     <value>Token Expirado !!</value>
+  </data>
+  <data name="TURMA_INEXISTENTE" xml:space="preserve">
+    <value>A turma informada não existe.</value>
   </data>
   <data name="TURMA_NOME_TURMA_NOMAXIMO50CARACTERES" xml:space="preserve">
     <value>O campo sala deve conter no máximo 50 caracteres.</value>
