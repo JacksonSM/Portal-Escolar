@@ -17,11 +17,14 @@ public class AlunoMap : IEntityTypeConfiguration<Aluno>
             .IsRequired()
             .HasMaxLength(200);
 
+
         builder.Property(c => c.Senha)
             .IsRequired();
 
+
         builder.Property(c => c.DataNascimento)
                .HasColumnType("date");
+
     }
 }
 

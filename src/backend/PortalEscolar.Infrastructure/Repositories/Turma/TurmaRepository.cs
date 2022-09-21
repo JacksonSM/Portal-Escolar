@@ -1,8 +1,9 @@
-﻿using PortalEscolar.Domain.Interfaces.Repositories.Turma;
+﻿using Microsoft.EntityFrameworkCore;
+using PortalEscolar.Domain.Interfaces.Repositories.Turma;
 using PortalEscolar.Infrastructure.Context;
 
 namespace PortalEscolar.Infrastructure.Repositories.Turma;
-public class TurmaRepository : ITurmaWriteOnlyRepository
+public class TurmaRepository : ITurmaWriteOnlyRepository, ITurmaReadOnlyRepository
 {
     private readonly PortalEscolarDbContext _context;
 
@@ -12,5 +13,7 @@ public class TurmaRepository : ITurmaWriteOnlyRepository
     }
     public async Task AdicionarAsync(Domain.Entities.SalaAula.Turma turma) =>
         await _context.Turma.AddAsync(turma);
-    
+
+    public async Task<bool> ExistePorIdAsync(long id) =>
+        await _context.Turma.AnyAsync(c => c.Id == id);
 }

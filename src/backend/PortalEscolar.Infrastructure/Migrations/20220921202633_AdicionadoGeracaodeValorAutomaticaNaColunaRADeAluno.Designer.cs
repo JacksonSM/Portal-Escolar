@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PortalEscolar.Infrastructure.Context;
 
@@ -11,9 +12,10 @@ using PortalEscolar.Infrastructure.Context;
 namespace PortalEscolar.Infrastructure.Migrations
 {
     [DbContext(typeof(PortalEscolarDbContext))]
-    partial class PortalEscolarDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220921202633_AdicionadoGeracaodeValorAutomaticaNaColunaRADeAluno")]
+    partial class AdicionadoGeracaodeValorAutomaticaNaColunaRADeAluno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,7 +64,7 @@ namespace PortalEscolar.Infrastructure.Migrations
                         {
                             Id = 1L,
                             DataNascimento = new DateTime(2002, 9, 21, 0, 0, 0, 0, DateTimeKind.Local),
-                            DataRegistro = new DateTime(2022, 9, 21, 21, 29, 55, 782, DateTimeKind.Utc).AddTicks(9854),
+                            DataRegistro = new DateTime(2022, 9, 21, 20, 26, 32, 639, DateTimeKind.Utc).AddTicks(8942),
                             Email = "diretor@portalescolar.com",
                             NomeCompleto = "Diretor",
                             Papel = 1,
@@ -122,6 +124,11 @@ namespace PortalEscolar.Infrastructure.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<long>("AlunoRA")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("date");

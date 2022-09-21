@@ -1,5 +1,5 @@
 ﻿namespace PortalEscolar.Domain.Interfaces.Repositories.Turma;
-public interface ITurmaWriteOnlyRepository
+public interface ITurmaReadOnlyRepository
 {
-    Task AdicionarAsync(Entities.SalaAula.Turma turma);
+    Task<bool> ExistePorIdAsync(long id);
 }

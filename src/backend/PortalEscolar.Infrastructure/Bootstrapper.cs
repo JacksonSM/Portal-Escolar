@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PortalEscolar.Domain.Interfaces.Repositories;
 using PortalEscolar.Domain.Interfaces.Repositories.Diretoria.Diretor;
+using PortalEscolar.Domain.Interfaces.Repositories.Diretoria.Matricula;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Aluno;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Professora;
 using PortalEscolar.Domain.Interfaces.Repositories.Turma;
@@ -47,6 +48,9 @@ public static class Bootstrapper
         services.AddScoped<IAlunoWriteOnlyRepository, AlunoRepository>();
 
         services.AddScoped<ITurmaWriteOnlyRepository, TurmaRepository>();
+        services.AddScoped<ITurmaReadOnlyRepository, TurmaRepository>();
+
+        services.AddScoped<IMatriculaWriteOnlyRepository, MatriculaRepository>();
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
