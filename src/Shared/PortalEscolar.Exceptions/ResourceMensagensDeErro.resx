@@ -168,6 +168,9 @@
   <data name="MATRICULA_CPF_RESPONSAVEL_VAZIO" xml:space="preserve">
     <value>O campo CPF deve ser informado.</value>
   </data>
+  <data name="MATRICULA_DATAINICIO_MAIOR_OU_IGUAL_DATATERMINIO" xml:space="preserve">
+    <value>A data de inicio é maior ou igual a data de terminio.</value>
+  </data>
   <data name="MATRICULA_DATA_INICIO_INVALIDO" xml:space="preserve">
     <value>O campo data inicio está inválido. o formato deve ser DD/MM/AAAA</value>
   </data>

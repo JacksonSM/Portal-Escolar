@@ -268,6 +268,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A data de inicio é maior ou igual a data de terminio..
+        /// </summary>
+        public static string MATRICULA_DATAINICIO_MAIOR_OU_IGUAL_DATATERMINIO {
+            get {
+                return ResourceManager.GetString("MATRICULA_DATAINICIO_MAIOR_OU_IGUAL_DATATERMINIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo nome completo do responsavel deve conter no máximo 20 caracteres.
         /// </summary>
         public static string MATRICULA_NOMECOMPLETO_RESPONSAVEL_NOMAXIMO200CARACTERES {

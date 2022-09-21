@@ -64,7 +64,14 @@ public class MatricularAlunoUseCase : IMatricularAlunoUseCase
         if (!existeTurma)    
             validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(request.TurmaId.ToString(),
                 ResourceMensagensDeErro.TURMA_INEXISTENTE));
-        
+
+        var dataInicio = DateTime.Parse(request.DataInicio);
+        var dataTerminio = DateTime.Parse(request.DataTerminio);
+
+        if(dataInicio.CompareTo(dataTerminio) >= 0)
+            validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(request.TurmaId.ToString(),
+                ResourceMensagensDeErro.MATRICULA_DATAINICIO_MAIOR_OU_IGUAL_DATATERMINIO));
+
         if (!validationResult.IsValid)
         {
             var mensagensDeErro = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
