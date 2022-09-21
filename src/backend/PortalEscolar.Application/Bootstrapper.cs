@@ -9,6 +9,7 @@ using PortalEscolar.Application.UseCases.Aluno.Registrar;
 using PortalEscolar.Application.UseCases.Diretora.AlterarInfoPessoal;
 using PortalEscolar.Application.UseCases.Diretora.AlterarSenha;
 using PortalEscolar.Application.UseCases.Diretora.Login;
+using PortalEscolar.Application.UseCases.Diretora.Matricular;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Application.UseCases.Professora.Login;
@@ -60,6 +61,8 @@ public static class Bootstrapper
         services.AddScoped<ILoginAlunoUseCase, LoginAlunoUseCase>();
 
         services.AddScoped<ICriarTurmaUseCase, CriarTurmaUseCase>();
+
+        services.AddScoped<IMatricularAlunoUseCase, MatricularAlunoUseCase>();
 
     }
 }

@@ -61,6 +61,15 @@ namespace PortalEscolar.Application.Responses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aluno matriculado com sucesso !!.
+        /// </summary>
+        public static string MATRICULA_REALIZADA_COM_SUCESSO {
+            get {
+                return ResourceManager.GetString("MATRICULA_REALIZADA_COM_SUCESSO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A senha foi alterada com sucesso !!.
         /// </summary>
         public static string SENHA_ALTERADA_COM_SUCESSO {

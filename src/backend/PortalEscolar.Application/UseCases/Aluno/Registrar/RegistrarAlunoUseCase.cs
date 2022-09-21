@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using PortalEscolar.Application.Services.Criptografia;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Response;
@@ -30,7 +31,7 @@ public class RegistrarAlunoUseCase : IRegistrarAlunoUseCase
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<GenericResponseJson> ExecuteAsync(RequestRegistrarAlunoJson request)
+    public async Task<ReponseRegistarAlunoJson> ExecuteAsync(RequestRegistrarAlunoJson request)
     {
         await ValidarAsync(request);
 
@@ -43,7 +44,9 @@ public class RegistrarAlunoUseCase : IRegistrarAlunoUseCase
         await _repoAlunoWrite.AdicionarAsync(entidade);
         await _unitOfWork.CommitAsync();
 
-        return new GenericResponseJson { Mensagem = ResourceMensagensDeErro.REGISTRAR_ALUNO_SUCESSO };
+        var response = _mapper.Map<ReponseRegistarAlunoJson>(entidade);
+
+        return response;
     }
 
     private async Task ValidarAsync(RequestRegistrarAlunoJson request)

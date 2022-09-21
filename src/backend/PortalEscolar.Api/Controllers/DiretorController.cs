@@ -3,10 +3,12 @@ using PortalEscolar.Api.Filters.Autorizacao;
 using PortalEscolar.Application.UseCases.Diretora.AlterarInfoPessoal;
 using PortalEscolar.Application.UseCases.Diretora.AlterarSenha;
 using PortalEscolar.Application.UseCases.Diretora.Login;
+using PortalEscolar.Application.UseCases.Diretora.Matricular;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Application.UseCases.Turma.Criar;
 using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Matricula;
 using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Enum;
 
@@ -37,6 +39,7 @@ public class DiretorController : ControllerBase
         return Ok(response);
     }
     [HttpPost("primeiroacesso")]
+    [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
     [ProducesResponseType(typeof(ResponseTokenJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> PrimeiroAcesso(
         [FromServices] IPrimeiroAcessoDiretor useCase,
@@ -47,6 +50,7 @@ public class DiretorController : ControllerBase
         return Ok(response);
     }
     [HttpPut("alterar-senha")]
+    [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
     [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> AlterarSenha(
         [FromServices] IAlterarSenhaDiretorUseCase useCase,
@@ -71,11 +75,22 @@ public class DiretorController : ControllerBase
     [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
     [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status201Created)]
     public async Task<IActionResult> CriarTurma(
-    [FromServices] ICriarTurmaUseCase useCase,
-    [FromBody] RequestCriarTurmaJson request)
+        [FromServices] ICriarTurmaUseCase useCase,
+        [FromBody] RequestCriarTurmaJson request)
     {
         var response = await useCase.ExecuteAsync(request);
 
         return Created(string.Empty,response);
+    }
+    [HttpPost("matricular-aluno")]
+    [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
+    [ProducesResponseType(typeof(GenericResponseJson), StatusCodes.Status201Created)]
+    public async Task<IActionResult> MatricularAluno(
+        [FromServices] IMatricularAlunoUseCase useCase,
+        [FromBody] RequestMatricularAlunoJson request)
+    {
+        var response = await useCase.ExecuteAsync(request);
+
+        return Created(string.Empty, response);
     }
 }
