@@ -34,39 +34,25 @@ public class MatricularAlunoValidator : AbstractValidator<RequestMatricularAluno
         ValidarTelefoneResponsavel();
     }
 
-    private void ValidarTelefoneResponsavel()
-    {
-        RuleFor(c => c.Responsavel.Telefone)
-            .NotEmpty().WithMessage(ResourceMensagensDeErro.MATRICULA_TELEFONE_RESPONSAVEL_VAZIO);
-
-        When(c => !string.IsNullOrWhiteSpace(c.Responsavel.Telefone), () =>
-        {
-            RuleFor(c => c.Responsavel.Telefone).Custom((telefone, contexto) =>
-            {
-                string padraoTelefone = "[0-9]{2} [1-9]{1} [0-9]{4}-[0-9]{4}";
-                var isMatch = Regex.IsMatch(telefone, padraoTelefone);
-                if (!isMatch)
-                {
-                    contexto.AddFailure(new FluentValidation.Results.ValidationFailure(nameof(telefone), ResourceMensagensDeErro.MATRICULA_TELEFONE_RESPONSAVEL_INVALIDO));
-                }
-            });
-        });
-    }
-
     private void ValidarCampoCPF()
     {
         RuleFor(c => c.Responsavel.CPF)
             .NotEmpty()
-            .WithMessage(ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_VAZIO)
-            .MinimumLength(11)
-            .WithMessage(ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_SOMENTE11NUMEROS)
-            .MaximumLength(11)
-            .WithMessage(ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_SOMENTE11NUMEROS);
+            .WithMessage(ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_VAZIO);
+
+
 
         When(c => !string.IsNullOrWhiteSpace(c.Responsavel.CPF), () =>
         {
-            RuleFor(c => c.Responsavel.CPF).Matches("[0-9]{11}");
+            RuleFor(c => c.Responsavel.CPF).Matches("[0-9]{11}")
+            .WithMessage(ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_SOMENTE11NUMEROS);
         });
+        When(c => !string.IsNullOrWhiteSpace(c.Responsavel.CPF), () =>
+        {
+            RuleFor(c => c.Responsavel.CPF).Length(11)
+            .WithMessage(ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_SOMENTE11NUMEROS);
+        });
+
         When(c => !string.IsNullOrWhiteSpace(c.Responsavel.CPF), () =>
         {
             RuleFor(c => c.Responsavel.CPF).Custom((cpf, contexto) =>
@@ -75,7 +61,8 @@ public class MatricularAlunoValidator : AbstractValidator<RequestMatricularAluno
 
                 if (!isValido)
                 {
-                    contexto.AddFailure(new FluentValidation.Results.ValidationFailure(nameof(cpf), ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_INVALIDO));
+                    contexto.AddFailure(new FluentValidation.Results.ValidationFailure
+                        (nameof(cpf), ResourceMensagensDeErro.MATRICULA_CPF_RESPONSAVEL_INVALIDO));
                 }
             });
         });
@@ -183,9 +170,28 @@ public class MatricularAlunoValidator : AbstractValidator<RequestMatricularAluno
 
                 if (!isMatch)
                 {
-                    contexto.AddFailure(new FluentValidation.Results.ValidationFailure(nameof(dataNascimento), ResourceMensagensDeErro.MATRICULA_DATA_INICIO_INVALIDO));
+                    contexto.AddFailure(new FluentValidation.Results.ValidationFailure(nameof(dataNascimento), ResourceMensagensDeErro.MATRICULA_DATA_NASCIMENTO_RESPONSAVEL_INVALIDO));
                 }
             });
         });
     }
+    private void ValidarTelefoneResponsavel()
+    {
+        RuleFor(c => c.Responsavel.Telefone)
+            .NotEmpty().WithMessage(ResourceMensagensDeErro.MATRICULA_TELEFONE_RESPONSAVEL_VAZIO);
+
+        When(c => !string.IsNullOrWhiteSpace(c.Responsavel.Telefone), () =>
+        {
+            RuleFor(c => c.Responsavel.Telefone).Custom((telefone, contexto) =>
+            {
+                string padraoTelefone = "[0-9]{2} [1-9]{1} [0-9]{4}-[0-9]{4}";
+                var isMatch = Regex.IsMatch(telefone, padraoTelefone);
+                if (!isMatch)
+                {
+                    contexto.AddFailure(new FluentValidation.Results.ValidationFailure(nameof(telefone), ResourceMensagensDeErro.MATRICULA_TELEFONE_RESPONSAVEL_INVALIDO));
+                }
+            });
+        });
+    }
+
 }

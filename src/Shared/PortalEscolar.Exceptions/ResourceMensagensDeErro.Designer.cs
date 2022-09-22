@@ -160,7 +160,7 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O campo cidade nascimento do responsavel deve conter no máximo 20 caracteres.
+        ///   Looks up a localized string similar to O campo cidade nascimento do responsavel deve conter no máximo 200 caracteres.
         /// </summary>
         public static string MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_NOMAXIMO100CARACTERES {
             get {

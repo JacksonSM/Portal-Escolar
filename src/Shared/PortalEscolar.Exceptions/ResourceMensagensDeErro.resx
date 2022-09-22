@@ -151,7 +151,7 @@
     <value>O campo cidade de nascimento do aluno está vazia.</value>
   </data>
   <data name="MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_NOMAXIMO100CARACTERES" xml:space="preserve">
-    <value>O campo cidade nascimento do responsavel deve conter no máximo 20 caracteres</value>
+    <value>O campo cidade nascimento do responsavel deve conter no máximo 200 caracteres</value>
   </data>
   <data name="MATRICULA_CIDADENASCIMENTO_RESPONSAVEL_VAZIO" xml:space="preserve">
     <value>O campo cidade de nascimento do responsavel está vazia.</value>
