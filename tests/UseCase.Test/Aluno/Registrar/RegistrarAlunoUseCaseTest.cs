@@ -20,8 +20,7 @@ public class RegistrarAlunoUseCaseTest
         var result = await useCase.ExecuteAsync(request);
 
         result.Should().NotBeNull();
-        result.Mensagem.Should().NotBeNullOrWhiteSpace();
-        result.Mensagem.Should().Contain(ResourceMensagensDeErro.REGISTRAR_ALUNO_SUCESSO);
+        result.NomeCompleto.Should().NotBeNullOrWhiteSpace();
     }
 
     [Fact]
