@@ -2,5 +2,7 @@
 public interface IAlunoReadOnlyRepository
 {
     Task<bool> ExisteEmailAsync(string email);
-    Task<Entities.SalaAula.Aluno> ObterPorEmailSenhaAsync(string email, string senha);
+    Task<Entities.SalaAula.AlunoContext.Aluno> ObterPorEmailAsync(string email);
+    Task<Entities.SalaAula.AlunoContext.Aluno> ObterPorEmailSenhaAsync(string email, string senha);
+
 }
