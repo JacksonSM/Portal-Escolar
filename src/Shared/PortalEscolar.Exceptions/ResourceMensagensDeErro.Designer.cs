@@ -223,6 +223,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O exercicio informado não existe..
+        /// </summary>
+        public static string EXERCICIO_INEXISTENTE {
+            get {
+                return ResourceManager.GetString("EXERCICIO_INEXISTENTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login Invalido. Verifique suas credenciais..
         /// </summary>
         public static string LOGIN_INVALIDO {

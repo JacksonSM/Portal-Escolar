@@ -171,6 +171,9 @@
   <data name="ERRO_REGISTRAR_PROFESSOR_DIRETOR_INVALIDO" xml:space="preserve">
     <value>É necessario um Diretor valido para executar essa ação.</value>
   </data>
+  <data name="EXERCICIO_INEXISTENTE" xml:space="preserve">
+    <value>O exercicio informado não existe.</value>
+  </data>
   <data name="LOGIN_INVALIDO" xml:space="preserve">
     <value>Login Invalido. Verifique suas credenciais.</value>
   </data>
