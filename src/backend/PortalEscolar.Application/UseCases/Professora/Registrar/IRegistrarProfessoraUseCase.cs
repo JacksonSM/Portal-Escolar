@@ -1,4 +1,4 @@
-﻿using PortalEscolar.Communication.Request;
+﻿using PortalEscolar.Communication.Request.Professora;
 using PortalEscolar.Communication.Response;
 
 namespace PortalEscolar.Application.UseCases.Professora.Registrar;

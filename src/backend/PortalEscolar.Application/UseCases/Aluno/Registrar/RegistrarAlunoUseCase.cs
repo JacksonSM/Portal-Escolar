@@ -1,7 +1,7 @@
 ﻿
 using AutoMapper;
 using PortalEscolar.Application.Services.Criptografia;
-using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Aluno;
 using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Interfaces.Repositories;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Aluno;

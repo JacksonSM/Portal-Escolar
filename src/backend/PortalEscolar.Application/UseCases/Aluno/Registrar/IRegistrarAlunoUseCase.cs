@@ -1,4 +1,4 @@
-﻿using PortalEscolar.Communication.Request;
+﻿using PortalEscolar.Communication.Request.Aluno;
 using PortalEscolar.Communication.Response;
 
 namespace PortalEscolar.Application.UseCases.Aluno.Registrar;

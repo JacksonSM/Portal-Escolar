@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Diretor;
 
 namespace Utilities.Requests;
 public class RequestRegistrarDiretorBuilder

@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Diretor;
 using PortalEscolar.Exceptions;
 
 namespace PortalEscolar.Application.UseCases.Turma.Criar;

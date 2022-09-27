@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using PortalEscolar.Application.UseCases.Validator;
-using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Diretor;
 
 namespace PortalEscolar.Application.UseCases.Diretora.AlterarInfoPessoal;
 public class AlterarInfoPessoalDiretorValidator : AbstractValidator<RequestAlterarInfoPessoalDiretorJson>

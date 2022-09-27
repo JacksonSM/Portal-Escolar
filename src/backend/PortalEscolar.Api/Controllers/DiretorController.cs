@@ -8,6 +8,7 @@ using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
 using PortalEscolar.Application.UseCases.Turma.Criar;
 using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Diretor;
 using PortalEscolar.Communication.Request.Matricula;
 using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Enum;

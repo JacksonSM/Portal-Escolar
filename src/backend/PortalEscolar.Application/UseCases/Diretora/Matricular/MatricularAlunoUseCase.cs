@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using PortalEscolar.Application.Responses;
 using PortalEscolar.Application.UseCases.Aluno.Registrar;
-using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Aluno;
 using PortalEscolar.Communication.Request.Matricula;
 using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Entities.Diretoria.Matricula;

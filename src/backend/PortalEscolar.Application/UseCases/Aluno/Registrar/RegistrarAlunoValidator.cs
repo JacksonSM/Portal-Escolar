@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using PortalEscolar.Application.UseCases.Validator;
-using PortalEscolar.Communication.Request;
+using PortalEscolar.Communication.Request.Aluno;
 
 namespace PortalEscolar.Application.UseCases.Aluno.Registrar;
 public class RegistrarAlunoValidator : AbstractValidator<RequestRegistrarAlunoJson>

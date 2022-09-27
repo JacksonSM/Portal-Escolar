@@ -1,6 +1,6 @@
 ﻿using PortalEscolar.Domain.Enum;
 
-namespace PortalEscolar.Communication.Request;
+namespace PortalEscolar.Communication.Request.Diretor;
 public class RequestCriarTurmaJson
 {
     public long ProfessoraId { get; set; }

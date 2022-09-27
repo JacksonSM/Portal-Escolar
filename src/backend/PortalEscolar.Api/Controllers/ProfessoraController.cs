@@ -5,6 +5,7 @@ using PortalEscolar.Application.UseCases.Professora.Login;
 using PortalEscolar.Application.UseCases.Professora.Registrar;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Request.Exercicio;
+using PortalEscolar.Communication.Request.Professora;
 using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Enum;
 
