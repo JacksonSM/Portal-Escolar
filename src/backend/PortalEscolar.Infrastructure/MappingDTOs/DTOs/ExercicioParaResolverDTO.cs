@@ -1,8 +1,13 @@
-﻿using PortalEscolar.Domain.Enum;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using PortalEscolar.Domain.Enum;
 
 namespace PortalEscolar.Infrastructure.Mapping.DTOs;
 public class ExercicioParaResolverDTO
 {
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
     public long ProfessoraId { get; set; }
     public long TurmaId { get; set; }
     public string Nome { get; set; }
