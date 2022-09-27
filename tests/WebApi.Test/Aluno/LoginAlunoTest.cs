@@ -9,7 +9,7 @@ namespace WebApi.Test.Aluno;
 public class LoginAlunoTest : ControllerBase
 {
     private const string METODO = "api/aluno/login";
-    private PortalEscolar.Domain.Entities.SalaAula.Aluno _aluno;
+    private PortalEscolar.Domain.Entities.SalaAula.AlunoContext.Aluno _aluno;
     private string _senha;
 
     public LoginAlunoTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)

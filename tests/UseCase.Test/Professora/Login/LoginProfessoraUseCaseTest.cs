@@ -86,7 +86,7 @@ public class LoginProfessoraUseCaseTest
 
     }
 
-    private LoginProfessoraUseCase UseCaseBuilder(PortalEscolar.Domain.Entities.SalaAula.Professora professora)
+    private LoginProfessoraUseCase UseCaseBuilder(PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.Professora professora)
     {
         var repo = ProfessoraReadOnlyRepositoryBuilder
             .Instance()

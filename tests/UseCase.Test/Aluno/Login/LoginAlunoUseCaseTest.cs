@@ -116,7 +116,7 @@ public class LoginAlunoUseCaseTest
              .Where(exception => exception.Message.Equals(ResourceMensagensDeErro.LOGIN_INVALIDO));
     }
 
-    private LoginAlunoUseCase UseCaseBuild(PortalEscolar.Domain.Entities.SalaAula.Aluno aluno)
+    private LoginAlunoUseCase UseCaseBuild(PortalEscolar.Domain.Entities.SalaAula.AlunoContext.Aluno aluno)
     {
         var repoRead = AlunoReadOnlyRepositoryBuilder.Instance().ObterPorEmailSenha(aluno).Build();
         var encriptador = EncriptadorDeSenhaBuilder.Instance();

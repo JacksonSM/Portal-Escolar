@@ -11,10 +11,10 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
     private PortalEscolar.Domain.Entities.Diretoria.Diretor _diretor;
     private string _senha;
 
-    private PortalEscolar.Domain.Entities.SalaAula.Professora _professora;
+    private PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.Professora _professora;
     private string _senhaProfessora;
 
-    private PortalEscolar.Domain.Entities.SalaAula.Aluno _aluno;
+    private PortalEscolar.Domain.Entities.SalaAula.AlunoContext.Aluno _aluno;
     private string _senhaAluno;
 
 
@@ -58,7 +58,7 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
     {
         return _senha;
     }
-    public PortalEscolar.Domain.Entities.SalaAula.Professora ObterProfessora()
+    public PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.Professora ObterProfessora()
     {
         return _professora;
     }
@@ -66,7 +66,7 @@ public class PortalEscolarWebApplicationFactory<TStartup> : WebApplicationFactor
     {
         return _senhaProfessora;
     }
-    public PortalEscolar.Domain.Entities.SalaAula.Aluno ObterAluno()
+    public PortalEscolar.Domain.Entities.SalaAula.AlunoContext.Aluno ObterAluno()
     {
         return _aluno;
     }

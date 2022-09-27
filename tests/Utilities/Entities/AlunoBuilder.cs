@@ -1,6 +1,6 @@
 ﻿using Bogus;
 using PortalEscolar.Domain.Entities.Diretoria;
-using PortalEscolar.Domain.Entities.SalaAula;
+using PortalEscolar.Domain.Entities.SalaAula.AlunoContext;
 using System.Globalization;
 using Utilities.Services.Criptografia;
 

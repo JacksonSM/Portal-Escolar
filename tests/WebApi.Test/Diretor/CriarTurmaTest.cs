@@ -13,7 +13,7 @@ public class CriarTurmaTest : ControllerBase
     private const string METODO = "api/diretor/criar-turma";
 
     private PortalEscolar.Domain.Entities.Diretoria.Diretor _diretor;
-    private PortalEscolar.Domain.Entities.SalaAula.Professora _professora;
+    private PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.Professora _professora;
     public CriarTurmaTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)
     {
         _diretor = factory.ObterDiretor();

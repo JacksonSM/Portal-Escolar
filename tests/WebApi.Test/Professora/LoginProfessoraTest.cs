@@ -10,7 +10,7 @@ public class LoginProfessoraTest : ControllerBase
 {
     private const string METODO = "api/professora/login";
 
-    private PortalEscolar.Domain.Entities.SalaAula.Professora _professora;
+    private PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.Professora _professora;
     private string _senha;
 
     public LoginProfessoraTest(PortalEscolarWebApplicationFactory<Program> factory) : base(factory)

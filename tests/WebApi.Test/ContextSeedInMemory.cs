@@ -15,7 +15,7 @@ public class ContextSeedInMemory
         return (diretor,senha);
     }
 
-    internal static (PortalEscolar.Domain.Entities.SalaAula.Professora _professora, string _senhaProfessora) SeedProfessora(PortalEscolarDbContext context)
+    internal static (PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.Professora _professora, string _senhaProfessora) SeedProfessora(PortalEscolarDbContext context)
     {
         (var professora, var senha) = ProfessoraBuilder.Build();
 
@@ -25,7 +25,7 @@ public class ContextSeedInMemory
         return (professora, senha);
     }
 
-    internal static (PortalEscolar.Domain.Entities.SalaAula.Aluno _aluno, string _senhaAluno) SeedAluno(PortalEscolarDbContext context)
+    internal static (PortalEscolar.Domain.Entities.SalaAula.AlunoContext.Aluno _aluno, string _senhaAluno) SeedAluno(PortalEscolarDbContext context)
     {
         (var aluno, var senha) = AlunoBuilder.Build();
 

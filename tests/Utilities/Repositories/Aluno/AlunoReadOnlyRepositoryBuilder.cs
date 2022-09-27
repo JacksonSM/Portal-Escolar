@@ -33,7 +33,7 @@ public class AlunoReadOnlyRepositoryBuilder
         return _repository.Object;
     }
 
-    public AlunoReadOnlyRepositoryBuilder ObterPorEmailSenha(PortalEscolar.Domain.Entities.SalaAula.Aluno aluno)
+    public AlunoReadOnlyRepositoryBuilder ObterPorEmailSenha(PortalEscolar.Domain.Entities.SalaAula.AlunoContext.Aluno aluno)
     {
         _repository.Setup(i => i.ObterPorEmailSenhaAsync(aluno.Email, aluno.Senha)).ReturnsAsync(aluno);
         return this;

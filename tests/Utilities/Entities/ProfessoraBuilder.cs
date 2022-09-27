@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using PortalEscolar.Domain.Entities.SalaAula;
+using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
 using System.Globalization;
 using Utilities.Services.Criptografia;
 
