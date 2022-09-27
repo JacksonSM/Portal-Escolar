@@ -37,7 +37,7 @@ public class RegistrarAlunoUseCase : IRegistrarAlunoUseCase
 
         var senhaCriptografada = _encriptadorDeSenha.Criptografar(request.Senha);
 
-        var entidade = _mapper.Map<Domain.Entities.SalaAula.Aluno>(request);
+        var entidade = _mapper.Map<Domain.Entities.SalaAula.AlunoContext.Aluno>(request);
 
         entidade.Senha = senhaCriptografada;
 

@@ -9,8 +9,8 @@ public class InformacoesPessoaisValidator : AbstractValidator<InformacoesPessoai
     public InformacoesPessoaisValidator()
     {
         RuleFor(c => c.NomeCompleto)
-    .NotEmpty().WithMessage(ResourceMensagensDeErro.NOMECOMPLETO_VAZIO)
-    .MaximumLength(200).WithMessage(ResourceMensagensDeErro.NOMECOMPLETO_MAXIMO200CARACTERES);
+            .NotEmpty().WithMessage(ResourceMensagensDeErro.NOMECOMPLETO_VAZIO)
+            .MaximumLength(200).WithMessage(ResourceMensagensDeErro.NOMECOMPLETO_MAXIMO200CARACTERES);
 
         RuleFor(c => c.DataNascimento)
             .NotEmpty().WithMessage(ResourceMensagensDeErro.DATANASCIMENTO_VAZIO);

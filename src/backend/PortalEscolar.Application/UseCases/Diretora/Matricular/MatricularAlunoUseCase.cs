@@ -59,7 +59,7 @@ public class MatricularAlunoUseCase : IMatricularAlunoUseCase
 
         var validationResult = validator.Validate(request);
 
-        var existeTurma = await _turmaReadRepo.ExistePorIdAsync(request.TurmaId);
+        var existeTurma = await _turmaReadRepo.ExisteTurmaAtivaPorIdAsync(request.TurmaId);
 
         if (!existeTurma)    
             validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(request.TurmaId.ToString(),
