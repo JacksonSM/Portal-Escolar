@@ -12,6 +12,7 @@ using PortalEscolar.Application.UseCases.Diretora.Login;
 using PortalEscolar.Application.UseCases.Diretora.Matricular;
 using PortalEscolar.Application.UseCases.Diretora.PrimeiroAcesso;
 using PortalEscolar.Application.UseCases.Diretora.Registrar;
+using PortalEscolar.Application.UseCases.Professora.EnviarExercicio;
 using PortalEscolar.Application.UseCases.Professora.Login;
 using PortalEscolar.Application.UseCases.Professora.Registrar;
 using PortalEscolar.Application.UseCases.Turma.Criar;
@@ -56,6 +57,8 @@ public static class Bootstrapper
 
         services.AddScoped<IRegistrarProfessoraUseCase, RegistrarProfessoraUseCase>();
         services.AddScoped<ILoginProfessoraUseCase, LoginProfessoraUseCase>();
+
+        services.AddScoped<IEnviarExercicioUseCase, EnviarExercicioUseCase>();
 
         services.AddScoped<IRegistrarAlunoUseCase, RegistrarAlunoUseCase>();
         services.AddScoped<ILoginAlunoUseCase, LoginAlunoUseCase>();

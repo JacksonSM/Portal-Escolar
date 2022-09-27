@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using PortalEscolar.Domain.Entities.SalaAula.AlunoContext;
+using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
+using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.AtividadesParaResolver.Execicio;
 
 namespace PortalEscolar.Application.Services.Mapping;
 public class AutoMapperConfig : Profile
@@ -13,9 +16,12 @@ public class AutoMapperConfig : Profile
     public void RequestForEntity()
     {
         CreateMap<Communication.Request.RequestRegistrarDiretorJson, Domain.Entities.Diretoria.Diretor>();
-        CreateMap<Communication.Request.RequestRegistrarProfessoraJson, Domain.Entities.SalaAula.Professora>();
-        CreateMap<Communication.Request.RequestRegistrarAlunoJson, Domain.Entities.SalaAula.Aluno>();
+        CreateMap<Communication.Request.RequestRegistrarProfessoraJson, Professora>();
+        CreateMap<Communication.Request.RequestRegistrarAlunoJson, Aluno>();
         CreateMap<Communication.Request.RequestCriarTurmaJson, Domain.Entities.SalaAula.Turma>();
+
+        CreateMap<Communication.Request.Exercicio.RequestEnviarExercicioJson, ExercicioParaResolver>();
+        CreateMap<Communication.Request.Exercicio.QuestoesExercicioJson, QuestoesExercicioParaResolver>();
 
         CreateMap<Communication.Request.Matricula.RequestMatricularAlunoJson, Domain.Entities.Diretoria.Matricula.Matricula>()
             .ForMember(destino => destino.Aluno, config => config.Ignore()) 
@@ -28,6 +34,6 @@ public class AutoMapperConfig : Profile
     public void EntityForRequest()
     {
         CreateMap< Domain.Entities.Diretoria.Diretor, Communication.Response.ResponseInfoPessoalDiretorJson>();
-        CreateMap< Domain.Entities.SalaAula.Aluno, Communication.Response.ReponseRegistarAlunoJson>();
+        CreateMap< Aluno, Communication.Response.ReponseRegistarAlunoJson>();
     }
 }
