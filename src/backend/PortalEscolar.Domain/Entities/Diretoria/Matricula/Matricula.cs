@@ -1,4 +1,5 @@
 ﻿using PortalEscolar.Domain.Entities.SalaAula;
+using PortalEscolar.Domain.Entities.SalaAula.AlunoContext;
 
 namespace PortalEscolar.Domain.Entities.Diretoria.Matricula;
 public class Matricula : EntityBase

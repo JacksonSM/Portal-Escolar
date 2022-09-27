@@ -1,4 +1,6 @@
-﻿using PortalEscolar.Domain.Entities.Diretoria.Matricula;
+﻿
+using PortalEscolar.Domain.Entities.Diretoria.Matricula;
+using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
 using PortalEscolar.Domain.Enum;
 
 namespace PortalEscolar.Domain.Entities.SalaAula;
@@ -11,6 +13,6 @@ public class Turma : EntityBase
     public Serie Serie { get; set; }
     public Turno Turno { get; set; }
     public bool Ativo { get; set; } = true;
-    public List<Aluno> Alunos { get; set; }
+    public List<AlunoContext.Aluno> Alunos { get; set; }
     public List<Matricula> Matricula { get; set; }
 }
