@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PortalEscolar.Communication.Response.Aluno.Exercicio;
 
 namespace PortalEscolar.Application.UseCases.Aluno.ObterExercicio;
 public interface IObterExercicioUseCase
 {
-    
+    Task<ExercicioParaResolverJson> ExecuteAsync(string exercicioId);
 }

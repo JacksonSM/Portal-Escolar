@@ -38,5 +38,7 @@ public class AutoMapperConfig : Profile
     {
         CreateMap< Domain.Entities.Diretoria.Diretor, Communication.Response.ResponseInfoPessoalDiretorJson>();
         CreateMap< Aluno, Communication.Response.ReponseRegistarAlunoJson>();
+        CreateMap< ExercicioParaResolver, Communication.Response.Aluno.Exercicio.ExercicioParaResolverJson>();
+        CreateMap< QuestoesExercicioParaResolver, Communication.Response.Aluno.Exercicio.QuestoesExercicioParaResolverJson>();
     }
 }
