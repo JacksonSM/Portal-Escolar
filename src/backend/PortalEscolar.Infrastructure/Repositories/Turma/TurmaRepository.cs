@@ -14,6 +14,6 @@ public class TurmaRepository : ITurmaWriteOnlyRepository, ITurmaReadOnlyReposito
     public async Task AdicionarAsync(Domain.Entities.SalaAula.Turma turma) =>
         await _context.Turma.AddAsync(turma);
 
-    public async Task<bool> ExistePorIdAsync(long id) =>
-        await _context.Turma.AnyAsync(c => c.Id == id);
+    public async Task<bool> ExisteTurmaAtivaPorIdAsync(long id) =>
+        await _context.Turma.AnyAsync(c => c.Id == id && c.Ativo == true);
 }

@@ -12,7 +12,7 @@ public class ProfessoraRepository : IProfessoraWriteOnlyRepository, IProfessoraR
         _context = context;
     }
 
-    public async Task AddAsync(Domain.Entities.SalaAula.Professora professora) =>
+    public async Task AddAsync(Domain.Entities.SalaAula.ProfessoraContext.Professora professora) =>
         await _context.Professora.AddAsync(professora);
 
     public async Task<bool> ExisteEmailAsync(string email) =>
@@ -21,8 +21,11 @@ public class ProfessoraRepository : IProfessoraWriteOnlyRepository, IProfessoraR
     public async Task<bool> ExistePorIdAsync(long id) =>
         await _context.Professora.AnyAsync(c => c.Id == id);
 
-    public async Task<Domain.Entities.SalaAula.Professora> ObterPorEmailESenhaAsync (string email, string senha) =>
+    public async Task<Domain.Entities.SalaAula.ProfessoraContext.Professora> ObterPorEmailAsync(string email) =>
+        await _context.Professora.AsNoTracking().FirstOrDefaultAsync(c => string.Equals(c.Email.ToUpper(),email.ToUpper()));
+
+    public async Task<Domain.Entities.SalaAula.ProfessoraContext.Professora> ObterPorEmailESenhaAsync (string email, string senha) =>
         await _context.Professora
         .AsNoTracking()
-        .FirstOrDefaultAsync(c => c.Email.ToUpper().Equals(email.ToUpper()) && c.Senha.Equals(senha));
+        .FirstOrDefaultAsync(c => string.Equals(c.Email.ToUpper() , email.ToUpper()) && c.Senha.Equals(senha));
 }
