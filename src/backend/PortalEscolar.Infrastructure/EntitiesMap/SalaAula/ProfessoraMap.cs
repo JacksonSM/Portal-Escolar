@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PortalEscolar.Domain.Entities.SalaAula;
+using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
 
 namespace PortalEscolar.Infrastructure.EntitiesMap.SalaAula;
 public class ProfessoraMap : IEntityTypeConfiguration<Professora>

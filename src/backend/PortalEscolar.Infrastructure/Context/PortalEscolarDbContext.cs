@@ -2,6 +2,8 @@
 using PortalEscolar.Domain.Entities.Diretoria;
 using PortalEscolar.Domain.Entities.Diretoria.Matricula;
 using PortalEscolar.Domain.Entities.SalaAula;
+using PortalEscolar.Domain.Entities.SalaAula.AlunoContext;
+using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
 
 namespace PortalEscolar.Infrastructure.Context;
 public class PortalEscolarDbContext : DbContext
