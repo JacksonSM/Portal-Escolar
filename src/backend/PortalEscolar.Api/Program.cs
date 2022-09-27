@@ -2,6 +2,8 @@ using PortalEscolar.Api.Filters;
 using PortalEscolar.Application;
 using PortalEscolar.Application.Services.Mapping;
 using PortalEscolar.Infrastructure;
+using PortalEscolar.Infrastructure.Helpers;
+using PortalEscolar.Infrastructure.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +15,12 @@ builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddScoped(provider => new AutoMapper.MapperConfiguration(cfg =>
 {
     cfg.AddProfile(new AutoMapperConfig());
+    cfg.AddProfile(new InfrastructureProfile());
 }).CreateMapper());
 
+
+builder.Services.Configure<ExercicioParaResolverDatabaseSettings>(
+    builder.Configuration.GetSection("MongoDbConfig"));
 
 builder.Services.AddRouting(option => option.LowercaseUrls = true);
 
