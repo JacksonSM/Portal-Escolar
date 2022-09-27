@@ -115,6 +115,96 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo data de entrega estar invalido. deve seguir esse formato: DD/MM/AAAA HH:MM.
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_DATAENTREGA_INVALIDO {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_DATAENTREGA_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Essa disciplina não existe em nosso sistema..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_DISCIPLINA_INEXISTENTE {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_DISCIPLINA_INEXISTENTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo nome só pode conter no maximo 200 caracteres..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_NOME_NOMAXIMO200CARACTERES {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_NOME_NOMAXIMO200CARACTERES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo nome deve ser informado !!.
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_NOME_VAZIO {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_NOME_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo prazo de entrega aponta uma data passada..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_PRAZOENTREGA_PASSADO {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_PRAZOENTREGA_PASSADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo data de entrega deve ser informado..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_PRAZOENTREGA_VAZIO {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_PRAZOENTREGA_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo alternativa correta deve ser informado..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_QUESTAO_ALTERNATIVACORRETA_VAZIO {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_QUESTAO_ALTERNATIVACORRETA_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deve haver pelo menos duas alternativas..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_QUESTAO_ALTERNATIVAS_INVALIDO {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_QUESTAO_ALTERNATIVAS_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Existe uma questão com o enunciado vazio..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_QUESTAO_ENUNCIADO_VAZIO {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_QUESTAO_ENUNCIADO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Existe ordens repetidas em alguma questão..
+        /// </summary>
+        public static string ENVIAR_EXERCICIO_QUESTAO_ORDEM_REPETIDAS {
+            get {
+                return ResourceManager.GetString("ENVIAR_EXERCICIO_QUESTAO_ORDEM_REPETIDAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro desconhecido..
         /// </summary>
         public static string ERRO_DESCONHECIDO {
@@ -313,7 +403,7 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O campo nome só pode conter 200 caracteres..
+        ///   Looks up a localized string similar to O campo nome só pode conter no maximo 200 caracteres..
         /// </summary>
         public static string NOMECOMPLETO_MAXIMO200CARACTERES {
             get {

@@ -135,6 +135,36 @@
   <data name="EMAIL_VAZIO" xml:space="preserve">
     <value>O campo email deve ser informado.</value>
   </data>
+  <data name="ENVIAR_EXERCICIO_DATAENTREGA_INVALIDO" xml:space="preserve">
+    <value>O campo data de entrega estar invalido. deve seguir esse formato: DD/MM/AAAA HH:MM</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_DISCIPLINA_INEXISTENTE" xml:space="preserve">
+    <value>Essa disciplina não existe em nosso sistema.</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_NOME_NOMAXIMO200CARACTERES" xml:space="preserve">
+    <value>O campo nome só pode conter no maximo 200 caracteres.</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_NOME_VAZIO" xml:space="preserve">
+    <value>O campo nome deve ser informado !!</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_PRAZOENTREGA_PASSADO" xml:space="preserve">
+    <value>O campo prazo de entrega aponta uma data passada.</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_PRAZOENTREGA_VAZIO" xml:space="preserve">
+    <value>O campo data de entrega deve ser informado.</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_QUESTAO_ALTERNATIVACORRETA_VAZIO" xml:space="preserve">
+    <value>O campo alternativa correta deve ser informado.</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_QUESTAO_ALTERNATIVAS_INVALIDO" xml:space="preserve">
+    <value>Deve haver pelo menos duas alternativas.</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_QUESTAO_ENUNCIADO_VAZIO" xml:space="preserve">
+    <value>Existe uma questão com o enunciado vazio.</value>
+  </data>
+  <data name="ENVIAR_EXERCICIO_QUESTAO_ORDEM_REPETIDAS" xml:space="preserve">
+    <value>Existe ordens repetidas em alguma questão.</value>
+  </data>
   <data name="ERRO_DESCONHECIDO" xml:space="preserve">
     <value>Erro desconhecido.</value>
   </data>
@@ -202,7 +232,7 @@
     <value>O campo telefone do responsavel deve ser informado.</value>
   </data>
   <data name="NOMECOMPLETO_MAXIMO200CARACTERES" xml:space="preserve">
-    <value>O campo nome só pode conter 200 caracteres.</value>
+    <value>O campo nome só pode conter no maximo 200 caracteres.</value>
   </data>
   <data name="NOMECOMPLETO_VAZIO" xml:space="preserve">
     <value>O campo nome completo deve ser informado.</value>
