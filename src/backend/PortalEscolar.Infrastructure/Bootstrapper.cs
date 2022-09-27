@@ -53,6 +53,7 @@ public static class Bootstrapper
         services.AddScoped<IProfessoraReadOnlyRepository, ProfessoraRepository>();
 
         services.AddScoped<IExercicioWriteOnlyRepository, ExercicioParaResolverRepository>();
+        services.AddScoped<IExercicioReadOnlyRepository, ExercicioParaResolverRepository>();
 
         services.AddScoped<IAlunoReadOnlyRepository, AlunoRepository>();
         services.AddScoped<IAlunoWriteOnlyRepository, AlunoRepository>();

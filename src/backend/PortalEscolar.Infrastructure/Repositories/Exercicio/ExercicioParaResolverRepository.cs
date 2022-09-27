@@ -7,11 +7,12 @@ using PortalEscolar.Infrastructure.Helpers;
 using PortalEscolar.Infrastructure.Mapping.DTOs;
 
 namespace PortalEscolar.Infrastructure.Repositories.Exercicio;
-public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository
+public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository, IExercicioReadOnlyRepository
 {
     private readonly IMongoCollection<ExercicioParaResolverDTO> _exercicioCollection;
     private readonly IMapper _mapper;
-    public ExercicioParaResolverRepository(IOptions<ExercicioParaResolverDatabaseSettings> produtoServices, IMapper mapper)
+    public ExercicioParaResolverRepository(IOptions<ExercicioParaResolverDatabaseSettings> produtoServices,
+        IMapper mapper)
     {
         var mongoClient = new MongoClient(produtoServices.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(produtoServices.Value.DatabaseName);
@@ -25,5 +26,12 @@ public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository
         var exercicioDto = _mapper.Map<ExercicioParaResolverDTO>(exercicio);
 
         await _exercicioCollection.InsertOneAsync(exercicioDto);
+    }
+
+    public async Task<ExercicioParaResolver> ObterPorId(string id)
+    {
+        var exercicio = await _exercicioCollection.Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+
+        return _mapper.Map<ExercicioParaResolver>(exercicio);
     }
 }
