@@ -2,9 +2,11 @@
 using PortalEscolar.Communication.Request.Aluno;
 using PortalEscolar.Communication.Request.Diretor;
 using PortalEscolar.Communication.Request.Professora;
+using PortalEscolar.Communication.Response.Aluno.ObterListaExercicios;
 using PortalEscolar.Domain.Entities.SalaAula.AlunoContext;
 using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
 using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.AtividadesParaResolver.Execicio;
+using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Exercicio;
 
 namespace PortalEscolar.Application.Services.Mapping;
 public class AutoMapperConfig : Profile
@@ -12,9 +14,11 @@ public class AutoMapperConfig : Profile
     public AutoMapperConfig()
     {
         CreateMap<Communication.Request.Matricula.DadosAluno, RequestRegistrarAlunoJson>();
+        CreateMap<RequestObterListaExerciciosQuery, ObterListaExerciciosQuery>();
+
 
         RequestForEntity();
-        EntityForRequest();
+        EntityForResponse();
     }
     public void RequestForEntity()
     {
@@ -34,11 +38,13 @@ public class AutoMapperConfig : Profile
             .ForPath(destino => destino.Responsavel.CPF, config => config.MapFrom(origem => origem.Responsavel.CPF))
             .ForPath(destino => destino.Responsavel.Cidade, config => config.MapFrom(origem => origem.Responsavel.Cidade));
     }
-    public void EntityForRequest()
+    public void EntityForResponse()
     {
         CreateMap< Domain.Entities.Diretoria.Diretor, Communication.Response.ResponseInfoPessoalDiretorJson>();
         CreateMap< Aluno, Communication.Response.ReponseRegistarAlunoJson>();
         CreateMap< ExercicioParaResolver, Communication.Response.Aluno.Exercicio.ExercicioParaResolverJson>();
         CreateMap< QuestoesExercicioParaResolver, Communication.Response.Aluno.Exercicio.QuestoesExercicioParaResolverJson>();
+        CreateMap<ExercicioParaResolver, ResponseExercicioParaResolverJson>();
+        CreateMap<QuestoesExercicioParaResolver, ResponseQuestoesExercicioParaResolverJson>();
     }
 }

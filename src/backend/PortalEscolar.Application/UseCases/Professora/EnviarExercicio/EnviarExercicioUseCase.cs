@@ -33,13 +33,17 @@ public class EnviarExercicioUseCase : IEnviarExercicioUseCase
 
     public async Task<GenericResponseJson> ExecuteAsync(RequestEnviarExercicioJson request)
     {
-        await ValidarAsync(request);
+        var turma = await _turmaReadRepo.ObterTurmaPorIdAsync(request.TurmaId);
+
+        Validar(request,turma);
 
         var professoraLogado = await _usuarioLogado.ObterProfessora();
 
         var entidade = _mapper.Map<ExercicioParaResolver>(request);
 
         entidade.ProfessoraId = professoraLogado.Id;
+        entidade.NomeProfessora = professoraLogado.NomeCompleto;
+        entidade.NomeTurma = turma.NomeTurma;
 
         await _exercicioWriteRepo.AdicionarAsync(entidade);
         
@@ -47,15 +51,15 @@ public class EnviarExercicioUseCase : IEnviarExercicioUseCase
         return new GenericResponseJson { Mensagem = ResourceRespostasUseCases.ENVIAR_EXERCICIO_ENVIADO_COM_SUCESSO };
     }
 
-    private async Task ValidarAsync(RequestEnviarExercicioJson request)
+    private void Validar(RequestEnviarExercicioJson request, Domain.Entities.SalaAula.Turma turma)
     {
         var validator = new EnviarExercicioValidador();
         var validationResult = validator.Validate(request);
 
-        var existeTurma = await _turmaReadRepo.ExisteTurmaAtivaPorIdAsync(request.TurmaId);
-        if (!existeTurma)
+        if (turma is null)
             validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(
                 request.TurmaId.ToString(),ResourceMensagensDeErro.TURMA_INEXISTENTE));
+
 
         if (!validationResult.IsValid)
         {
