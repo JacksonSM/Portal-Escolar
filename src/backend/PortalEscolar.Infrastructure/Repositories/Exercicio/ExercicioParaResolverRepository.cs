@@ -31,9 +31,10 @@ public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository, IE
         await _exercicioCollection.InsertOneAsync(exercicioDto);
     }
 
-    public async Task<ExercicioParaResolver> ObterPorId(string id)
+    public async Task<ExercicioParaResolver> ObterPorId(string id, long turmaId)
     {
-        var exercicio = await _exercicioCollection.Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+        var exercicio = await _exercicioCollection
+            .Find(x => x.Id.Equals(id) && x.TurmaId == turmaId).FirstOrDefaultAsync();
 
         return _mapper.Map<ExercicioParaResolver>(exercicio);
     }
@@ -43,7 +44,9 @@ public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository, IE
         var construtor = Builders<ExercicioParaResolverDTO>.Filter;
         FilterDefinition<ExercicioParaResolverDTO> filtro = construtor.Empty;
 
-        if(query.Disciplina is not null)       
+        filtro = construtor.Eq(c => c.TurmaId, query.TurmaId);
+
+        if (query.Disciplina is not null)       
             filtro = construtor.Eq(c => c.Disciplina ,(Disciplina)query.Disciplina);
 
         if (!string.IsNullOrEmpty(query.Nome))

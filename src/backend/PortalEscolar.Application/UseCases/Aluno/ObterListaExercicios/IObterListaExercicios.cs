@@ -1,5 +1,5 @@
 ﻿using PortalEscolar.Communication.Request.Aluno;
-using PortalEscolar.Communication.Response.Aluno.ObterListaExercicios;
+using PortalEscolar.Communication.Response.Aluno.Exercicio;
 
 namespace PortalEscolar.Application.UseCases.Aluno.ObterListaExercicios;
 public interface IObterListaExercicios
