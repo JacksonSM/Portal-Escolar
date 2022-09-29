@@ -61,6 +61,15 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Essse aluno não existe em nossa base de dados..
+        /// </summary>
+        public static string ALUNO_INEXISTENTE {
+            get {
+                return ResourceManager.GetString("ALUNO_INEXISTENTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo data nascimento está inválido. o formato deve ser DD/MM/AAAA.
         /// </summary>
         public static string DATANASCIMENTO_INVALIDO {

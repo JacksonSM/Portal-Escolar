@@ -1,5 +1,5 @@
 ﻿namespace PortalEscolar.Communication.Response.Aluno.Exercicio;
-public class ExercicioParaResolverJson
+public class ResponseExercicioParaResolverJson
 {
     public long ProfessoraId { get; set; }
     public long TurmaId { get; set; }
