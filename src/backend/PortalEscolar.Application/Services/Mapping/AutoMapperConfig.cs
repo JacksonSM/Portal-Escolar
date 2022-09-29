@@ -2,7 +2,7 @@
 using PortalEscolar.Communication.Request.Aluno;
 using PortalEscolar.Communication.Request.Diretor;
 using PortalEscolar.Communication.Request.Professora;
-using PortalEscolar.Communication.Response.Aluno.ObterListaExercicios;
+using PortalEscolar.Communication.Response.Aluno.Exercicio;
 using PortalEscolar.Domain.Entities.SalaAula.AlunoContext;
 using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
 using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.AtividadesParaResolver.Execicio;
@@ -42,9 +42,9 @@ public class AutoMapperConfig : Profile
     {
         CreateMap< Domain.Entities.Diretoria.Diretor, Communication.Response.ResponseInfoPessoalDiretorJson>();
         CreateMap< Aluno, Communication.Response.ReponseRegistarAlunoJson>();
-        CreateMap< ExercicioParaResolver, Communication.Response.Aluno.Exercicio.ExercicioParaResolverJson>();
-        CreateMap< QuestoesExercicioParaResolver, Communication.Response.Aluno.Exercicio.QuestoesExercicioParaResolverJson>();
+        CreateMap< ExercicioParaResolver, ResponseExercicioParaResolverJson>();
+        CreateMap< QuestoesExercicioParaResolver, QuestoesExercicioParaResolverJson>();
         CreateMap<ExercicioParaResolver, ResponseExercicioParaResolverJson>();
-        CreateMap<QuestoesExercicioParaResolver, ResponseQuestoesExercicioParaResolverJson>();
+        CreateMap<QuestoesExercicioParaResolver, QuestoesExercicioParaResolverJson>();
     }
 }

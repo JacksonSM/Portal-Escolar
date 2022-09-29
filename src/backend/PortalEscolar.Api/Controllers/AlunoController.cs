@@ -26,7 +26,7 @@ public class AlunoController : ControllerBase
     }
     [HttpGet("{exercicioId:length(24)}")]
     [AutorizacaoPortalEscolar(new Papel[] { Papel.Aluno })]
-    [ProducesResponseType(typeof(ExercicioParaResolverJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseExercicioParaResolverJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> ObterExercicio(
         [FromServices] IObterExercicioUseCase useCase,
         string exercicioId)
@@ -41,7 +41,7 @@ public class AlunoController : ControllerBase
 
     [HttpGet("obter-lista-exercicios")]
     [AutorizacaoPortalEscolar(new Papel[] { Papel.Aluno })]
-    [ProducesResponseType(typeof(ExercicioParaResolverJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseExercicioParaResolverJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> ObterListaExercicio(
         [FromServices] IObterListaExercicios useCase,
         [FromQuery] RequestObterListaExerciciosQuery request)

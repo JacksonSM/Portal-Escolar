@@ -3,5 +3,5 @@
 namespace PortalEscolar.Application.UseCases.Aluno.ObterExercicio;
 public interface IObterExercicioUseCase
 {
-    Task<ExercicioParaResolverJson> ExecuteAsync(string exercicioId);
+    Task<ResponseExercicioParaResolverJson> ExecuteAsync(string exercicioId);
 }

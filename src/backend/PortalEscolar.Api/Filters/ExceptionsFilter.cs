@@ -13,7 +13,7 @@ public class ExceptionsFilter : IExceptionFilter
     {
         if (context.Exception is PortalEscolarException)
         {
-            TratarMeuLivroDeReceitasException(context);
+            TratarPortalEscolarException(context);
 
         }
         else
@@ -22,7 +22,7 @@ public class ExceptionsFilter : IExceptionFilter
         }
     }
 
-    private static void TratarMeuLivroDeReceitasException(ExceptionContext context)
+    private static void TratarPortalEscolarException(ExceptionContext context)
     {
         if (context.Exception is ErrosDeValidacaoException)
         {

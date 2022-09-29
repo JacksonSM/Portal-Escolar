@@ -46,6 +46,7 @@ public class MatricularAlunoUseCase : IMatricularAlunoUseCase
 
         entidadeMatricula.NomeCompletoAluno = requestRegistrarAluno.NomeCompleto;
         entidadeMatricula.AlunoId = responseRegistrarAluno.Id;
+        entidadeMatricula.TurmaId = requestRegistrarAluno.TurmaId;
 
         await _matriculaWriteRepo.AdicionarAsync(entidadeMatricula);
         await _unitOfWork.CommitAsync();
@@ -59,7 +60,7 @@ public class MatricularAlunoUseCase : IMatricularAlunoUseCase
 
         var validationResult = validator.Validate(request);
 
-        var existeTurma = await _turmaReadRepo.ExisteTurmaAtivaPorIdAsync(request.TurmaId);
+        var existeTurma = await _turmaReadRepo.ExisteTurmaAtivaPorIdAsync(request.Aluno.TurmaId);
 
         if (!existeTurma)    
             validationResult.Errors.Add(new FluentValidation.Results.ValidationFailure(request.TurmaId.ToString(),

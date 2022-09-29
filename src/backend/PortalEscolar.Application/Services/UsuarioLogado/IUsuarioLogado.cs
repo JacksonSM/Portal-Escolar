@@ -6,4 +6,5 @@ public interface IUsuarioLogado
 {
     Task<Diretor> ObterDiretor();
     Task<Professora> ObterProfessora();
+    Task<Domain.Entities.SalaAula.AlunoContext.Aluno> ObterAluno();
 }
