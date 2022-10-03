@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PortalEscolar.Domain.Interfaces.Repositories;
@@ -7,15 +6,16 @@ using PortalEscolar.Domain.Interfaces.Repositories.Diretoria.Diretor;
 using PortalEscolar.Domain.Interfaces.Repositories.Diretoria.Matricula;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Aluno;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Exercicio;
+using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.ExercicioResolvido;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Professora;
 using PortalEscolar.Domain.Interfaces.Repositories.Turma;
 using PortalEscolar.Infrastructure.Context;
-using PortalEscolar.Infrastructure.Helpers;
 using PortalEscolar.Infrastructure.Mapping;
 using PortalEscolar.Infrastructure.Repositories;
 using PortalEscolar.Infrastructure.Repositories.Aluno;
 using PortalEscolar.Infrastructure.Repositories.Diretoria;
 using PortalEscolar.Infrastructure.Repositories.Exercicio;
+using PortalEscolar.Infrastructure.Repositories.ExercicioResolvido;
 using PortalEscolar.Infrastructure.Repositories.Professora;
 using PortalEscolar.Infrastructure.Repositories.Turma;
 using System.Reflection;
@@ -54,6 +54,9 @@ public static class Bootstrapper
 
         services.AddScoped<IExercicioWriteOnlyRepository, ExercicioParaResolverRepository>();
         services.AddScoped<IExercicioReadOnlyRepository, ExercicioParaResolverRepository>();
+
+        services.AddScoped<IExercicioResolvidoWriteOnlyRepository, ExercicioResolvidoRepository>();
+        services.AddScoped<IExercicioResolvidoReadOnlyRepository, ExercicioResolvidoRepository>();
 
         services.AddScoped<IAlunoReadOnlyRepository, AlunoRepository>();
         services.AddScoped<IAlunoWriteOnlyRepository, AlunoRepository>();
