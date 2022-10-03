@@ -1,6 +1,6 @@
-﻿namespace PortalEscolar.Infrastructure.Mapping.DTOs;
+﻿namespace PortalEscolar.Infrastructure.MappingDTOs.DTOs.ExercicioParaResolver;
 
-public class QuestoesExercicioParaResolverDTO
+public class QuestoesExercicioParaResolverDoc
 {
     public int Ordem { get; set; }
     public string Enunciado { get; set; }
