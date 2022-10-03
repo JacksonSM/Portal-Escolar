@@ -5,12 +5,12 @@ using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.AtividadesParaRes
 using PortalEscolar.Domain.Enum;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Exercicio;
 using PortalEscolar.Infrastructure.Helpers;
-using PortalEscolar.Infrastructure.Mapping.DTOs;
+using PortalEscolar.Infrastructure.MappingDTOs.DTOs.ExercicioParaResolver;
 
 namespace PortalEscolar.Infrastructure.Repositories.Exercicio;
 public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository, IExercicioReadOnlyRepository
 {
-    private readonly IMongoCollection<ExercicioParaResolverDTO> _exercicioCollection;
+    private readonly IMongoCollection<ExercicioParaResolverDoc> _exercicioCollection;
     private readonly IMapper _mapper;
 
     public ExercicioParaResolverRepository(IOptions<ExercicioParaResolverDatabaseSettings> produtoServices,
@@ -19,30 +19,30 @@ public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository, IE
         var mongoClient = new MongoClient(produtoServices.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(produtoServices.Value.DatabaseName);
 
-        _exercicioCollection = mongoDatabase.GetCollection<ExercicioParaResolverDTO>
+        _exercicioCollection = mongoDatabase.GetCollection<ExercicioParaResolverDoc>
             (produtoServices.Value.ExercicioCollectionName);
         _mapper = mapper;
     }
 
     public async Task AdicionarAsync(ExercicioParaResolver exercicio)
     {
-        var exercicioDto = _mapper.Map<ExercicioParaResolverDTO>(exercicio);
+        var exercicioDto = _mapper.Map<ExercicioParaResolverDoc>(exercicio);
 
         await _exercicioCollection.InsertOneAsync(exercicioDto);
     }
 
-    public async Task<ExercicioParaResolver> ObterPorId(string id, long turmaId)
+    public async Task<ExercicioParaResolver> ObterPorId(string id)
     {
         var exercicio = await _exercicioCollection
-            .Find(x => x.Id.Equals(id) && x.TurmaId == turmaId).FirstOrDefaultAsync();
+            .Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
 
         return _mapper.Map<ExercicioParaResolver>(exercicio);
     }
 
     public async Task<List<ExercicioParaResolver>> ObterListaExercicios(ObterListaExerciciosQuery query)
     {
-        var construtor = Builders<ExercicioParaResolverDTO>.Filter;
-        FilterDefinition<ExercicioParaResolverDTO> filtro = construtor.Empty;
+        var construtor = Builders<ExercicioParaResolverDoc>.Filter;
+        FilterDefinition<ExercicioParaResolverDoc> filtro = construtor.Empty;
 
         filtro = construtor.Eq(c => c.TurmaId, query.TurmaId);
 
@@ -52,7 +52,7 @@ public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository, IE
         if (!string.IsNullOrEmpty(query.Nome))
             filtro = construtor.Where(c => c.Nome.Contains(query.Nome));
 
-        var listaFiltrada = new List<ExercicioParaResolverDTO>();
+        var listaFiltrada = new List<ExercicioParaResolverDoc>();
 
         if (query.PaginaAtual.HasValue)
         {

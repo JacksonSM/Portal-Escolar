@@ -3,6 +3,6 @@
 namespace PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Exercicio;
 public interface IExercicioReadOnlyRepository
 {
-    Task<ExercicioParaResolver> ObterPorId(string id, long turmaId);
+    Task<ExercicioParaResolver> ObterPorId(string id);
     Task<List<ExercicioParaResolver>> ObterListaExercicios(ObterListaExerciciosQuery query);
 }
