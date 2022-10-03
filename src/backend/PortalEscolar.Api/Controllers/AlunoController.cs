@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PortalEscolar.Api.Filters.Autorizacao;
+using PortalEscolar.Application.UseCases.Aluno.EnviarExercicioResolvido;
 using PortalEscolar.Application.UseCases.Aluno.Login;
 using PortalEscolar.Application.UseCases.Aluno.ObterExercicio;
 using PortalEscolar.Application.UseCases.Aluno.ObterListaExercicios;
 using PortalEscolar.Communication.Request;
 using PortalEscolar.Communication.Request.Aluno;
+using PortalEscolar.Communication.Request.Aluno.EnviarExercicioResolvido;
 using PortalEscolar.Communication.Response;
-using PortalEscolar.Communication.Response.Aluno.Exercicio;
+using PortalEscolar.Communication.Response.Aluno.ExercicioResolvido;
 using PortalEscolar.Domain.Enum;
 
 namespace PortalEscolar.Api.Controllers;
@@ -24,9 +26,10 @@ public class AlunoController : ControllerBase
 
         return Ok(response);
     }
+
     [HttpGet("{exercicioId:length(24)}")]
     [AutorizacaoPortalEscolar(new Papel[] { Papel.Aluno })]
-    [ProducesResponseType(typeof(ResponseExercicioParaResolverJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseExercicioResolvidoJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> ObterExercicio(
         [FromServices] IObterExercicioUseCase useCase,
         string exercicioId)
@@ -41,7 +44,7 @@ public class AlunoController : ControllerBase
 
     [HttpGet("obter-lista-exercicios")]
     [AutorizacaoPortalEscolar(new Papel[] { Papel.Aluno })]
-    [ProducesResponseType(typeof(ResponseExercicioParaResolverJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseExercicioResolvidoJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> ObterListaExercicio(
         [FromServices] IObterListaExercicios useCase,
         [FromQuery] RequestObterListaExerciciosQuery request)
@@ -56,6 +59,16 @@ public class AlunoController : ControllerBase
 
         if (response is null || response.Count == 0)
             return NoContent();
+
+        return Ok(response);
+    }
+    [HttpPost("enviar-exercicio-resolvido")]
+    [ProducesResponseType(typeof(ResponseTokenJson), StatusCodes.Status200OK)]
+    public async Task<IActionResult> EnviarExercicioResolvido(
+        [FromServices] IEnviarExercicioResolvidoUseCase useCase,
+        [FromBody] RequestEnviarExercicioResolvidoJson request)
+    {
+        var response = await useCase.ExecuteAsync(request);
 
         return Ok(response);
     }
