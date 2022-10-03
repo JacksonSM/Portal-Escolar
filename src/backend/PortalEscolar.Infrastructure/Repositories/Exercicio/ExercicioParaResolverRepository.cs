@@ -31,10 +31,19 @@ public class ExercicioParaResolverRepository : IExercicioWriteOnlyRepository, IE
         await _exercicioCollection.InsertOneAsync(exercicioDto);
     }
 
-    public async Task<ExercicioParaResolver> ObterPorId(string id)
+    public async Task<ExercicioParaResolver> ObterPorId(string id, long turmaId = 0)
     {
-        var exercicio = await _exercicioCollection
-            .Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+        ExercicioParaResolverDoc exercicio;
+        if (turmaId == 0) 
+        {
+            exercicio = await _exercicioCollection
+                .Find(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+        }
+        else
+        {
+            exercicio = await _exercicioCollection
+                .Find(x => x.Id.Equals(id) && x.TurmaId == turmaId).FirstOrDefaultAsync();
+        }
 
         return _mapper.Map<ExercicioParaResolver>(exercicio);
     }

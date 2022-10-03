@@ -1,4 +1,5 @@
-﻿using PortalEscolar.Communication.Response.Aluno.Exercicio;
+﻿using PortalEscolar.Communication.Request.Aluno.ExercicioResolvido;
+using PortalEscolar.Communication.Response.Aluno.Exercicio;
 
 namespace PortalEscolar.Application.UseCases.Aluno.ObterExercicio;
 public interface IObterExercicioUseCase
