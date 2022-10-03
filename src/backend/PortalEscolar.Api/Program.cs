@@ -20,7 +20,10 @@ builder.Services.AddScoped(provider => new AutoMapper.MapperConfiguration(cfg =>
 
 
 builder.Services.Configure<ExercicioParaResolverDatabaseSettings>(
-    builder.Configuration.GetSection("MongoDbConfig"));
+    builder.Configuration.GetSection("ExercicioParaResolverMongoDbConfig"));
+
+builder.Services.Configure<ExercicioResolvidoDatabaseSettings>(
+    builder.Configuration.GetSection("ExercicioResolvidoMongoDbConfig"));
 
 builder.Services.AddRouting(option => option.LowercaseUrls = true);
 

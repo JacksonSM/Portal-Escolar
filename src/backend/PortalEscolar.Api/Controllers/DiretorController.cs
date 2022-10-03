@@ -14,6 +14,8 @@ using PortalEscolar.Communication.Response;
 using PortalEscolar.Domain.Enum;
 
 namespace PortalEscolar.Api.Controllers;
+
+
 [Route("api/[controller]")]
 [ApiController]
 public class DiretorController : ControllerBase
@@ -40,7 +42,6 @@ public class DiretorController : ControllerBase
         return Ok(response);
     }
     [HttpPost("primeiroacesso")]
-    [AutorizacaoPortalEscolar(new Papel[] { Papel.Diretor })]
     [ProducesResponseType(typeof(ResponseTokenJson), StatusCodes.Status200OK)]
     public async Task<IActionResult> PrimeiroAcesso(
         [FromServices] IPrimeiroAcessoDiretor useCase,
