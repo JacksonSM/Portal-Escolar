@@ -61,6 +61,33 @@ namespace PortalEscolar.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo ExercicioParaResolverId deve conter 24 caracteres..
+        /// </summary>
+        public static string ALUNO_ENVIAR_EXERCICIORESOLVIDO_EXERCICIOID_INVALIDO {
+            get {
+                return ResourceManager.GetString("ALUNO_ENVIAR_EXERCICIORESOLVIDO_EXERCICIOID_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O aluno já resolveu este exercicio..
+        /// </summary>
+        public static string ALUNO_ENVIAR_EXERCICIORESOLVIDO_EXERCICIOJAFOIRESOLVIDO {
+            get {
+                return ResourceManager.GetString("ALUNO_ENVIAR_EXERCICIORESOLVIDO_EXERCICIOJAFOIRESOLVIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O exercicio enviado está fora do prazo..
+        /// </summary>
+        public static string ALUNO_ENVIAR_EXERCICIORESOLVIDO_PRAZOEXPIRADO {
+            get {
+                return ResourceManager.GetString("ALUNO_ENVIAR_EXERCICIORESOLVIDO_PRAZOEXPIRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Essse aluno não existe em nossa base de dados..
         /// </summary>
         public static string ALUNO_INEXISTENTE {
