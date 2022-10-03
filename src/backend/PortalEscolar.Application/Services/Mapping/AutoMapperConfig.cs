@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using PortalEscolar.Communication.Request.Aluno;
+using PortalEscolar.Communication.Request.Aluno.EnviarExercicioResolvido;
+using PortalEscolar.Communication.Request.Aluno.ExercicioResolvido;
 using PortalEscolar.Communication.Request.Diretor;
 using PortalEscolar.Communication.Request.Professora;
-using PortalEscolar.Communication.Response.Aluno.Exercicio;
+using PortalEscolar.Communication.Response.Aluno.ExercicioResolvido;
 using PortalEscolar.Domain.Entities.SalaAula.AlunoContext;
+using PortalEscolar.Domain.Entities.SalaAula.AlunoContext.AtividadesResolvido.Exercicio;
 using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext;
 using PortalEscolar.Domain.Entities.SalaAula.ProfessoraContext.AtividadesParaResolver.Execicio;
 using PortalEscolar.Domain.Interfaces.Repositories.SalaAula.Exercicio;
@@ -30,6 +33,12 @@ public class AutoMapperConfig : Profile
         CreateMap<Communication.Request.Exercicio.RequestEnviarExercicioJson, ExercicioParaResolver>();
         CreateMap<Communication.Request.Exercicio.QuestoesExercicioJson, QuestoesExercicioParaResolver>();
 
+        CreateMap<RequestExercicioResolvidoJson, ExercicioResolvido>();
+        CreateMap<RequestQuestoesExercicioParaResolverJson, QuestoesExercicioResolvido>();
+        
+        CreateMap<RequestEnviarExercicioResolvidoJson, ExercicioResolvido>();
+        CreateMap<RequestQuestoesEnviarExercicioParaResolverJson, QuestoesExercicioResolvido>();
+
         CreateMap<Communication.Request.Matricula.RequestMatricularAlunoJson, Domain.Entities.Diretoria.Matricula.Matricula>()
             .ForMember(destino => destino.Aluno, config => config.Ignore()) 
             .ForPath(destino => destino.Responsavel.NomeCompleto, config => config.MapFrom(origem => origem.Responsavel.NomeCompleto))
@@ -42,9 +51,8 @@ public class AutoMapperConfig : Profile
     {
         CreateMap< Domain.Entities.Diretoria.Diretor, Communication.Response.ResponseInfoPessoalDiretorJson>();
         CreateMap< Aluno, Communication.Response.ReponseRegistarAlunoJson>();
-        CreateMap< ExercicioParaResolver, ResponseExercicioParaResolverJson>();
-        CreateMap< QuestoesExercicioParaResolver, QuestoesExercicioParaResolverJson>();
-        CreateMap<ExercicioParaResolver, ResponseExercicioParaResolverJson>();
-        CreateMap<QuestoesExercicioParaResolver, QuestoesExercicioParaResolverJson>();
+
+        CreateMap<ExercicioResolvido, ResponseExercicioResolvidoJson>();
+        CreateMap<QuestoesExercicioResolvido, ResponseQuestoesExercicioResolvidoJson>();
     }
 }
